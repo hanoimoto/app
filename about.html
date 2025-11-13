@@ -486,6 +486,42 @@
     }
     /* END PATCH 2 */
 
+    /* PATCH 2.1 – Sửa nền panel trong Light Mode */
+    :root[data-theme="light"] .menu-panel{
+      background: #ffffff;
+      color:#111;
+      border:1px solid rgba(0,0,0,0.06);
+      box-shadow:0 12px 24px rgba(0,0,0,0.08);
+    }
+
+    /* PATCH 2.2 – Icon trong Light Mode rõ nét */
+    :root[data-theme="light"] .menu-link-icon{
+      background:rgba(0,0,0,0.06);
+      color:#000;
+    }
+
+    /* PATCH 2.3 – Các menu-tile trên Light Mode */
+    :root[data-theme="light"] .menu-tile{
+      background:#f6f6f6;
+      color:#111;
+    }
+
+    :root[data-theme="light"] .menu-tile-icon{
+      background:rgba(0,0,0,0.05);
+      color:#000;
+    }
+
+    /* PATCH 2.4 – Hover đúng Light Mode */
+    :root[data-theme="light"] .menu-link-row:hover{
+      background:rgba(0,0,0,0.06);
+    }
+
+    /* PATCH 2.5 – Submenu trong Light Mode */
+    :root[data-theme="light"] .submenu a{
+      color:#111;
+    }
+
+
     #offcanvasMenu .offcanvas-header{
       border-bottom:1px solid rgba(255,255,255,0.08);
       padding:0 0 10px 0;
