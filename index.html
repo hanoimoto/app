@@ -41,6 +41,7 @@
 
   <style>
     /* === Variables & Theme === */
+    /* PATCH 1: Đổi --header-bg */
     :root{
       --primary:#D6001C;
       --accent:#fff;
@@ -49,11 +50,13 @@
       --bg:#ffffff;
       --text:#111111;
       --card-bg:#ffffff;
-      --header-bg:rgba(0,0,0,0.55);
+      /* Top bar Honda style: đỏ đậm, chữ trắng */
+      --header-bg:linear-gradient(135deg,#D6001C,#8B0000);
       --footer-bg:linear-gradient(135deg, #0f0f0f 10%, #1c1c1c 50%, #330000 100%);
 
       --fade-duration: 0.9s;
     }
+    /* END PATCH 1 */
 
     /* Dark mode overrides */
     :root[data-theme="dark"]{
@@ -452,6 +455,87 @@
       display:flex;
       flex-direction:column;
     }
+
+    /* PATCH 2: Thêm CSS cho offcanvas light mode */
+    /* Light mode: menu trắng, chữ đen */
+    :root[data-theme="light"] #offcanvasMenu .offcanvas-sheet{
+      background:#ffffff;
+      color:#111111;
+      box-shadow:0 22px 40px rgba(0,0,0,0.12);
+    }
+
+    /* Light mode: panel menu sáng hơn, giống card trắng */
+    :root[data-theme="light"] .menu-panel{
+      background:#f7f7f7;
+      box-shadow:0 10px 26px rgba(0,0,0,0.06);
+    }
+
+    /* Light mode: tile và icon sáng, đúng style đỏ – trắng – đen */
+    :root[data-theme="light"] .menu-tile{
+      background:#fafafa;
+      color:#111111;
+    }
+    :root[data-theme="light"] .menu-tile-icon,
+    :root[data-theme="light"] .menu-link-icon{
+      background:rgba(0,0,0,0.04);
+    }
+
+    /* Hover nhẹ màu xám, không phải nền đen */
+    :root[data-theme="light"] .menu-link-row:hover{
+      background:rgba(0,0,0,0.05);
+    }
+    /* END PATCH 2 */
+
+    /* PATCH 2.1 – Sửa nền panel trong Light Mode */
+    :root[data-theme="light"] .menu-panel{
+      background: #ffffff;
+      color:#111;
+      border:1px solid rgba(0,0,0,0.06);
+      box-shadow:0 12px 24px rgba(0,0,0,0.08);
+    }
+
+    /* PATCH 2.2 – Icon trong Light Mode rõ nét */
+    :root[data-theme="light"] .menu-link-icon{
+      background:rgba(0,0,0,0.06);
+      color:#000;
+    }
+
+    /* PATCH 2.3 – Các menu-tile trên Light Mode */
+    :root[data-theme="light"] .menu-tile{
+      background:#f6f6f6;
+      color:#111;
+    }
+
+    :root[data-theme="light"] .menu-tile-icon{
+      background:rgba(0,0,0,0.05);
+      color:#000;
+    }
+
+    /* PATCH 2.4 – Hover đúng Light Mode */
+    :root[data-theme="light"] .menu-link-row:hover{
+      background:rgba(0,0,0,0.06);
+    }
+
+    /* PATCH 2.5 – Submenu trong Light Mode */
+    :root[data-theme="light"] .submenu a{
+      color:#111;
+    }
+
+    /* PATCH 2.6 – Text menu rõ nét trong Light Mode */
+    :root[data-theme="light"] .menu-link-row {
+      color: #111111;        /* chữ đen rõ */
+    }
+
+    :root[data-theme="light"] .menu-link-row span {
+      color: #111111;
+    }
+
+    :root[data-theme="light"] .menu-section-title {
+      color: #555555;
+      opacity: 0.9;
+    }
+
+
     #offcanvasMenu .offcanvas-header{
       border-bottom:1px solid rgba(255,255,255,0.08);
       padding:0 0 10px 0;
@@ -905,27 +989,47 @@
     }
 
     /* Nút bấm hero (copy từ file cũ, vì file mới ko có) */
+    /* PATCH 3.1: Đổi .btn-site */
     .btn-site{
-      background: linear-gradient(90deg,#FFD700,#FFB200);
-      color:#111;font-weight:800;padding:10px 18px;border-radius:999px;border:none;box-shadow:0 8px 26px rgba(255,182,0,0.18);
+      background: linear-gradient(90deg,#D6001C,#8B0000);
+      color:#fff;
+      font-weight:800;
+      padding:10px 18px;
+      border-radius:999px;
+      border:none;
+      box-shadow:0 8px 26px rgba(214,0,28,0.25);
       text-decoration:none;
     }
     .btn-site:hover{transform:translateY(-4px)}
+
+    /* PATCH 3.2: Đổi .btn-wp và @keyframes pulseGlow */
     .btn-wp {
-      background: linear-gradient(90deg, #25D366, #128C7E);
+      background: linear-gradient(90deg,#D6001C,#8B0000);
       color: #fff;
       border-radius: 999px;
       padding: 10px 18px;
       font-weight:800;
-      box-shadow:0 0 20px rgba(37,211,102,0.45);
-      display:inline-flex;align-items:center;gap:10px;border:none;cursor:pointer;
+      box-shadow:0 0 20px rgba(214,0,28,0.45);
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      border:none;
+      cursor:pointer;
       animation: pulseGlow 3s infinite ease-in-out, slightShake 6s infinite;
       text-decoration:none;
     }
     @keyframes pulseGlow {
-      0%,100%{box-shadow:0 0 12px rgba(37,211,102,0.45),0 0 24px rgba(37,211,102,0.3)}
-      50%{box-shadow:0 0 30px rgba(37,211,102,0.9),0 0 60px rgba(37,211,102,0.45)}
+      0%,100%{
+        box-shadow:0 0 12px rgba(214,0,28,0.45),
+                   0 0 24px rgba(214,0,28,0.3);
+      }
+      50%{
+        box-shadow:0 0 30px rgba(214,0,28,0.9),
+                   0 0 60px rgba(214,0,28,0.45);
+      }
     }
+    /* END PATCH 3 */
+
     @keyframes slightShake {
       0%,92%,100%{transform:translateX(0)}
       93%{transform:translateX(-2px)}
