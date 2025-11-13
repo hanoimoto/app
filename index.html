@@ -954,7 +954,23 @@
       overflow:hidden;
     }
     .bike-card:hover{transform:translateY(-8px)}
-    .bike-card img{width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:10px}
+    
+    /* === FIX 3: Sửa CSS ảnh sản phẩm === */
+    .bike-card img{
+      width:100%;
+      height:auto;
+      max-height:260px;
+      object-fit:contain;
+      border-radius:8px;
+      margin-bottom:10px;
+    }
+
+    @media (max-width: 576px){
+      .bike-card img{
+        max-height:220px;
+      }
+    }
+    
     .bike-card h4{font-weight:700;margin-bottom:6px}
     .bike-note{color:var(--muted);font-size:0.95rem;margin-top:12px;text-align:center}
 
@@ -1527,7 +1543,7 @@
     </div>
   </div>
 
-  <div class="bike-anim" aria-hidden="true">🏍️</div>
+  <!-- REMOVED BIKE ANIMATION AS REQUESTED -->
 </section>
 
 <section id="about" class="fade-in">
@@ -1952,7 +1968,8 @@ try {
     contactFloating.classList.toggle('active');
     const expanded = contactFloating.classList.contains('active');
     mainContactBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-    if (opts) opts.setAttribute('aria-hidden', expanded ? 'true' : 'false');
+    /* === FIX 1: Sửa logic aria-hidden === */
+    if (opts) opts.setAttribute('aria-hidden', expanded ? 'false' : 'true');
   });
 
   document.addEventListener('click', (e)=>{
