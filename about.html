@@ -41,6 +41,7 @@
 
   <style>
     /* === Variables & Theme === */
+    /* PATCH 1: Đổi --header-bg */
     :root{
       --primary:#D6001C;
       --accent:#fff;
@@ -49,11 +50,13 @@
       --bg:#ffffff;
       --text:#111111;
       --card-bg:#ffffff;
-      --header-bg:rgba(0,0,0,0.55);
+      /* Top bar Honda style: đỏ đậm, chữ trắng */
+      --header-bg:linear-gradient(135deg,#D6001C,#8B0000);
       --footer-bg:linear-gradient(135deg, #0f0f0f 10%, #1c1c1c 50%, #330000 100%);
 
       --fade-duration: 0.9s;
     }
+    /* END PATCH 1 */
 
     /* Dark mode overrides */
     :root[data-theme="dark"]{
@@ -202,7 +205,7 @@
       border:1px solid rgba(255,255,255,0.16);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      cursor:pointer;
+      cursor:pointer; /* NEW */
     }
     .status-dot{
       width:8px;
@@ -303,6 +306,7 @@
       }
     }
 
+    /* Mobile Menu Btn */
     .mobile-menu-btn{background:transparent;border:2px solid rgba(255,255,255,0.08);color:#fff;padding:6px 10px;border-radius:8px;}
 
     /* ===== Desktop Navigation & Dropdowns (UPDATED) ===== */
@@ -315,6 +319,7 @@
       align-items:center;
     }
     
+    /* Link base style */
     nav.desktop-nav a.nav-link-item{
       position:relative;
       color:#fff;
@@ -352,6 +357,7 @@
       opacity:1;
     }
 
+    /* Active state */
     nav.desktop-nav a.nav-link-item.active{
       color:#FFD700;
     }
@@ -445,10 +451,41 @@
       box-shadow:0 22px 60px rgba(0,0,0,0.8);
       color:#f5f5f5;
 
-      height:calc(100vh - 16px);
+      height:calc(100vh - 16px); /* full height minus margins */
       display:flex;
       flex-direction:column;
     }
+
+    /* PATCH 2: Thêm CSS cho offcanvas light mode */
+    /* Light mode: menu trắng, chữ đen */
+    :root[data-theme="light"] #offcanvasMenu .offcanvas-sheet{
+      background:#ffffff;
+      color:#111111;
+      box-shadow:0 22px 40px rgba(0,0,0,0.12);
+    }
+
+    /* Light mode: panel menu sáng hơn, giống card trắng */
+    :root[data-theme="light"] .menu-panel{
+      background:#f7f7f7;
+      box-shadow:0 10px 26px rgba(0,0,0,0.06);
+    }
+
+    /* Light mode: tile và icon sáng, đúng style đỏ – trắng – đen */
+    :root[data-theme="light"] .menu-tile{
+      background:#fafafa;
+      color:#111111;
+    }
+    :root[data-theme="light"] .menu-tile-icon,
+    :root[data-theme="light"] .menu-link-icon{
+      background:rgba(0,0,0,0.04);
+    }
+
+    /* Hover nhẹ màu xám, không phải nền đen */
+    :root[data-theme="light"] .menu-link-row:hover{
+      background:rgba(0,0,0,0.05);
+    }
+    /* END PATCH 2 */
+
     #offcanvasMenu .offcanvas-header{
       border-bottom:1px solid rgba(255,255,255,0.08);
       padding:0 0 10px 0;
@@ -480,6 +517,7 @@
       box-shadow:0 10px 26px rgba(0,0,0,0.6);
     }
 
+    /* Quick actions grid */
     .menu-grid{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
@@ -511,6 +549,7 @@
       font-size:1.1rem;
     }
 
+    /* Link list panel */
     .menu-link-row{
       display:flex;
       align-items:center;
@@ -592,6 +631,7 @@
       transform: rotate(90deg);
     }
 
+    /* Theme row inside panel (reuse switch styles) */
     .offcanvas-theme-row{
       display:flex;
       align-items:center;
@@ -608,6 +648,7 @@
       color:#f5f5f5;
     }
 
+    /* Switch */
     .switch{
       position:relative;
       display:inline-block;
@@ -704,12 +745,14 @@
       transition:transform 0.15s ease, box-shadow .25s ease;
     }
 
+    /* layout 100% text */
     .hero-main{
       display:flex;
       flex-direction:column;
       gap:16px;
     }
 
+    /* hàng trên cùng kiểu mini-app */
     .hero-top-row{
       display:flex;
       align-items:center;
@@ -751,6 +794,7 @@
       color:rgba(255,255,255,0.9);
     }
 
+    /* title */
     .hero-title{
       font-size:2.6rem;
       font-weight:800;
@@ -776,6 +820,7 @@
       max-width:620px;
     }
 
+    /* metrics mini-app */
     .hero-specs-row{
       display:flex;
       flex-wrap:wrap;
@@ -807,6 +852,7 @@
       opacity:0.82;
     }
 
+    /* dãy tag dưới cùng */
     .hero-tags-row{
       display:flex;
       flex-wrap:wrap;
@@ -821,6 +867,7 @@
       border:1px solid rgba(255,255,255,0.14);
     }
 
+    /* actions + mini note – tái dùng style nút cũ */
     .hero-actions{
       display:flex;
       gap:12px;
@@ -856,6 +903,7 @@
       100% { left:125%; opacity:0; transform: translateY(0) scale(1); }
     }
 
+    /* responsive hero */
     @media (min-width: 992px){
       .hero-title{ font-size:3rem; }
     }
@@ -891,27 +939,47 @@
     }
 
     /* Nút bấm hero (copy từ file cũ, vì file mới ko có) */
+    /* PATCH 3.1: Đổi .btn-site */
     .btn-site{
-      background: linear-gradient(90deg,#FFD700,#FFB200);
-      color:#111;font-weight:800;padding:10px 18px;border-radius:999px;border:none;box-shadow:0 8px 26px rgba(255,182,0,0.18);
+      background: linear-gradient(90deg,#D6001C,#8B0000);
+      color:#fff;
+      font-weight:800;
+      padding:10px 18px;
+      border-radius:999px;
+      border:none;
+      box-shadow:0 8px 26px rgba(214,0,28,0.25);
       text-decoration:none;
     }
     .btn-site:hover{transform:translateY(-4px)}
+
+    /* PATCH 3.2: Đổi .btn-wp và @keyframes pulseGlow */
     .btn-wp {
-      background: linear-gradient(90deg, #25D366, #128C7E);
+      background: linear-gradient(90deg,#D6001C,#8B0000);
       color: #fff;
       border-radius: 999px;
       padding: 10px 18px;
       font-weight:800;
-      box-shadow:0 0 20px rgba(37,211,102,0.45);
-      display:inline-flex;align-items:center;gap:10px;border:none;cursor:pointer;
+      box-shadow:0 0 20px rgba(214,0,28,0.45);
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      border:none;
+      cursor:pointer;
       animation: pulseGlow 3s infinite ease-in-out, slightShake 6s infinite;
       text-decoration:none;
     }
     @keyframes pulseGlow {
-      0%,100%{box-shadow:0 0 12px rgba(37,211,102,0.45),0 0 24px rgba(37,211,102,0.3)}
-      50%{box-shadow:0 0 30px rgba(37,211,102,0.9),0 0 60px rgba(37,211,102,0.45)}
+      0%,100%{
+        box-shadow:0 0 12px rgba(214,0,28,0.45),
+                   0 0 24px rgba(214,0,28,0.3);
+      }
+      50%{
+        box-shadow:0 0 30px rgba(214,0,28,0.9),
+                   0 0 60px rgba(214,0,28,0.45);
+      }
     }
+    /* END PATCH 3 */
+
     @keyframes slightShake {
       0%,92%,100%{transform:translateX(0)}
       93%{transform:translateX(-2px)}
@@ -1016,6 +1084,7 @@
       z-index:2;
     }
 
+    /* layout 3 cột desktop */
     .footer-grid{
       display:grid;
       grid-template-columns:minmax(0,2fr) minmax(0,1.2fr) minmax(0,1.6fr);
@@ -1023,6 +1092,7 @@
       align-items:flex-start;
     }
 
+    /* CARD cho từng cột */
     .footer-box{
       background: rgba(0,0,0,0.22);
       border-radius: 16px;
@@ -1032,6 +1102,7 @@
       -webkit-backdrop-filter: blur(10px);
     }
 
+    /* cột chung */
     .footer-col-title{
       color:#FFD700;
       text-shadow:0 0 6px rgba(255,215,0,0.25);
@@ -1064,6 +1135,7 @@
       width:18px;
     }
 
+    /* Quick links */
     .footer-link-list{
       list-style:none;
       padding:0;
@@ -1079,6 +1151,7 @@
       text-decoration:none;
     }
 
+    /* pill + icon cho mỗi link */
     .footer-link-pill{
       display:flex;
       align-items:center;
@@ -1100,6 +1173,7 @@
       color:#FFD700;
     }
 
+    /* social */
     .footer-social-row{
       display:flex;
       flex-wrap:wrap;
@@ -1117,6 +1191,7 @@
       text-shadow:0 0 10px #FFD700;
     }
 
+    /* đáy footer */
     .footer-divider{
       border-color:rgba(255,255,255,0.18);
       margin-top:26px;
@@ -1282,6 +1357,55 @@
         font-size: 15px;
       }
     }
+
+    /* ===== Why Us Section (NEW) ===== */
+    .why-us-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .why-us-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 20px 18px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+      display: flex;
+      align-items: flex-start; /* Align icon and text */
+      gap: 14px;
+      text-align: left;
+    }
+    .why-us-icon {
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+    .why-us-card h5 {
+      font-weight: 700;
+      margin-bottom: 4px;
+      font-size: 1.05rem;
+    }
+    .why-us-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0;
+      line-height: 1.4;
+    }
+
+    /* Responsive grid */
+    @media (max-width: 991.98px) {
+      .why-us-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 575.98px) {
+      .why-us-grid {
+        grid-template-columns: 1fr;
+      }
+      .why-us-card {
+        padding: 16px 14px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1333,7 +1457,7 @@
           <li><a href="faq.html" class="nav-link-item">FAQ</a></li>
           <li><a href="terms.html" class="nav-link-item">Terms</a></li>
           <li><a href="privacy.html" class="nav-link-item">Privacy</a></li>
-          <li><a href="contract.html" class="nav-link-item">Contract</a></li>
+          <li><a href="contact.html" class="nav-link-item">Contact</a></li>
         </ul>
       </nav>
       </div>
@@ -1421,9 +1545,9 @@
             <span>Privacy</span>
           </a>
 
-          <a href="contract.html" class="menu-link-row">
+          <a href="contact.html" class="menu-link-row">
             <div class="menu-link-icon"><i class="bi bi-telephone-outbound-fill"></i></div>
-            <span>Contract</span>
+            <span>Contact</span>
           </a>
         </div>
         <div class="menu-panel">
@@ -1526,9 +1650,81 @@
   </div>
 </section>
 
+<!-- ===== START: NEW SECTION ===== -->
+<section id="why-us" class="fade-in">
+  <div class="container-max">
+    <h2 class="text-center mb-3">Why Choose Nguyen Tu Motorbike?</h2>
+    <p class="muted text-center" style="max-width:900px;margin:0 auto 24px">
+      We focus on quality, safety, and providing the best service for locals and expats in Hanoi.
+    </p>
+    
+    <div class="why-us-grid">
+      <!-- Item 1 -->
+      <div class="why-us-card">
+        <i class="bi bi-tools why-us-icon"></i>
+        <div>
+          <h5>Well-Maintained Bikes</h5>
+          <p>All motorbikes receive regular service to ensure they are safe and reliable.</p>
+        </div>
+      </div>
+      <!-- Item 2 -->
+      <div class="why-us-card">
+        <i class="bi bi-file-earmark-check-fill why-us-icon"></i>
+        <div>
+          <h5>Full Paperwork</h5>
+          <p>Complete "Blue Card" (Cavet) and paperwork provided for an easy transfer.</p>
+        </div>
+      </div>
+      <!-- Item 3 -->
+      <div class="why-us-card">
+        <i class="bi bi-cash-coin why-us-icon"></i>
+        <div>
+          <h5>Fair Prices</h5>
+          <p>Transparent and competitive pricing for both sales and rentals.</p>
+        </div>
+      </div>
+      <!-- Item 4 -->
+      <div class="why-us-card">
+        <i class="bi bi-translate why-us-icon"></i>
+        <div>
+          <h5>English & Vietnamese Support</h5>
+          <p>We provide full support in both English and Vietnamese.</p>
+        </div>
+      </div>
+      <!-- Item 5 -->
+      <div class="why-us-card">
+        <i class="bi bi-geo-alt-fill why-us-icon"></i>
+        <div>
+          <h5>Convenient Pickup</h5>
+          <p>Easy location in Long Bien, close to Old Quarter and Tay Ho.</p>
+        </div>
+      </div>
+      <!-- Item 6 -->
+      <div class="why-us-card">
+        <i class="bi bi-arrow-repeat why-us-icon"></i>
+        <div>
+          <h5>Flexible Options</h5>
+          <p>We offer flexible long-term rentals and buy-back guarantees.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== END: NEW SECTION ===== -->
+
+
 <section id="bikes-for-sale" class="fade-in">
   <div class="container-max">
     <h2 class="text-center mb-3">🏍️ Bikes for Sale</h2>
+
+    <!-- ===== START: DELETED LOGO IMAGE DIV ===== -->
+    <!--
+    <div class="text-center mb-3">
+      <img src="https://raw.githubusercontent.com/hanoimoto/app/refs/heads/main/IMG_0045.png" alt="brand" style="max-width:140px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.25);">
+    </div>
+    -->
+    <!-- ===== END: DELETED LOGO IMAGE DIV ===== -->
+
 
     <div class="bike-grid">
       <div class="bike-card">
@@ -1668,8 +1864,8 @@
           <li>
             <span class="icon">✉️</span>
             <span>
-              <a href="mailto:nguyentuantu8@gmail.com" style="color:#f5f5f5">
-                nguyentuantu8@gmail.com
+              <a href="mailto:nguyentuantu1102@gmail.com" style="color:#f5f5f5">
+                nguyentuantu1102@gmail.com
               </a>
             </span>
           </li>
@@ -1736,10 +1932,10 @@
             </a>
           </li>
           <li>
-            <a href="contract.html" class="footer-link">
+            <a href="contact.html" class="footer-link">
               <span class="footer-link-pill">
                 <i class="bi bi-telephone-outbound-fill"></i>
-                <span>Contract</span>
+                <span>Contact</span>
               </span>
             </a>
           </li>
@@ -2003,8 +2199,8 @@ try {
 
   if (!pill || !labelMain || !labelHours || !popover) return;
 
-  const OPEN_HOUR = 9;
-  const CLOSE_HOUR = 21;
+  const OPEN_HOUR = 9;   // 09:00
+  const CLOSE_HOUR = 21; // 21:00
 
   function getHanoiDate(){
     const now = new Date();
@@ -2120,3 +2316,4 @@ try {
 
 </body>
 </html>
+
