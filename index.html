@@ -1303,6 +1303,55 @@
         font-size: 15px;
       }
     }
+
+    /* ===== Why Us Section (NEW) ===== */
+    .why-us-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .why-us-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 20px 18px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+      display: flex;
+      align-items: flex-start; /* Align icon and text */
+      gap: 14px;
+      text-align: left;
+    }
+    .why-us-icon {
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+    .why-us-card h5 {
+      font-weight: 700;
+      margin-bottom: 4px;
+      font-size: 1.05rem;
+    }
+    .why-us-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0;
+      line-height: 1.4;
+    }
+
+    /* Responsive grid */
+    @media (max-width: 991.98px) {
+      .why-us-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 575.98px) {
+      .why-us-grid {
+        grid-template-columns: 1fr;
+      }
+      .why-us-card {
+        padding: 16px 14px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1547,13 +1596,81 @@
   </div>
 </section>
 
+<!-- ===== START: NEW SECTION ===== -->
+<section id="why-us" class="fade-in">
+  <div class="container-max">
+    <h2 class="text-center mb-3">Why Choose Nguyen Tu Motorbike?</h2>
+    <p class="muted text-center" style="max-width:900px;margin:0 auto 24px">
+      We focus on quality, safety, and providing the best service for locals and expats in Hanoi.
+    </p>
+    
+    <div class="why-us-grid">
+      <!-- Item 1 -->
+      <div class="why-us-card">
+        <i class="bi bi-tools why-us-icon"></i>
+        <div>
+          <h5>Well-Maintained Bikes</h5>
+          <p>All motorbikes receive regular service to ensure they are safe and reliable.</p>
+        </div>
+      </div>
+      <!-- Item 2 -->
+      <div class="why-us-card">
+        <i class="bi bi-file-earmark-check-fill why-us-icon"></i>
+        <div>
+          <h5>Full Paperwork</h5>
+          <p>Complete "Blue Card" (Cavet) and paperwork provided for an easy transfer.</p>
+        </div>
+      </div>
+      <!-- Item 3 -->
+      <div class="why-us-card">
+        <i class="bi bi-cash-coin why-us-icon"></i>
+        <div>
+          <h5>Fair Prices</h5>
+          <p>Transparent and competitive pricing for both sales and rentals.</p>
+        </div>
+      </div>
+      <!-- Item 4 -->
+      <div class="why-us-card">
+        <i class="bi bi-translate why-us-icon"></i>
+        <div>
+          <h5>English & Vietnamese Support</h5>
+          <p>We provide full support in both English and Vietnamese.</p>
+        </div>
+      </div>
+      <!-- Item 5 -->
+      <div class="why-us-card">
+        <i class="bi bi-geo-alt-fill why-us-icon"></i>
+        <div>
+          <h5>Convenient Pickup</h5>
+          <p>Easy location in Long Bien, close to Old Quarter and Tay Ho.</p>
+        </div>
+      </div>
+      <!-- Item 6 -->
+      <div class="why-us-card">
+        <i class="bi bi-arrow-repeat why-us-icon"></i>
+        <div>
+          <h5>Flexible Options</h5>
+          <p>We offer flexible long-term rentals and buy-back guarantees.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== END: NEW SECTION ===== -->
+
+
 <section id="bikes-for-sale" class="fade-in">
   <div class="container-max">
     <h2 class="text-center mb-3">🏍️ Bikes for Sale</h2>
 
+    <!-- ===== START: DELETED LOGO IMAGE DIV ===== -->
+    <!--
     <div class="text-center mb-3">
       <img src="https://raw.githubusercontent.com/hanoimoto/app/refs/heads/main/IMG_0045.png" alt="brand" style="max-width:140px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.25);">
     </div>
+    -->
+    <!-- ===== END: DELETED LOGO IMAGE DIV ===== -->
+
 
     <div class="bike-grid">
       <div class="bike-card">
@@ -2145,3 +2262,4 @@ try {
 
 </body>
 </html>
+
