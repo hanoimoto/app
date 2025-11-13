@@ -67,338 +67,6 @@
       --footer-bg:linear-gradient(135deg,#000000 10%, #141414 50%, #330000 100%);
     }
 
-    /* === START: HONDA RENTAL HERO – MINI APP (CSS MỚI) === */
-    
-    :root{
-      /* Nếu trang đã có vars rồi thì có thể bỏ những dòng trùng */
-      --honda-red:#D6001C;
-      --honda-red-dark:#8B0000;
-      --hero-bg-dark:#02040a;
-      --hero-text:#f8fafc;
-      --hero-muted:#9ca3af;
-    }
-    
-    /* Section wrapper */
-    .hero-rental{
-      position: relative;
-      padding: 80px 16px 40px;
-      background: radial-gradient(circle at top left,#111827 0,#020617 45%,#01010a 100%);
-      color: var(--hero-text);
-      overflow: hidden;
-    }
-    
-    /* Light mode support (nếu trang có data-theme="light") */
-    :root[data-theme="light"] .hero-rental{
-      background: #f7f7f9;
-      color:#0f172a;
-    }
-    
-    /* Glow layer */
-    .hero-rental::before{
-      content:"";
-      position:absolute;
-      inset: -40%;
-      background:
-        radial-gradient(circle at 0% 0%,rgba(255,255,255,0.10),transparent 45%),
-        radial-gradient(circle at 100% 0%,rgba(214,0,28,0.32),transparent 55%);
-      opacity:0.9;
-      mix-blend-mode: screen;
-      pointer-events:none;
-    }
-    
-    /* Inner layout */
-    .hero-rental-inner{
-      position:relative;
-      z-index:1;
-      max-width:1120px;
-      margin:0 auto;
-    }
-    
-    /* Card */
-    .hero-rental-card{
-      border-radius:24px;
-      padding:22px 18px 20px;
-      background: linear-gradient(135deg,rgba(15,23,42,0.96),rgba(3,7,18,0.96));
-      border:1px solid rgba(148,163,184,0.35);
-      box-shadow:
-        0 24px 60px rgba(0,0,0,0.75),
-        0 0 0 1px rgba(255,255,255,0.03) inset;
-      backdrop-filter: blur(22px);
-      -webkit-backdrop-filter: blur(22px);
-    }
-    
-    /* Light mode card */
-    :root[data-theme="light"] .hero-rental-card{
-      background:#ffffff;
-      border-color:rgba(15,23,42,0.08);
-      box-shadow:0 18px 50px rgba(15,23,42,0.08);
-    }
-    
-    /* 2-column layout (desktop) */
-    .hero-rental-layout{
-      display:flex;
-      flex-direction:column;
-      gap:22px;
-    }
-    
-    /* left / right */
-    .hero-rental-main{
-      display:flex;
-      flex-direction:column;
-      gap:14px;
-    }
-    .hero-rental-side{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-    
-    /* top label row */
-    .hero-rental-badges{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      align-items:center;
-    }
-    
-    .hero-badge-main{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:4px 10px;
-      border-radius:999px;
-      font-size:0.75rem;
-      text-transform:uppercase;
-      letter-spacing:0.14em;
-      background:rgba(15,23,42,0.9);
-      border:1px solid rgba(248,250,252,0.22);
-      color:#fde047;
-    }
-    .hero-badge-dot{
-      width:8px;
-      height:8px;
-      border-radius:999px;
-      background:#22c55e;
-      box-shadow:0 0 0 6px rgba(34,197,94,0.45);
-    }
-    .hero-badge-sub{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:4px 10px;
-      border-radius:999px;
-      font-size:0.78rem;
-      background:rgba(15,23,42,0.8);
-      border:1px solid rgba(148,163,184,0.45);
-      color:rgba(226,232,240,0.92);
-    }
-    .hero-badge-sub i{font-size:0.9rem;}
-    
-    /* Title + sub */
-    .hero-rental-title{
-      font-size:2rem;
-      font-weight:800;
-      line-height:1.05;
-      margin:4px 0 2px;
-    }
-    .hero-rental-title span.brand{
-      color:#e5e7eb;
-    }
-    .hero-rental-sub{
-      font-size:0.98rem;
-      color:var(--hero-muted);
-      max-width:520px;
-    }
-    
-    /* buttons */
-    .hero-rental-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:4px;
-    }
-    
-    /* main CTA – Honda red pill */
-    .hero-btn-primary{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      padding:11px 20px;
-      border-radius:999px;
-      font-weight:700;
-      border:none;
-      text-decoration:none;
-      background:linear-gradient(90deg,var(--honda-red),var(--honda-red-dark));
-      color:#f9fafb;
-      box-shadow:0 12px 32px rgba(214,0,28,0.6);
-      font-size:0.96rem;
-    }
-    .hero-btn-primary i{font-size:1rem;}
-    .hero-btn-primary:hover{
-      transform:translateY(-2px);
-    }
-    
-    /* secondary CTA */
-    .hero-btn-secondary{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      padding:11px 18px;
-      border-radius:999px;
-      font-weight:600;
-      text-decoration:none;
-      border:1px solid rgba(148,163,184,0.6);
-      color:#e5e7eb;
-      font-size:0.94rem;
-    }
-    .hero-btn-secondary i{font-size:1rem;}
-    .hero-btn-secondary:hover{
-      background:rgba(15,23,42,0.85);
-    }
-    
-    /* Light mode buttons */
-    :root[data-theme="light"] .hero-btn-secondary{
-      color:#111827;
-      border-color:rgba(15,23,42,0.18);
-    }
-    :root[data-theme="light"] .hero-btn-secondary:hover{
-      background:#f4f4f5;
-    }
-    
-    /* tags row */
-    .hero-rental-tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-top:6px;
-    }
-    .hero-tag-chip{
-      font-size:0.8rem;
-      padding:4px 10px;
-      border-radius:999px;
-      background:rgba(15,23,42,0.9);
-      border:1px solid rgba(148,163,184,0.5);
-      color:#e5e7eb;
-    }
-    :root[data-theme="light"] .hero-tag-chip{
-      background:#f3f4f6;
-      color:#111827;
-      border-color:rgba(148,163,184,0.4);
-    }
-    
-    /* Note */
-    .hero-rental-note{
-      margin-top:4px;
-      font-size:0.85rem;
-      color:var(--hero-muted);
-    }
-    
-    /* side card – mini summary */
-    .hero-side-card{
-      border-radius:18px;
-      padding:14px 14px 12px;
-      background: radial-gradient(circle at top left,rgba(15,23,42,0.9),rgba(3,7,18,0.9));
-      border:1px solid rgba(148,163,184,0.6);
-      color:#e5e7eb;
-      box-shadow:0 16px 40px rgba(0,0,0,0.7);
-      font-size:0.9rem;
-    }
-    .hero-side-title{
-      font-size:0.85rem;
-      text-transform:uppercase;
-      letter-spacing:0.16em;
-      color:#9ca3af;
-      margin-bottom:8px;
-    }
-    .hero-side-row{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      padding:6px 0;
-    }
-    .hero-side-row + .hero-side-row{
-      border-top:1px dashed rgba(148,163,184,0.5);
-    }
-    .hero-side-label{
-      display:flex;
-      align-items:center;
-      gap:6px;
-      color:#9ca3af;
-      font-size:0.82rem;
-    }
-    .hero-side-value{
-      font-weight:700;
-      font-size:0.94rem;
-    }
-    .hero-side-highlight{
-      margin-top:8px;
-      font-size:0.84rem;
-      color:#f97316;
-    }
-    
-    /* Light mode side card */
-    :root[data-theme="light"] .hero-side-card{
-      background: #ffffff;
-      color:#0f172a;
-      border-color:rgba(15,23,42,0.12);
-      box-shadow:0 18px 50px rgba(15,23,42,0.08);
-    }
-    :root[data-theme="light"] .hero-side-label{
-      color:#6b7280;
-    }
-    
-    /* responsive */
-    @media (min-width: 768px){
-      .hero-rental{
-        padding:96px 24px 56px;
-      }
-      .hero-rental-card{
-        padding:26px 22px 22px;
-      }
-      .hero-rental-title{
-        font-size:2.4rem;
-      }
-    }
-    
-    @media (min-width: 992px){
-      .hero-rental{
-        padding:110px 24px 70px;
-      }
-      .hero-rental-card{
-        padding:28px 26px 24px;
-      }
-      .hero-rental-layout{
-        flex-direction:row;
-        align-items:flex-start;
-        gap:30px;
-      }
-      .hero-rental-main{
-        flex: 5;
-      }
-      .hero-rental-side{
-        flex: 3;
-      }
-      .hero-rental-title{
-        font-size:2.9rem;
-      }
-    }
-    
-    @media (max-width: 575.98px){
-      .hero-rental-actions{
-        flex-direction:column;
-      }
-      .hero-btn-primary,
-      .hero-btn-secondary{
-        width:100%;
-      }
-    }
-
-    /* === END: HONDA RENTAL HERO – MINI APP (CSS MỚI) === */
-
-
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
@@ -1072,7 +740,7 @@
       transform:translateX(22px);
     }
 
-    /* ===== [OLD HERO - SẼ BỊ THAY THẾ] ===== */
+    /* ===== HERO – Mini App Ultra 2025 (text only, no image) ===== */
     #hero{
       min-height:78vh;
       display:flex;
@@ -1319,7 +987,80 @@
         align-items:flex-start;
       }
     }
-    /* ===== [HẾT CSS HERO CŨ] ===== */
+
+    /* === START: CSS PATCH TỪ USER === */
+    /* === HERO DESKTOP UPGRADE – MINI APP 2-COLUMN === */
+
+    /* Bổ sung layout 2 cột cho hero */
+    .hero-layout{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .hero-col-primary{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .hero-col-side{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    /* Tăng chút khoảng cách / kích thước trên màn hình lớn */
+    @media (min-width: 992px){
+      #hero{
+        min-height: 92vh;
+        padding-top: 90px;
+        padding-bottom: 60px;
+      }
+
+      .hero-inner{
+        max-width: 1180px;
+      }
+
+      .hero-card{
+        padding: 28px 26px 26px;
+        border-radius: 28px;
+      }
+
+      .hero-layout{
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 32px;
+      }
+
+      .hero-col-primary{
+        flex: 3;
+      }
+
+      .hero-col-side{
+        flex: 2;
+      }
+
+      .hero-title{
+        font-size: 3.4rem;
+        line-height: 1.02;
+      }
+
+      .hero-sub{
+        font-size: 1.08rem;
+      }
+
+      .hero-specs-row{
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 0;
+      }
+
+      .hero-spec-card{
+        width: 100%;
+      }
+    }
+    /* === END: CSS PATCH TỪ USER === */
 
 
     /* Nút bấm hero (copy từ file cũ, vì file mới ko có) */
@@ -1952,108 +1693,90 @@
   </div>
   </header>
 
-<section id="rental-hero" class="hero-rental" aria-label="Motorbike rental hero">
-  <div class="hero-rental-inner">
-    <div class="hero-rental-card">
-      <div class="hero-rental-layout">
+<!-- ===== START: HERO SECTION ĐÃ ĐƯỢC THAY THẾ ===== -->
+<section id="hero" class="fade-in" aria-label="Hero">
+  <div class="light-shimmer" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <div class="hero-card" id="heroCard" role="region" aria-label="Main hero">
+      <div class="hero-main hero-layout">
         
-        <div class="hero-rental-main">
-          <div class="hero-rental-badges">
-            <div class="hero-badge-main">
-              <span class="hero-badge-dot"></span>
-              <span>2025 · Honda style rental</span>
+        <!-- CỘT TRÁI: TIÊU ĐỀ + NÚT -->
+        <div class="hero-col-primary">
+          <div class="hero-top-row">
+            <div class="hero-chip-main">
+              <span class="hero-chip-dot"></span>
+              <span>2025 • Mini app</span>
             </div>
-            <div class="hero-badge-sub">
+            <div class="hero-chip-side">
               <i class="bi bi-geo-alt-fill"></i>
-              <span>Hoan Kiem · Hanoi</span>
+              <span>Long Bien · Hanoi</span>
             </div>
           </div>
 
-          <h1 class="hero-rental-title">
-            Motorbike Rental in Hanoi – <span class="brand">Nguyen Tu</span>
-          </h1>
-
-          <p class="hero-rental-sub">
-            Fast delivery, light deposit, good bikes with full paperwork.  
-            We support tourists and expats 24/7 around Hoan Kiem, Old Quarter and Tay Ho.
+          <h1 class="hero-title glow">Hanoi Motorbike For Sale & Rent</h1>
+          <p class="hero-sub">
+            Reliable scooters & motorbikes with full paperwork – ready to ride the same day.
+            Pickup in Long Bien, close to Old Quarter & Tay Ho.
           </p>
 
-          <div class="hero-rental-actions">
-            <a class="hero-btn-primary"
-               href="tel:+84942467674"
-               aria-label="Call now 0942467674">
-              <i class="bi bi-telephone-fill"></i>
-              <span>Call now 0942 467 674</span>
-            </a>
-
-            <a class="hero-btn-secondary"
-               href="https://zalo.me/0812050090"
+          <div class="hero-actions">
+            <a class="btn-site"
+               href="https://athanoi.github.io/moto/"
                target="_blank"
                rel="noopener noreferrer"
-               aria-label="Chat on Zalo">
-              <i class="bi bi-chat-dots-fill"></i>
-              <span>Chat on Zalo</span>
+               aria-label="Visit official site">
+              🌐 Visit Official Website
+            </a>
+            <a class="btn-wp"
+               href="https://wa.me/84812050090"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Chat on WhatsApp">
+               <i class="bi bi-whatsapp"></i> Chat on WhatsApp
             </a>
           </div>
 
-          <div class="hero-rental-tags">
-            <span class="hero-tag-chip">⚡ Delivery in ~20 min</span>
-            <span class="hero-tag-chip">💰 Light deposit</span>
-            <span class="hero-tag-chip">🛵 Scooter & semi-auto</span>
-            <span class="hero-tag-chip">🚚 Door-to-door service</span>
+          <div class="hero-tags-row">
+            <span class="hero-tag">For sale & rent</span>
+            <span class="hero-tag">Long-term rental</span>
+            <span class="hero-tag">Buy-back options</span>
+            <span class="hero-tag">Free helmets</span>
           </div>
 
-          <div class="hero-rental-note">
-            No hidden fees · Helmets included · Long-term rental & buy-back options available.
+          <div class="hero-mini-note">
+            No hidden deposit • Flexible long-term rental & buy-back options • Easy pickup near Old Quarter.
           </div>
         </div>
 
-        <aside class="hero-rental-side" aria-label="Rental quick summary">
-          <div class="hero-side-card">
-            <div class="hero-side-title">Rental overview</div>
-
-            <div class="hero-side-row">
-              <div class="hero-side-label">
-                <i class="bi bi-geo-alt"></i>
-                <span>Area</span>
-              </div>
-              <div class="hero-side-value">Hoan Kiem & nearby</div>
+        <!-- CỘT PHẢI: SPEC / MINI APP PANEL -->
+        <div class="hero-col-side">
+          <div class="hero-specs-row">
+            <div class="hero-spec-card">
+              <div class="hero-spec-label">Stock</div>
+              <div class="hero-spec-main">4 Honda Vision</div>
+              <div class="hero-spec-sub">Smart key • Full papers</div>
             </div>
-
-            <div class="hero-side-row">
-              <div class="hero-side-label">
-                <i class="bi bi-cash-coin"></i>
-                <span>From</span>
-              </div>
-              <div class="hero-side-value">~150k VND / day</div>
+            <div class="hero-spec-card">
+              <div class="hero-spec-label">From</div>
+              <div class="hero-spec-main">10M VND</div>
+              <div class="hero-spec-sub">Used Honda scooters</div>
             </div>
-
-            <div class="hero-side-row">
-              <div class="hero-side-label">
-                <i class="bi bi-clock-history"></i>
-                <span>Delivery</span>
-              </div>
-              <div class="hero-side-value">< 20 minutes</div>
-            </div>
-
-            <div class="hero-side-row">
-              <div class="hero-side-label">
-                <i class="bi bi-headset"></i>
-                <span>Support</span>
-              </div>
-              <div class="hero-side-value">EN / VI · 24/7</div>
-            </div>
-
-            <div class="hero-side-highlight">
-              Ideal for tourists, digital nomads and long-stay guests who need a reliable bike in Hanoi.
+            <div class="hero-spec-card">
+              <div class="hero-spec-label">Support</div>
+              <div class="hero-spec-main">EN / VI</div>
+              <div class="hero-spec-sub">Tourists & expats welcome</div>
             </div>
           </div>
-        </aside>
+        </div>
 
       </div>
     </div>
   </div>
 </section>
+<!-- ===== END: HERO SECTION ĐÃ ĐƯỢC THAY THẾ ===== -->
+
+
 <section id="about" class="fade-in">
   <div class="container-max">
     <h2 class="text-center mb-3">About Us</h2>
@@ -2062,6 +1785,7 @@
   </div>
 </section>
 
+<!-- ===== START: NEW SECTION ===== -->
 <section id="why-us" class="fade-in">
   <div class="container-max">
     <h2 class="text-center mb-3">Why Choose Nguyen Tu Motorbike?</h2>
@@ -2070,6 +1794,7 @@
     </p>
     
     <div class="why-us-grid">
+      <!-- Item 1 -->
       <div class="why-us-card">
         <i class="bi bi-tools why-us-icon"></i>
         <div>
@@ -2077,6 +1802,7 @@
           <p>All motorbikes receive regular service to ensure they are safe and reliable.</p>
         </div>
       </div>
+      <!-- Item 2 -->
       <div class="why-us-card">
         <i class="bi bi-file-earmark-check-fill why-us-icon"></i>
         <div>
@@ -2084,6 +1810,7 @@
           <p>Complete "Blue Card" (Cavet) and paperwork provided for an easy transfer.</p>
         </div>
       </div>
+      <!-- Item 3 -->
       <div class="why-us-card">
         <i class="bi bi-cash-coin why-us-icon"></i>
         <div>
@@ -2091,6 +1818,7 @@
           <p>Transparent and competitive pricing for both sales and rentals.</p>
         </div>
       </div>
+      <!-- Item 4 -->
       <div class="why-us-card">
         <i class="bi bi-translate why-us-icon"></i>
         <div>
@@ -2098,6 +1826,7 @@
           <p>We provide full support in both English and Vietnamese.</p>
         </div>
       </div>
+      <!-- Item 5 -->
       <div class="why-us-card">
         <i class="bi bi-geo-alt-fill why-us-icon"></i>
         <div>
@@ -2105,6 +1834,7 @@
           <p>Easy location in Long Bien, close to Old Quarter and Tay Ho.</p>
         </div>
       </div>
+      <!-- Item 6 -->
       <div class="why-us-card">
         <i class="bi bi-arrow-repeat why-us-icon"></i>
         <div>
@@ -2115,9 +1845,21 @@
     </div>
   </div>
 </section>
+<!-- ===== END: NEW SECTION ===== -->
+
+
 <section id="bikes-for-sale" class="fade-in">
   <div class="container-max">
     <h2 class="text-center mb-3">🏍️ Bikes for Sale</h2>
+
+    <!-- ===== START: DELETED LOGO IMAGE DIV ===== -->
+    <!--
+    <div class="text-center mb-3">
+      <img src="https://raw.githubusercontent.com/hanoimoto/app/refs/heads/main/IMG_0045.png" alt="brand" style="max-width:140px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.25);">
+    </div>
+    -->
+    <!-- ===== END: DELETED LOGO IMAGE DIV ===== -->
+
 
     <div class="bike-grid">
       <div class="bike-card">
@@ -2420,11 +2162,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', function(e){
     const href = this.getAttribute('href');
     if (!href || href === '#') return;
-    
-    // Sửa lại target cho Back to Top
-    const targetId = (href === '#hero') ? 'rental-hero' : href.substring(1);
-    const target = document.getElementById(targetId);
-    
+    const target = document.querySelector(href);
     if (target) {
       e.preventDefault();
       window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
@@ -2452,7 +2190,7 @@ try {
 
 /* ===== Fade-in observer ULTRA (0.9s + stagger) ===== */
 (function(){
-  const sections = document.querySelectorAll('.fade-in, .hero-rental'); // Thêm .hero-rental vào
+  const sections = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -2466,33 +2204,26 @@ try {
     // stagger nhẹ giữa các section
     const delay = index * 90; // ms
     el.style.setProperty('--fade-delay', delay + 'ms');
-    
-    // Thêm fade-in cho hero mới nếu nó chưa có
-    if (el.classList.contains('hero-rental') && !el.classList.contains('fade-in')) {
-      el.classList.add('fade-in');
-    }
-    
     observer.observe(el);
   });
 })();
 
-/* ===== Hero parallax (mouse & device tilt) [CHO HERO CŨ - BỎ QUA] ===== */
+/* ===== Hero parallax (mouse & device tilt) ===== */
 (function(){
-  const hero = document.getElementById('hero'); // Hero cũ
-  const heroCard = document.getElementById('heroCard'); // Card cũ
-  if (!hero || !heroCard) return; // Sẽ không tìm thấy, tự động bỏ qua
-
+  const hero = document.getElementById('hero');
+  const heroCard = document.getElementById('heroCard');
   const layers = document.querySelectorAll('#hero .layer');
+  if (!hero) return;
 
   function handleMove(xRatio, yRatio){
     const rx = (yRatio - 0.5) * 8;
     const ry = (xRatio - 0.5) * -12;
-    if (heroCard) heroCard.style.transform = \`rotateX(\${rx}deg) rotateY(\${ry}deg) translateZ(0)\`;
+    if (heroCard) heroCard.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
     layers.forEach((el, i)=>{
       const depth = (i+1) * 6;
       const moveX = (xRatio - 0.5) * depth;
       const moveY = (yRatio - 0.5) * depth * 0.6;
-      el.style.transform = \`translate(calc(-50% + \${moveX}px), calc(-50% + \${moveY}px))\`;
+      el.style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px))`;
     });
   }
 
@@ -2720,3 +2451,4 @@ try {
 
 </body>
 </html>
+
