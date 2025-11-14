@@ -147,10 +147,11 @@ LOCAL_HTML_CONTEXT:
   /* ========== CSS (SCOPED) ========== */
 
   const CSS = `
+    /* Vị trí cơ bản, JS sẽ auto chỉnh thêm */
     #gmini2-root{
       position:fixed;
-      right:16px;
-      bottom:calc(16px + env(safe-area-inset-bottom,0));
+      right:22px;
+      bottom:calc(22px + env(safe-area-inset-bottom,0));
       z-index:2147483646;
       font-family:-apple-system,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;
     }
@@ -372,9 +373,11 @@ LOCAL_HTML_CONTEXT:
       -webkit-text-fill-color:inherit !important;
     }
 
-    /* Mobile only */
-    @media (min-width:768px){
-      #gmini2-root{display:none !important;}
+    /* Ẩn trên tablet / desktop */
+    @media (min-width: 768px){
+      #gmini2-root{
+        display:none !important;
+      }
     }
   `;
 
@@ -584,5 +587,84 @@ LOCAL_HTML_CONTEXT:
     console.log("%cGemini Widget V2 — mobile, HTML-aware, online",
       "color:#34A853;font-weight:bold;");
   }
+
+  /* ===== AUTO-NÉ QUICK CALL ===== */
+  (function(){
+    const rootId = 'gmini2-root';
+
+    function isMobileWidth(){
+      return window.innerWidth < 768;
+    }
+
+    function updateBubbleVisibility(){
+      const root = document.getElementById(rootId);
+      if (!root) return;
+
+      if (!isMobileWidth()){
+        root.style.display = 'none';
+        return;
+      }
+      root.style.display = 'block';
+    }
+
+    function updateBubblePosition(){
+      const root = document.getElementById(rootId);
+      if (!root) return;
+
+      // baseBottom = khoảng cách tối thiểu với mép dưới
+      const baseBottomPx = 22;
+
+      let extraBottom = 0;
+
+      // Ưu tiên chọn khối quick call chung
+      const quick = document.querySelector('.contact-floating');
+      if (quick){
+        const rect = quick.getBoundingClientRect();
+
+        // Nếu nó đang hiển thị trên màn hình
+        if (rect.height > 0 && rect.bottom > 0 && rect.top < window.innerHeight){
+          const bottomSpace = Math.max(0, window.innerHeight - rect.bottom);
+          // cao quick call + khoảng cách extra + khoảng hở hiện tại
+          extraBottom = rect.height + bottomSpace + 16; // 16px là khoảng cách giữa 2 nút
+        }
+      }
+
+      // Gán bottom bằng inline style (giữ env(safe-area-inset-bottom))
+      root.style.bottom = `calc(${baseBottomPx + extraBottom}px + env(safe-area-inset-bottom,0))`;
+    }
+
+    function fullUpdate(){
+      updateBubbleVisibility();
+      updateBubblePosition();
+    }
+
+    // Chạy khi load
+    window.addEventListener('load', fullUpdate);
+    // Resize / xoay màn hình
+    window.addEventListener('resize', fullUpdate);
+    window.addEventListener('orientationchange', fullUpdate);
+
+    // Quan sát thay đổi của quick call (mở/ẩn, class đổi, v.v.)
+    const quick = document.querySelector('.contact-floating');
+    if (quick && window.MutationObserver){
+      const mo = new MutationObserver(fullUpdate);
+      mo.observe(quick, {
+        attributes: true,
+        attributeFilter: ['style', 'class', 'aria-hidden']
+      });
+    }
+
+    // Đồng thời quan sát body (vì anh có class offcanvas-open-custom để ẩn quick call)
+    if (document.body && window.MutationObserver){
+      const moBody = new MutationObserver(fullUpdate);
+      moBody.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class']
+      });
+    }
+
+    // Fallback: cập nhật định kỳ nếu lỡ miss sự kiện
+    setInterval(fullUpdate, 2000);
+  })();
 
 })();
