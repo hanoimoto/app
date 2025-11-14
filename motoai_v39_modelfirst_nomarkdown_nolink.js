@@ -616,7 +616,21 @@
       -webkit-text-fill-color:#fff !important;
       background:#151822;
     }
-  }`;
+  }
+
+  /* === HARD FIX: force input text color (iOS Safari bị trắng chữ) === */
+  #mta-root #mta-in{
+    color:#0b1220 !important;
+    -webkit-text-fill-color:#0b1220 !important;
+  }
+
+  @media(prefers-color-scheme:dark){
+    #mta-root #mta-in{
+      color:#ffffff !important;
+      -webkit-text-fill-color:#ffffff !important;
+    }
+  }
+  `;
 
   const HTML = `
   <div id="mta-root" aria-live="polite">
@@ -1101,6 +1115,30 @@
 
     if (!bubble || !card || !close || !backdrop || !input || !send) return;
 
+    // === FIX: ép màu chữ input theo theme (chống bị CSS ngoài override) ===
+    function applyInputTheme(){
+      const inp = document.getElementById("mta-in");
+      if (!inp) return;
+
+      const html = document.documentElement;
+      const body = document.body;
+
+      const isDark =
+        (html && (html.dataset.theme === "dark" || html.classList.contains("dark"))) ||
+        (body && (body.dataset.theme === "dark" || body.classList.contains("dark"))) ||
+        (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+      if (isDark){
+        inp.style.background = "#151822";
+        inp.style.color = "#ffffff";
+        inp.style.webkitTextFillColor = "#ffffff";
+      } else {
+        inp.style.background = "#F2F4F7";
+        inp.style.color = "#0b1220";
+        inp.style.webkitTextFillColor = "#0b1220";
+      }
+    }
+
     function openCard(){
       card.classList.add("open");
       card.setAttribute("aria-hidden","false");
@@ -1159,6 +1197,32 @@
         handleUserInput(q);
       });
     }
+
+    // Gọi lần đầu
+    applyInputTheme();
+
+    // Nếu user đổi system theme (light/dark)
+    if (window.matchMedia){
+      const mq = window.matchMedia("(prefers-color-scheme: dark)");
+      const h = () => applyInputTheme();
+      if (mq.addEventListener) mq.addEventListener("change", h);
+      else if (mq.addListener) mq.addListener(h); // iOS cũ
+    }
+
+    // Nếu site đang dùng html[data-theme="dark"] hoặc class .dark
+    try{
+      const mo = new MutationObserver(applyInputTheme);
+      mo.observe(document.documentElement, {
+        attributes:true,
+        attributeFilter:["data-theme","class"]
+      });
+      if (document.body){
+        mo.observe(document.body, {
+          attributes:true,
+          attributeFilter:["data-theme","class"]
+        });
+      }
+    }catch(e){}
   }
 
   function boot(){
