@@ -618,17 +618,16 @@
     }
   }
 
-  /* === HARD FIX: force input text color (iOS Safari bị trắng chữ) === */
+  /* === FINAL HARD FIX: input luôn nền tối, chữ trắng – chống lỗi iOS 26.1 === */
   #mta-root #mta-in{
-    color:#0b1220 !important;
-    -webkit-text-fill-color:#0b1220 !important;
+    background:#111827 !important;              /* nền xám đậm, nhìn được cả light/dark */
+    color:#ffffff !important;                   /* chữ trắng rõ */
+    -webkit-text-fill-color:#ffffff !important; /* iOS Safari */
+    caret-color:#60a5fa !important;             /* màu con trỏ xanh */
   }
-
-  @media(prefers-color-scheme:dark){
-    #mta-root #mta-in{
-      color:#ffffff !important;
-      -webkit-text-fill-color:#ffffff !important;
-    }
+  #mta-root #mta-in::placeholder{
+    color:rgba(148,163,184,0.9) !important;         /* placeholder xám */
+    -webkit-text-fill-color:rgba(148,163,184,0.9) !important;
   }
   `;
 
@@ -769,7 +768,7 @@
     if (/map|address|địa chỉ|where.*shop/i.test(q)){
       return lang === "vi"
         ? "Cửa hàng ở Long Biên, Hà Nội, gần trung tâm và cầu Chương Dương / Long Biên. Nếu bạn gửi vị trí hiện tại, mình có thể hướng dẫn đường hoặc sắp xếp giao xe."
-        : "Our shop is in Long Bien, Hanoi, close to the center and the Old Quarter. If you send us your current location, we can guide you or arrange delivery.";
+        : "Our shop is in Long Biên, Hanoi, close to the center and the Old Quarter. If you send us your current location, we can guide you or arrange delivery.";
     }
     return null;
   }
