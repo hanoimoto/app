@@ -1,34 +1,62 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="aPKX4OVJZhZ-s0KFoDEyLJRA8zWnPkZn6LymE8OBODQ" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <title>Hanoi Motorbike For Sale & Rent - Nguyen Tu</title>
-  <meta name="description" content="Hanoi Motorbike For Sale & Rent - Nguyen Tu. Reliable scooters and motorbikes for sale or rent in Hanoi. Well-maintained, full paperwork and friendly service." />
-  <meta name="keywords" content="Hanoi motorbike rental, motorbike for sale Hanoi, rent motorbike Hanoi, scooter sale Hanoi, Nguyen Tu motorbike" />
-  <meta name="author" content="Nguyen Tu Motorbike" />
-  <meta name="robots" content="index, follow" />
+  <!-- Đã bỏ tên cá nhân, đổi sang tên shop chung -->
+  <title>Hanoi Motorbike Rental and Sale | Reliable Scooters | Hanoi Motorbike Shop</title>
 
+  <!-- Bỏ "at Nguyen Tu" -->
+  <meta name="description" content="Find reliable Hanoi motorbike rental and used motorbike sale services. We offer well-maintained scooters and motorbikes with full paperwork, perfect for expats and tourists. Easy pickup in Long Bien, near Old Quarter." />
+
+  <!-- Bỏ "Nguyen Tu Motorbike" khỏi keywords -->
+  <meta name="keywords" content="Hanoi motorbike rental, Hanoi motorbike sale, rent motorbike Hanoi, buy used motorbike Hanoi, scooter rental Hanoi, long-term motorbike rental Hanoi, Hanoi scooter sale" />
+  
+  <!-- Đổi author sang tên thương hiệu chung, không dùng tên người -->
+  <meta name="author" content="Hanoi Motorbike Rental and Sale" />
+  <meta http-equiv="Content-Language" content="en-US" />
+  
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://hanoimoto.github.io/app/" />
+
   <link rel="icon" href="https://raw.githubusercontent.com/hanoimoto/app/refs/heads/main/IMG_0045.png" type="image/png" />
   <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/hanoimoto/app/refs/heads/main/IMG_0045.png" />
+
+  <!-- Màu thanh địa chỉ mobile -->
+  <meta name="theme-color" content="#D6001C" />
   
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Hanoi Motorbike For Sale & Rent - Nguyen Tu" />
-  <meta property="og:description" content="Reliable motorbikes and scooters for rent or sale in Hanoi. Affordable, high-quality service from Nguyen Tu Motorbike." />
+
+  <!-- Bỏ tên cá nhân khỏi og:title -->
+  <meta property="og:title" content="Hanoi Motorbike Rental & Sale | Reliable Scooters in Hanoi" />
+
+  <meta property="og:description" content="Trusted Hanoi motorbike rental and sale. Find well-maintained scooters with full paperwork. We serve expats and tourists near Old Quarter & Tay Ho." />
   <meta property="og:url" content="https://hanoimoto.github.io/app/" />
-  <meta property="og:site_name" content="Nguyen Tu Motorbike" />
+
+  <!-- Bỏ tên cá nhân khỏi og:site_name -->
+  <meta property="og:site_name" content="Hanoi Motorbike Rental and Sale" />
+
   <meta property="og:image" content="https://raw.githubusercontent.com/hanoimoto/app/refs/heads/main/IMG_0045.png" />
+
+  <!-- Bỏ "Nguyen Tu Motorbike" trong alt -->
+  <meta property="og:image:alt" content="Hanoi motorbike rental and sale shop in Long Bien, Hanoi" />
   
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Hanoi Motorbike For Sale & Rent - Nguyen Tu" />
-  <meta name="twitter:description" content="Reliable motorbikes and scooters for rent or sale in Hanoi. Affordable, high-quality service from Nguyen Tu Motorbike." />
+
+  <!-- Đồng bộ với og:title nhưng không có tên người -->
+  <meta name="twitter:title" content="Hanoi Motorbike Rental & Sale | Reliable Scooters in Hanoi" />
+
+  <meta name="twitter:description" content="Trusted Hanoi motorbike rental and sale. Find well-maintained scooters with full paperwork. We serve expats and tourists near Old Quarter & Tay Ho." />
   <meta name="twitter:image" content="https://raw.githubusercontent.com/hanoimoto/app/refs/heads/main/IMG_0045.png" />
 
+  <meta name="geo.region" content="VN-HN" />
+  <meta name="geo.placename" content="Hanoi" />
+  <meta name="geo.position" content="21.040922;105.869287" />
+  <meta name="ICBM" content="21.040922, 105.869287" />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
@@ -38,7 +66,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
-
+ 
   <style>
     /* === Variables & Theme === */
     /* PATCH 1: Đổi --header-bg */
@@ -611,6 +639,18 @@
       font-weight:600;
       font-size:0.95rem;
     }
+    
+    /* Mobile Active Link Style (for Rule 2) */
+    .menu-link-row.active {
+      color: #FFD700;
+      background: rgba(255, 215, 0, 0.1);
+    }
+    :root[data-theme="light"] .menu-link-row.active {
+      color: var(--primary);
+      background: rgba(214, 0, 28, 0.08);
+    }
+    /* End Mobile Active Link Style */
+
 
     /* START FIX: iOS Button Reset */
     /* Fix button Service trong offcanvas bị nền trắng trên iOS */
@@ -741,7 +781,8 @@
     }
 
     /* ===== HERO – Mini App Ultra 2025 (text only, no image) ===== */
-    #hero{
+    /* This rule applies to both #hero and #hero-about */
+    #hero, #hero-about {
       min-height:78vh;
       display:flex;
       align-items:center;
@@ -753,7 +794,8 @@
       background: linear-gradient(135deg,#050509 0%, #2a0000 50%, #120000 100%);
     }
 
-    #hero .light-shimmer{
+    #hero .light-shimmer,
+    #hero-about .light-shimmer {
       position:absolute;
       left:-20%;
       top:-30%;
@@ -966,7 +1008,7 @@
     }
 
     @media (max-width: 575.98px){
-      #hero{
+      #hero, #hero-about {
         padding-top:64px;
       }
       .hero-card{
@@ -987,81 +1029,6 @@
         align-items:flex-start;
       }
     }
-
-    /* === START: CSS PATCH TỪ USER === */
-    /* === HERO DESKTOP UPGRADE – MINI APP 2-COLUMN === */
-
-    /* Bổ sung layout 2 cột cho hero */
-    .hero-layout{
-      display:flex;
-      flex-direction:column;
-      gap:18px;
-    }
-
-    .hero-col-primary{
-      display:flex;
-      flex-direction:column;
-      gap:14px;
-    }
-
-    .hero-col-side{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-
-    /* Tăng chút khoảng cách / kích thước trên màn hình lớn */
-    @media (min-width: 992px){
-      #hero{
-        min-height: 92vh;
-        padding-top: 90px;
-        padding-bottom: 60px;
-      }
-
-      .hero-inner{
-        max-width: 1180px;
-      }
-
-      .hero-card{
-        padding: 28px 26px 26px;
-        border-radius: 28px;
-      }
-
-      .hero-layout{
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 32px;
-      }
-
-      .hero-col-primary{
-        flex: 3;
-      }
-
-      .hero-col-side{
-        flex: 2;
-      }
-
-      .hero-title{
-        font-size: 3.4rem;
-        line-height: 1.02;
-      }
-
-      .hero-sub{
-        font-size: 1.08rem;
-      }
-
-      .hero-specs-row{
-        flex-direction: column;
-        align-items: stretch;
-        margin-top: 0;
-      }
-
-      .hero-spec-card{
-        width: 100%;
-      }
-    }
-    /* === END: CSS PATCH TỪ USER === */
-
 
     /* Nút bấm hero (copy từ file cũ, vì file mới ko có) */
     /* PATCH 3.1: Đổi .btn-site */
@@ -1405,6 +1372,7 @@
     .muted{color:var(--muted)}
     .text-center { text-align:center }
     .mb-2 { margin-bottom: .5rem; }
+    .mb-3 { margin-bottom: 1rem; }
 
     /* ========== RESPONSIVE HEADER FIXES (Optimized) ========== */
     
@@ -1533,19 +1501,19 @@
     }
   </style>
 </head>
-<body>
-
-<header>
+<body id="top-of-page"> <header>
   <div class="brand-row">
-    <a href="index.html" class="brand-left">
+    <!-- YÊU CẦU 1: ĐỔI TÊN -->
+    <a href="index.html" class="brand-left" title="Nguyen Chinh - Hanoi Motorbike Rental and Sale Home">
       <div class="logo-wrap">
         <img src="https://raw.githubusercontent.com/hanoimoto/app/refs/heads/main/IMG_0045.png"
-             alt="Nguyen Tu Motorbike logo">
-        <span class="logo-tag">NT</span>
+             alt="Nguyen Chinh - Hanoi Motorbike Rental and Sale Logo">
+        <!-- YÊU CẦU 1: ĐỔI TÊN (LOGO TAG) -->
+        <span class="logo-tag">NC</span>
       </div>
       <div class="brand-text">
-        <div class="site-title">Hanoi Motorbike For Sale & Rent</div>
-        <div class="site-sub">Scooters & Motorbikes in Hanoi</div>
+        <div class="site-title">Hanoi Motorbike Sale & Rental</div>
+        <div class="site-sub">Top Scooter & Motorbike Rental in Hanoi</div>
       </div>
     </a>
 
@@ -1564,18 +1532,20 @@
 
       <nav class="desktop-nav d-none d-md-block" aria-label="Main navigation">
         <ul>
-          <li><a href="index.html" class="nav-link-item active">Home</a></li>
+          <!-- YÊU CẦU 2: Bỏ active khỏi Home -->
+          <li><a href="index.html" class="nav-link-item">Home</a></li>
 
-          <li><a href="about.html" class="nav-link-item">About</a></li>
+          <!-- YÊU CẦU 2: Thêm active vào About -->
+          <li><a href="about.html" class="nav-link-item active">About</a></li>
 
           <li class="has-dropdown">
-            <button class="dropdown-toggle" type="button">
+            <button class="dropdown-toggle" type="button" aria-expanded="false" aria-controls="desktop-service-menu">
               Service
               <i class="bi bi-chevron-down" aria-hidden="true" style="font-size:0.8rem;"></i>
             </button>
-            <ul class="dropdown-menu">
-              <li><a href="sale.html">Sale</a></li>
-              <li><a href="rental.html">Rental</a></li>
+            <ul class="dropdown-menu" id="desktop-service-menu">
+              <li><a href="sale.html">Motorbike Sale</a></li>
+              <li><a href="rental.html">Motorbike Rental</a></li>
             </ul>
           </li>
 
@@ -1588,7 +1558,7 @@
       </div>
   </div>
 
-  <div class="status-popover" id="statusPopover" aria-hidden="true">
+  <div class="status-popover" id="statusPopover" aria-hidden="true" role="dialog">
     <div class="status-popover-header">
       <span class="status-popover-title">Opening hours</span>
       <span class="status-popover-tz">Asia/Bangkok (GMT+7)</span>
@@ -1603,7 +1573,7 @@
   </div>
 
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
-    <div class="offcanvas-sheet">
+    <div class="offcanvas-sheet" role="dialog" aria-modal="true">
       <div class="offcanvas-header">
         <h5 id="offcanvasMenuLabel">Menu</h5>
         <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -1616,43 +1586,46 @@
               <div class="menu-tile-icon"><i class="bi bi-telephone-fill"></i></div>
               <div>Call now</div>
             </a>
-            <a href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" class="menu-tile"
+            <!-- UPDATED LINK -->
+            <a href="https://maps.app.goo.gl/AQfB4c9MmfBJpP7QA?g_st=ipc" class="menu-tile"
                target="_blank" rel="noopener noreferrer">
               <div class="menu-tile-icon"><i class="bi bi-geo-alt-fill"></i></div>
               <div>Open map</div>
             </a>
             <a href="sale.html" class="menu-tile">
               <div class="menu-tile-icon"><i class="bi bi-tag-fill"></i></div>
-              <div>View Sale</div>
+              <div>View Bikes for Sale</div>
             </a>
             <a href="faq.html" class="menu-tile">
               <div class="menu-tile-icon"><i class="bi bi-question-circle-fill"></i></div>
-              <div>FAQ</div>
+<div>FAQ</div>
             </a>
           </div>
         </div>
 
-        <div class="menu-panel">
+        <nav class="menu-panel" aria-label="Mobile navigation">
           <div class="menu-section-title">Navigation</div>
 
+          <!-- YÊU CẦU 2: Home (mobile) không có active (giữ nguyên) -->
           <a href="index.html" class="menu-link-row">
             <div class="menu-link-icon"><i class="bi bi-house-door-fill"></i></div>
             <span>Home</span>
           </a>
 
-          <a href="about.html" class="menu-link-row">
+          <!-- YÊU CẦU 2: Thêm active vào About (mobile) -->
+          <a href="about.html" class="menu-link-row active">
             <div class="menu-link-icon"><i class="bi bi-info-circle-fill"></i></div>
             <span>About</span>
           </a>
 
-          <button type="button" class="menu-link-row service-toggle" id="mobileServiceToggle">
+          <button type="button" class="menu-link-row service-toggle" id="mobileServiceToggle" aria-expanded="false" aria-controls="mobileServiceSubmenu">
             <div class="menu-link-icon"><i class="bi bi-bicycle"></i></div>
             <span>Service</span>
             <i class="bi bi-chevron-right chevron" aria-hidden="true"></i>
           </button>
           <div class="submenu" id="mobileServiceSubmenu">
-            <a href="sale.html">Sale</a>
-            <a href="rental.html">Rental</a>
+            <a href="sale.html">Motorbike Sale</a>
+            <a href="rental.html">Motorbike Rental</a>
           </div>
 
           <a href="faq.html" class="menu-link-row">
@@ -1674,7 +1647,7 @@
             <div class="menu-link-icon"><i class="bi bi-telephone-outbound-fill"></i></div>
             <span>Contact</span>
           </a>
-        </div>
+        </nav>
         <div class="menu-panel">
           <div class="menu-section-title">Display</div>
           <div class="offcanvas-theme-row">
@@ -1682,7 +1655,7 @@
               <i class="bi bi-brightness-high-fill"></i>
               <span>Theme</span>
             </div>
-            <label class="switch">
+            <label class="switch" aria-label="Theme toggle switch">
               <input type="checkbox" id="themeSwitch">
               <span class="slider"></span>
             </label>
@@ -1693,302 +1666,245 @@
   </div>
   </header>
 
-<!-- ===== START: HERO SECTION ĐÃ ĐƯỢC THAY THẾ ===== -->
-<section id="hero" class="fade-in" aria-label="Hero">
-  <div class="light-shimmer" aria-hidden="true"></div>
+<main>
+  <!-- YÊU CẦU 3.1: Hero About -->
+  <section id="hero-about" class="fade-in" aria-labelledby="hero-title-id">
+    <div class="light-shimmer" aria-hidden="true"></div>
 
-  <div class="hero-inner">
-    <div class="hero-card" id="heroCard" role="region" aria-label="Main hero">
-      <div class="hero-main hero-layout">
-        
-        <!-- CỘT TRÁI: TIÊU ĐỀ + NÚT -->
-        <div class="hero-col-primary">
+    <div class="hero-inner">
+      <div class="hero-card" id="heroCard" role="region" aria-label="Main hero">
+        <div class="hero-main">
+          <!-- Giữ nguyên top-row layout từ index -->
           <div class="hero-top-row">
             <div class="hero-chip-main">
               <span class="hero-chip-dot"></span>
-              <span>2025 • Mini app</span>
+              <span>About Our Shop</span>
             </div>
             <div class="hero-chip-side">
               <i class="bi bi-geo-alt-fill"></i>
-              <span>Long Bien · Hanoi</span>
+              <span>Long Bien, Hanoi Motorbike Hub</span>
             </div>
           </div>
 
-          <h1 class="hero-title glow">Hanoi Motorbike For Sale & Rent</h1>
+          <h1 class="hero-title glow" id="hero-title-id">About Hanoi Motorbike Rental & Sale</h1>
           <p class="hero-sub">
-            Reliable scooters & motorbikes with full paperwork – ready to ride the same day.
-            Pickup in Long Bien, close to Old Quarter & Tay Ho.
+            Our shop specializes in motorbike and scooter rental and sales in Hanoi, focusing on expats, tourists, and long-term residents.
+            We are conveniently located in Long Bien, near the Old Quarter & Chuong Duong Bridge.
           </p>
 
-          <div class="hero-actions">
-            <a class="btn-site"
-               href="https://athanoi.github.io/moto/"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Visit official site">
-              🌐 Visit Official Website
-            </a>
-            <a class="btn-wp"
-               href="https://wa.me/84812050090"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Chat on WhatsApp">
-               <i class="bi bi-whatsapp"></i> Chat on WhatsApp
-            </a>
-          </div>
-
-          <div class="hero-tags-row">
-            <span class="hero-tag">For sale & rent</span>
-            <span class="hero-tag">Long-term rental</span>
-            <span class="hero-tag">Buy-back options</span>
-            <span class="hero-tag">Free helmets</span>
-          </div>
-
-          <div class="hero-mini-note">
-            No hidden deposit • Flexible long-term rental & buy-back options • Easy pickup near Old Quarter.
-          </div>
-        </div>
-
-        <!-- CỘT PHẢI: SPEC / MINI APP PANEL -->
-        <div class="hero-col-side">
           <div class="hero-specs-row">
             <div class="hero-spec-card">
-              <div class="hero-spec-label">Stock</div>
-              <div class="hero-spec-main">4 Honda Vision</div>
-              <div class="hero-spec-sub">Smart key • Full papers</div>
+              <div class="hero-spec-label">Experience</div>
+              <div class="hero-spec-main">Since 2015</div>
+              <div class="hero-spec-sub">Local family business</div>
             </div>
             <div class="hero-spec-card">
-              <div class="hero-spec-label">From</div>
-              <div class="hero-spec-main">10M VND</div>
-              <div class="hero-spec-sub">Used Honda scooters</div>
+              <div class="hero-spec-label">Main Service</div>
+              <div class="hero-spec-main">Motorbike Rental & Used Scooter Sale</div>
+              <div class="hero-spec-sub">Honda specialists</div>
             </div>
             <div class="hero-spec-card">
               <div class="hero-spec-label">Support</div>
-              <div class="hero-spec-main">EN / VI</div>
-              <div class="hero-spec-sub">Tourists & expats welcome</div>
+              <div class="hero-spec-main">English / Vietnamese</div>
+              <div class="hero-spec-sub">Long-term support</div>
             </div>
           </div>
-        </div>
 
-      </div>
-    </div>
-  </div>
-</section>
-<!-- ===== END: HERO SECTION ĐÃ ĐƯỢC THAY THẾ ===== -->
+          <div class="hero-actions">
+            <a class="btn-site"
+               href="sale.html"
+               aria-label="View motorbikes for sale">
+               <i class="bi bi-tag-fill"></i> View Bikes for Sale
+            </a>
+            <a class="btn-wp"
+               href="rental.html"
+               aria-label="See motorbike rental info">
+               <i class="bi bi-bicycle"></i> Motorbike Rental Info
+            </a>
+          </div>
 
-
-<section id="about" class="fade-in">
-  <div class="container-max">
-    <h2 class="text-center mb-3">About Us</h2>
-    <p class="muted text-center" style="max-width:900px;margin:0 auto 12px">We offer reliable scooters & motorbikes for sale or rent across Hanoi. All bikes are well-maintained, include complete paperwork, and can be transferred quickly.</p>
-    <div class="text-center"><a class="btn cta-btn btn-danger" href="https://zalo.me/0812050090" target="_blank" rel="noopener noreferrer">💬 Chat on Zalo</a></div>
-  </div>
-</section>
-
-<!-- ===== START: NEW SECTION ===== -->
-<section id="why-us" class="fade-in">
-  <div class="container-max">
-    <h2 class="text-center mb-3">Why Choose Nguyen Tu Motorbike?</h2>
-    <p class="muted text-center" style="max-width:900px;margin:0 auto 24px">
-      We focus on quality, safety, and providing the best service for locals and expats in Hanoi.
-    </p>
-    
-    <div class="why-us-grid">
-      <!-- Item 1 -->
-      <div class="why-us-card">
-        <i class="bi bi-tools why-us-icon"></i>
-        <div>
-          <h5>Well-Maintained Bikes</h5>
-          <p>All motorbikes receive regular service to ensure they are safe and reliable.</p>
-        </div>
-      </div>
-      <!-- Item 2 -->
-      <div class="why-us-card">
-        <i class="bi bi-file-earmark-check-fill why-us-icon"></i>
-        <div>
-          <h5>Full Paperwork</h5>
-          <p>Complete "Blue Card" (Cavet) and paperwork provided for an easy transfer.</p>
-        </div>
-      </div>
-      <!-- Item 3 -->
-      <div class="why-us-card">
-        <i class="bi bi-cash-coin why-us-icon"></i>
-        <div>
-          <h5>Fair Prices</h5>
-          <p>Transparent and competitive pricing for both sales and rentals.</p>
-        </div>
-      </div>
-      <!-- Item 4 -->
-      <div class="why-us-card">
-        <i class="bi bi-translate why-us-icon"></i>
-        <div>
-          <h5>English & Vietnamese Support</h5>
-          <p>We provide full support in both English and Vietnamese.</p>
-        </div>
-      </div>
-      <!-- Item 5 -->
-      <div class="why-us-card">
-        <i class="bi bi-geo-alt-fill why-us-icon"></i>
-        <div>
-          <h5>Convenient Pickup</h5>
-          <p>Easy location in Long Bien, close to Old Quarter and Tay Ho.</p>
-        </div>
-      </div>
-      <!-- Item 6 -->
-      <div class="why-us-card">
-        <i class="bi bi-arrow-repeat why-us-icon"></i>
-        <div>
-          <h5>Flexible Options</h5>
-          <p>We offer flexible long-term rentals and buy-back guarantees.</p>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- ===== END: NEW SECTION ===== -->
+  </section>
 
-
-<section id="bikes-for-sale" class="fade-in">
-  <div class="container-max">
-    <h2 class="text-center mb-3">🏍️ Bikes for Sale</h2>
-
-    <!-- ===== START: DELETED LOGO IMAGE DIV ===== -->
-    <!--
-    <div class="text-center mb-3">
-      <img src="https://raw.githubusercontent.com/hanoimoto/app/refs/heads/main/IMG_0045.png" alt="brand" style="max-width:140px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.25);">
+  <!-- YÊU CẦU 3.2: Section "Our Story" -->
+  <section id="our-story" class="fade-in" aria-labelledby="story-title">
+    <div class="container-max">
+      <h2 class="text-center mb-3" id="story-title">Our Story in Hanoi</h2>
+      <p class="muted" style="max-width:900px;margin:0 auto 12px; text-align: left;">
+        Our shop started as a small family business in Long Bien, initially renting just a few bikes to friends and local expats. We saw a need for reliable, safe bikes for foreigners navigating the city.
+      </p>
+      <p class="muted" style="max-width:900px;margin:0 auto 12px; text-align: left;">
+        Over the years, we expanded to include used motorbike sales, focusing on quality Honda models. We offer full support with all paperwork, registration, and maintenance, making the process easy for everyone.
+      </p>
+      <p class="muted" style="max-width:900px;margin:0 auto 12px; text-align: left;">
+        We pride ourselves on clean, well-serviced bikes and providing continuous, friendly support in English and Vietnamese for all our customers, whether you rent for a month or buy for a year.
+      </p>
     </div>
-    -->
-    <!-- ===== END: DELETED LOGO IMAGE DIV ===== -->
+  </section>
 
-
-    <div class="bike-grid">
-      <div class="bike-card">
-        <img src="https://i.postimg.cc/KzJ68YdW/IMG-5259.jpg" alt="Honda Airblade 2012">
-        <h4>Honda Airblade 2012</h4>
-        <p>10 Million VND — Complete papers, ready to ride</p>
-        <a class="btn btn-danger" href="https://zalo.me/0812050090" target="_blank" rel="noopener noreferrer">💬 Chat on Zalo</a>
-      </div>
-
-      <div class="bike-card">
-        <img src="https://i.postimg.cc/rwx7tjBt/IMG-5259.jpg" alt="Honda Vision 2017 Version 2">
-        <h4>Honda Vision 2017 (Version 2)</h4>
-        <p>19 Million VND — Well-maintained, complete papers</p>
-        <a class="btn btn-danger" href="https://zalo.me/0812050090" target="_blank" rel="noopener noreferrer">💬 Chat on Zalo</a>
-      </div>
-
-      <div class="bike-card">
-        <img src="https://i.postimg.cc/m2F50V2p/IMG-5260.jpg" alt="Honda Vision 2017 Black">
-        <h4>Honda Vision 2017 (Version 2, Black)</h4>
-        <p>23 Million VND — Two-tone, good condition</p>
-        <a class="btn btn-danger" href="https://zalo.me/0812050090" target="_blank" rel="noopener noreferrer">💬 Chat on Zalo</a>
-      </div>
-
-      <div class="bike-card">
-        <img src="https://i.postimg.cc/hGMy95px/IMG-5261.jpg" alt="Honda Vision 2020 Blue">
-        <h4>Honda Vision 2020 (Version 3, Blue)</h4>
-        <p>26 Million VND — Smart Key, excellent condition</p>
-        <a class="btn btn-danger" href="https://zalo.me/0812050090" target="_blank" rel="noopener noreferrer">💬 Chat on Zalo</a>
-      </div>
-
-      <div class="bike-card">
-        <img src="https://i.postimg.cc/1z5hh6d9/IMG-5262.jpg" alt="Honda Vision 2020 Cream">
-        <h4>Honda Vision 2020 (Version 3, Cream)</h4>
-        <p>26 Million VND — Smart Key, excellent condition</p>
-        <a class="btn btn-danger" href="https://zalo.me/0812050090" target="_blank" rel="noopener noreferrer">💬 Chat on Zalo</a>
-      </div>
-    </div>
-
-    <p class="bike-note">We currently have 4 Honda Vision scooters available. The Honda Vision series has been produced from 2011 to 2025 — used prices vary by condition and mileage. All bikes are registered in Hanoi (prices slightly higher than out-of-province).</p>
-  </div>
-</section>
-
-<section id="faq" class="fade-in">
-  <div class="container-max">
-    <h2 class="text-center mb-3">❓ Frequently Asked Questions</h2>
-    <div class="accordion" id="faqAccordion">
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            What documents are needed to rent a motorbike?
-          </button>
-        </h2>
-        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            You generally need your original passport or a valid ID card, plus a small deposit depending on the bike model.
+  <!-- YÊU CẦU 3.3: Section "What We Offer" (dùng style .why-us) -->
+  <section id="what-we-offer" class="fade-in" aria-labelledby="offer-title">
+    <div class="container-max">
+      <h2 class="text-center mb-3" id="offer-title">What We Offer</h2>
+      <div class="why-us-grid" style="grid-template-columns: repeat(2, 1fr);">
+        <div class="why-us-card">
+          <i class="bi bi-bicycle why-us-icon" aria-hidden="true"></i>
+          <div>
+            <h5>Motorbike Rental in Hanoi</h5>
+            <p>
+              Monthly and long-term rentals perfect for expats. Includes helmets and basic repair support. 
+              See our <a href="rental.html" style="text-decoration:underline; color:var(--primary);" title="Hanoi Motorbike Rental">rental options</a>.
+            </p>
           </div>
         </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            Do the bikes come with helmets?
-          </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Yes, we provide high-quality helmets with every rental for your safety.
+        <div class="why-us-card">
+          <i class="bi bi-tag-fill why-us-icon" aria-hidden="true"></i>
+          <div>
+            <h5>Used Motorbikes for Sale</h5>
+            <p>
+              Honda Vision & Airblade scooters with valid blue card/cavet for easy ownership transfer. 
+              Check our <a href="sale.html" style="text-decoration:underline; color:var(--primary);" title="Hanoi Motorbikes for Sale">bikes for sale</a>.
+            </p>
+          </div>
+        </div>
+        <div class="why-us-card">
+          <i class="bi bi-tools why-us-icon" aria-hidden="true"></i>
+          <div>
+            <h5>Service & Maintenance Support</h5>
+            <p>Regular check-ups and prompt support for any issues during your rental period to keep you safe on the road.</p>
+          </div>
+        </div>
+        <div class="why-us-card">
+          <i class="bi bi-translate why-us-icon" aria-hidden="true"></i>
+          <div>
+            <h5>English & Vietnamese Support</h5>
+            <p>We make communication easy for all our international and local customers, ensuring you get the help you need.</p>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="reviews" class="fade-in">
-  <div class="container-max">
-    <h2 class="text-center mb-3">Customer Reviews</h2>
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <p>“Rented a scooter in Hoan Kiem / Old Quarter — pickup was fast, bike ran smoothly. Highly recommend Nguyen Tu!”</p>
-          <h5 class="mt-2">— James, UK</h5>
+  <!-- YÊU CẦU 3.4: Section "How It Works" (dùng style .why-us) -->
+  <section id="how-it-works" class="fade-in" aria-labelledby="how-title">
+    <div class="container-max">
+      <h2 class="text-center mb-3" id="how-title">How Our Motorbike Service Works</h2>
+      <div class="why-us-grid" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="why-us-card">
+          <i class="bi bi-1-circle-fill why-us-icon" aria-hidden="true"></i>
+          <div>
+            <h5>Step 1: Contact Us</h5>
+            <p>Reach out via Zalo, WhatsApp, or phone to discuss your needs.</p>
+          </div>
         </div>
-        <div class="swiper-slide">
-          <p>“Living near Tay Ho, needed monthly rental. Bike was excellent and smart key worked perfectly. Great service!”</p>
-          <h5 class="mt-2">— Anna, Germany</h5>
+        <div class="why-us-card">
+          <i class="bi bi-2-circle-fill why-us-icon" aria-hidden="true"></i>
+          <div>
+            <h5>Step 2: Visit & Test Ride</h5>
+            <p>Come to our Long Bien shop to see our bikes and take a test ride.</p>
+          </div>
         </div>
-        <div class="swiper-slide">
-          <p>“Visited Ba Dinh — renting from Nguyen Tu was the easiest experience. Friendly staff, clear prices.”</p>
-          <h5 class="mt-2">— Lucas, France</h5>
+        <div class="why-us-card">
+          <i class="bi bi-3-circle-fill why-us-icon" aria-hidden="true"></i>
+          <div>
+            <h5>Step 3: Paperwork & Payment</h5>
+            <p>We'll handle the rental contract or sale paperwork quickly and clearly.</p>
+          </div>
+        </div>
+        <div class="why-us-card">
+          <i class="bi bi-4-circle-fill why-us-icon" aria-hidden="true"></i>
+          <div>
+            <h5>Step 4: After-Service Support</h5>
+            <p>Enjoy our full support for maintenance and assistance during your rental.</p>
+          </div>
         </div>
       </div>
-      <div class="swiper-pagination mt-3"></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="map" class="fade-in">
-  <div class="container-max text-center">
-    <h2 class="mb-2">Find Us</h2>
-    <p class="muted mb-2">Open daily 09:00–21:00. Click the button to open the location in Google Maps app.</p>
-    <p><a class="btn btn-outline-primary" href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" target="_blank" rel="noopener noreferrer">📍 Open in Google Maps (App)</a></p>
-    <div style="max-width:960px;margin:14px auto 0;">
-      <iframe class="map-embed" src="https://www.google.com/maps?q=21.0409222,105.8692870&z=15&output=embed" allowfullscreen loading="lazy"></iframe>
+  <!-- YÊU CẦU 3.5: Section "Why Riders Trust Us" (dùng style .why-us) -->
+  <section id="why-trust-us" class="fade-in" aria-labelledby="trust-title">
+    <div class="container-max">
+      <h2 class="text-center mb-3" id="trust-title">Why Riders Trust Us</h2>
+      <div class="why-us-grid" style="grid-template-columns: repeat(2, 1fr);">
+        <div class="why-us-card">
+          <i class="bi bi-cash-coin why-us-icon" aria-hidden="true"></i>
+          <div>
+            <h5>Transparent Pricing – No Hidden Fees</h5>
+            <p>We offer clear and fair prices for all rentals and sales. What you see is what you get.</p>
+          </div>
+        </div>
+        <div class="why-us-card">
+          <i class="bi bi-shield-check why-us-icon" aria-hidden="true"></i>
+          <div>
+            <h5>Regularly Serviced Honda Scooters</h5>
+            <p>Our fleet is well-maintained for your safety, focusing on reliable and efficient Honda models.</p>
+          </div>
+        </div>
+        <div class="why-us-card">
+          <i class="bi bi-calendar-check-fill why-us-icon" aria-hidden="true"></i>
+          <div>
+            <h5>Long-Term Rental for Teachers & Expats</h5>
+            <p>We are experts in monthly and long-term contracts, providing flexible options for your stay in Hanoi.</p>
+          </div>
+        </div>
+        <div class="why-us-card">
+          <i class="bi bi-geo-alt-fill why-us-icon" aria-hidden="true"></i>
+          <div>
+            <h5>Close to Old Quarter, Easy Pickup</h5>
+            <p>Our Long Bien shop is just a 5-minute ride from the Old Quarter, making pickup and service easy.</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer id="footer" class="fade-in" role="contentinfo">
+  <!-- YÊU CẦU 3.6: Section "Location & Contact Reminder" -->
+  <section id="about-location" class="fade-in" aria-labelledby="location-title">
+    <div class="container-max text-center">
+      <h2 class="mb-3" id="location-title">Visit Our Hanoi Motorbike Shop</h2>
+      <p class="muted" style="max-width:900px;margin:0 auto 24px">
+        Find us at 112 Nguyen Van Cu, Long Bien. We are close to the Old Quarter and Chuong Duong Bridge, convenient for customers in Tay Ho or Hoan Kiem.
+      </p>
+      <div class="hero-actions" style="justify-content: center;">
+        <a class="btn-site" href="https://maps.app.goo.gl/AQfB4c9MmfBJpP7QA?g_st=ipc" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-geo-alt-fill"></i> Open in Google Maps
+        </a>
+        <a class="btn-wp" href="tel:+84942467674">
+          <i class="bi bi-telephone-fill"></i> Call Now
+        </a>
+        <a class="btn-wp" href="https://zalo.me/0942467674" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-chat-dots-fill"></i> Chat on Zalo
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="footer" class="fade-in" role="contentinfo" aria-labelledby="footer-title-id">
   <div class="led-border" aria-hidden="true"></div>
 
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-col footer-col-about footer-box">
-        <h5 class="footer-col-title">About Nguyen Tu Motorbike</h5>
+        <h5 class="footer-col-title" id="footer-title-id">Contact Us Motorbike Hanoi Rental & Sale</h5>
         <p class="footer-about-text">
-          We provide quality used motorbikes for sale and long-term rentals in Hanoi. Trusted by both
+          We provide quality used motorbikes for sale and long-term motorbike rentals in Hanoi. Trusted by both
           locals and expats for reliability, good service, and fair prices.
         </p>
         <ul class="footer-contact-list">
           <li>
             <span class="icon">📍</span>
-            <span>112 Nguyen Van Cu, Long Bien, Hanoi</span>
+            <span>112 Nguyen Van Cu, Long Bien, Hanoi (Near Old Quarter)</span>
           </li>
           <li>
             <span class="icon">📞</span>
             <span>
-              <a href="tel:+84812050090" class="fw-bold" style="color:#f5f5f5">
-                +84 81 205 0090
+              <!-- YÊU CẦU 1: ĐỔI TÊN TRONG TITLE -->
+              <a href="tel:+84812050090" class="fw-bold" style="color:#f5f5ff" title="Call Nguyen Chinh Motorbike">
+                +84812050090
               </a>
             </span>
           </li>
@@ -1999,7 +1915,8 @@
           <li>
             <span class="icon">✉️</span>
             <span>
-              <a href="mailto:nguyentuantu1102@gmail.com" style="color:#f5f5f5">
+              <!-- YÊU CẦU 1: ĐỔI TÊN TRONG TITLE. KHÔNG ĐỔI EMAIL -->
+              <a href="mailto:nguyentuantu1102@gmail.com" style="color:#f5f5f5" title="Email Nguyen Chinh Motorbike">
                 nguyentuantu1102@gmail.com
               </a>
             </span>
@@ -2030,7 +1947,7 @@
             <a href="sale.html" class="footer-link">
               <span class="footer-link-pill">
                 <i class="bi bi-tag-fill"></i>
-                <span>Sale</span>
+                <span>Motorbike Sale</span>
               </span>
             </a>
           </li>
@@ -2038,7 +1955,7 @@
             <a href="rental.html" class="footer-link">
               <span class="footer-link-pill">
                 <i class="bi bi-bicycle"></i>
-                <span>Rental</span>
+                <span>Motorbike Rental</span>
               </span>
             </a>
           </li>
@@ -2078,15 +1995,15 @@
       </div>
 
       <div class="footer-col footer-box">
-        <h5 class="footer-col-title">Connect & Support</h5>
+        <h5 class="footer-col-title" title="Connect with Hanoi Motorbike Rental">Connect & Support</h5>
         <div class="footer-social-row">
-          <a href="https://zalo.me/0812050090" target="_blank" class="social-icon" title="Chat on Zalo" rel="noopener noreferrer">
+          <a href="https://zalo.me/0942467674" target="_blank" class="social-icon" title="Chat on Zalo" rel="noopener noreferrer">
             <i class="bi bi-chat-dots"></i>
           </a>
-          <a href="https://wa.me/84812050090" target="_blank" class="social-icon" title="Chat on WhatsApp" rel="noopener noreferrer">
+          <a href="https://wa.me/84942467674" target="_blank" class="social-icon" title="Chat on WhatsApp" rel="noopener noreferrer">
             <i class="bi bi-whatsapp"></i>
           </a>
-          <a href="https://www.facebook.com/chothuexemaynguyentu/" target="_blank" class="social-icon" title="Visit Facebook" rel="noopener noreferrer">
+          <a href="https://m.facebook.com/cheapmotorbikerentalhanoi/" target="_blank" class="social-icon" title="Visit Facebook" rel="noopener noreferrer">
             <i class="bi bi-facebook"></i>
           </a>
           <a href="https://athanoi.github.io/moto/" target="_blank" class="social-icon" title="Official Website" rel="noopener noreferrer">
@@ -2095,13 +2012,14 @@
         </div>
         <p class="mb-1" style="color:#f5f5f5">
           🌐 Official Website:<br>
-          <a href="https://athanoi.github.io/moto/" class="fw-bold" style="color:#FFD700" target="_blank" rel="noopener noreferrer">
-            athanoi.github.io/moto
+          <a href="https://rentbikehanoi.com" class="fw-bold" style="color:#FFD700" target="_blank" rel="noopener noreferrer">
+            https://rentbikehanoi.com
           </a>
         </p>
         <p class="mt-2" style="color:#f5f5f5">
           📍
-          <a href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" style="color:#f5f5f5" target="_blank" rel="noopener noreferrer">
+          <!-- UPDATED LINK -->
+          <a href="https://maps.app.goo.gl/AQfB4c9MmfBJpP7QA?g_st=ipc" style="color:#f5f5f5" target="_blank" rel="noopener noreferrer">
             Find us on Google Maps
           </a>
         </p>
@@ -2110,8 +2028,8 @@
 
     <hr class="footer-divider">
     <div class="footer-bottom">
-      <p class="mb-0">© 2025 Nguyen Tu Motorbike | Designed with ❤️ in Hanoi</p>
-      <a href="#hero" class="back-to-top">↑ Back to Top</a>
+      <p class="mb-0">© 2025 Hanoi Motorbike Rental and Sale | All Rights Reserved</p>
+      <a href="#hero-about" class="back-to-top">↑ Back to Top</a>
     </div>
   </div>
 </footer>
@@ -2120,9 +2038,9 @@
   <div class="contact-options" id="contactOptions" aria-hidden="true">
     <a href="tel:+84942467674" title="Call" aria-label="Call"><i class="bi bi-telephone-fill"></i></a>
     
-    <a href="https://zalo.me/0812050090" target="_blank" aria-label="Zalo" rel="noopener noreferrer"><i class="bi bi-chat-dots-fill"></i></a>
+    <a href="https://zalo.me/0942467674" target="_blank" aria-label="Zalo" rel="noopener noreferrer"><i class="bi bi-chat-dots-fill"></i></a>
     
-    <a href="https://wa.me/84812050090" target="_blank" title="WhatsApp" aria-label="WhatsApp" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i></a>
+    <a href="https://wa.me/84942467674" target="_blank" title="WhatsApp" aria-label="WhatsApp" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i></a>
   </div>
   <button class="main-btn" id="mainContactBtn" aria-expanded="false" aria-controls="contactOptions" title="Contact menu">
     <i class="bi bi-person-lines-fill" aria-hidden="true"></i>
@@ -2162,10 +2080,19 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', function(e){
     const href = this.getAttribute('href');
     if (!href || href === '#') return;
-    const target = document.querySelector(href);
+    // SEO Fix: Use 'top-of-page' if it exists, else hero
+    const targetID = href === '#' ? 'top-of-page' : href.substring(1);
+    const target = document.getElementById(targetID);
+    
     if (target) {
       e.preventDefault();
-      window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
+      // Use id of the hero section on this page
+      if (targetID === 'hero') {
+         window.scrollTo({ top: document.getElementById('hero-about').offsetTop - 70, behavior: 'smooth' });
+      } else {
+         window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
+      }
+      
       const off = document.getElementById('offcanvasMenu');
       if (off && off.classList.contains('show')) bootstrap.Offcanvas.getInstance(off).hide();
     }
@@ -2210,9 +2137,9 @@ try {
 
 /* ===== Hero parallax (mouse & device tilt) ===== */
 (function(){
-  const hero = document.getElementById('hero');
+  const hero = document.getElementById('hero-about'); // Target new hero ID
   const heroCard = document.getElementById('heroCard');
-  const layers = document.querySelectorAll('#hero .layer');
+  const layers = document.querySelectorAll('#hero-about .layer'); // Target new hero ID
   if (!hero) return;
 
   function handleMove(xRatio, yRatio){
@@ -2275,8 +2202,10 @@ try {
   const submenu = document.getElementById('mobileServiceSubmenu');
   if (!toggleBtn || !submenu) return;
   toggleBtn.addEventListener('click', () => {
+    const isOpening = !submenu.classList.contains('show');
     submenu.classList.toggle('show');
     toggleBtn.classList.toggle('open');
+    toggleBtn.setAttribute('aria-expanded', isOpening ? 'true' : 'false');
   });
 })();
 
@@ -2449,6 +2378,7 @@ try {
 /* ===== END: JS MỚI ===== */
 </script>
 
+<script src="https://hanoimoto.github.io/app/motoai_v38_1_modelfirst_nomarkdown_nolink.js" defer></script>
 </body>
 </html>
 
