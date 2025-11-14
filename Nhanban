@@ -1,0 +1,59 @@
+Hãy dùng file index.html dưới đây làm template để tạo file contact.html cho website Hanoi Motorbike Rental & Sale.
+
+YÊU CẦU:
+
+1. Giữ nguyên toàn bộ:
+   - Phần <head> (title, meta, link, font, CSS CDN, JS CDN, motoai_v38_1_modelfirst_nomarkdown_nolink.js, v.v.)
+   - Header/topbar, menu, offcanvas mobile, theme toggle, status pill, footer, floating contact, các script JS ở cuối file.
+   - Toàn bộ CSS trong <style>.
+
+2. Trong menu desktop và mobile:
+   - Link "Contact" phải có class "active".
+   - Link "Home" (index.html) không còn class "active".
+
+3. Thay toàn bộ nội dung bên trong <main> bằng layout trang liên hệ:
+
+   3.1. Hero contact:
+   - Section đầu tiên: id="hero-contact" hoặc dùng lại id="hero" nhưng nội dung khác.
+   - Tiêu đề: “Contact Hanoi Motorbike Rental & Sale”.
+   - Đoạn mô tả ngắn (2–3 câu) nói về liên hệ thuê / mua xe máy ở Hà Nội.
+   - Hai nút:
+     + Call now (href="tel:+84942467674", style giống .btn-site)
+     + Chat on Zalo (href="https://zalo.me/0942467674", style giống .btn-wp nhưng đổi icon Zalo hoặc dùng bi bi-chat-dots)
+
+   3.2. Section “Contact Information”:
+   - id="contact-info".
+   - Dùng container-max, tiêu đề h2 “Contact Information”.
+   - Liệt kê: Địa chỉ, số điện thoại, email, giờ mở cửa, link Google Maps.
+   - Thêm 3 nút nhanh: Call, Zalo, WhatsApp (tel:+84942467674, https://zalo.me/0942467674, https://wa.me/84942467674).
+
+   3.3. Section “Contact Form”:
+   - id="contact-form".
+   - Form đơn giản (method="post" action="#" hoặc mailto:nguyentuantu1102@gmail.com) với các trường:
+     + Name (input type="text")
+     + Email (input type="email")
+     + Phone (input type="tel")
+     + Message (textarea)
+   - Nút submit “Send Message”.
+   - Dùng class Bootstrap để form đẹp (form-control, row, col-md-6, v.v.).
+
+   3.4. Section bản đồ:
+   - Dùng lại iframe Google Maps hiện tại.
+   - Tiêu đề: “Find Us in Hanoi – Contact & Pickup Point”.
+   - Đoạn mô tả ngắn nhắc lại địa điểm Long Biên, gần Old Quarter & cầu Chương Dương.
+
+4. Giữ các class liên quan đến hiệu ứng (fade-in, container-max, v.v.) để trang contact đồng bộ style với index.
+
+5. Đảm bảo HTML hợp lệ:
+   - Chỉ 1 cặp <head>...</head>.
+   - <style> nằm bên trong <head>.
+   - 1 <body> duy nhất, đóng thẻ đầy đủ.
+
+Đầu ra: In ra toàn bộ nội dung file contact.html hoàn chỉnh, bắt đầu từ:
+<!doctype html>
+<html lang="en">
+... (phần còn lại của file)
+và không giải thích thêm, chỉ in code HTML.
+    
+Dưới đây là nội dung index.html để tham chiếu:
+[ DÁN TOÀN BỘ CODE index.html VÀO SAU DÒNG NÀY ]
