@@ -2,32 +2,55 @@
 <html lang="en">
 <head>
   <meta name="google-site-verification" content="aPKX4OVJZhZ-s0KFoDEyLJRA8zWnPkZn6LymE8OBODQ" />
-  <meta charset="utf-t" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <title>Contact Nguyen Tu Motorbike – Hanoi Motorbike For Sale & Rental</title>
-  <meta name="description" content="Contact Nguyen Tu Motorbike in Hanoi for motorbike for sale & long-term rental. Fast response via phone, Zalo, WhatsApp – pickup in Long Bien, near Old Quarter & Tay Ho." />
-  <meta name="keywords" content="Hanoi motorbike rental, motorbike for sale Hanoi, rent motorbike Hanoi, scooter sale Hanoi, Nguyen Tu motorbike" />
-  <meta name="author" content="Nguyen Tu Motorbike" />
-  <meta name="robots" content="index, follow" />
+  <!-- Tiêu đề trang Contact -->
+  <title>Contact - Hanoi Motorbike Rental and Sale | Hanoi Motorbike Shop</title>
 
+  <!-- Mô tả trang Contact -->
+  <meta name="description" content="Contact Hanoi Motorbike Rental and Sale for reliable scooters and motorbikes. Call, Zalo, WhatsApp, or visit us in Long Bien, near Old Quarter, Hanoi." />
+
+  <!-- Keywords trang Contact -->
+  <meta name="keywords" content="contact Hanoi motorbike rental, contact Hanoi motorbike sale, Hanoi motorbike shop address, Hanoi motorbike phone number" />
+  
+  <meta name="author" content="Hanoi Motorbike Rental and Sale" />
+  <meta http-equiv="Content-Language" content="en-US" />
+  
+  <meta name="robots" content="index, follow" />
+  <!-- Canonical trang Contact -->
   <link rel="canonical" href="https://hanoimoto.github.io/app/contact.html" />
+
   <link rel="icon" href="https://raw.githubusercontent.com/hanoimoto/app/refs/heads/main/IMG_0045.png" type="image/png" />
   <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/hanoimoto/app/refs/heads/main/IMG_0045.png" />
+
+  <meta name="theme-color" content="#D6001C" />
   
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Contact Nguyen Tu Motorbike – Hanoi Motorbike For Sale & Rental" />
-  <meta property="og:description" content="Contact Nguyen Tu Motorbike in Hanoi for motorbike for sale & long-term rental. Fast response via phone, Zalo, WhatsApp – pickup in Long Bien, near Old Quarter & Tay Ho." />
+
+  <!-- OG Title trang Contact -->
+  <meta property="og:title" content="Contact - Hanoi Motorbike Rental & Sale" />
+
+  <meta property="og:description" content="Contact Hanoi Motorbike Rental and Sale for reliable scooters and motorbikes. Call, Zalo, WhatsApp, or visit us in Long Bien, near Old Quarter, Hanoi." />
+  <!-- OG URL trang Contact -->
   <meta property="og:url" content="https://hanoimoto.github.io/app/contact.html" />
-  <meta property="og:site_name" content="Nguyen Tu Motorbike" />
+
+  <meta property="og:site_name" content="Hanoi Motorbike Rental and Sale" />
   <meta property="og:image" content="https://raw.githubusercontent.com/hanoimoto/app/refs/heads/main/IMG_0045.png" />
+  <meta property="og:image:alt" content="Hanoi motorbike rental and sale shop in Long Bien, Hanoi" />
   
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Contact Nguyen Tu Motorbike – Hanoi Motorbike For Sale & Rental" />
-  <meta name="twitter:description" content="Contact Nguyen Tu Motorbike in Hanoi for motorbike for sale & long-term rental. Fast response via phone, Zalo, WhatsApp – pickup in Long Bien, near Old Quarter & Tay Ho." />
+  <meta name="twitter:title" content="Contact - Hanoi Motorbike Rental & Sale" />
+  <meta name="twitter:description" content="Contact Hanoi Motorbike Rental and Sale for reliable scooters and motorbikes. Call, Zalo, WhatsApp, or visit us in Long Bien, near Old Quarter, Hanoi." />
   <meta name="twitter:image" content="https://raw.githubusercontent.com/hanoimoto/app/refs/heads/main/IMG_0045.png" />
+
+  <meta name="geo.region" content="VN-HN" />
+  <meta name="geo.placename" content="Hanoi" />
+  <meta name="geo.position" content="21.040922;105.869287" />
+  <meta name="ICBM" content="21.040922, 105.869287" />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
@@ -37,9 +60,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
-
+ 
   <style>
     /* === Variables & Theme === */
+    /* PATCH 1: Đổi --header-bg */
     :root{
       --primary:#D6001C;
       --accent:#fff;
@@ -48,11 +72,13 @@
       --bg:#ffffff;
       --text:#111111;
       --card-bg:#ffffff;
-      --header-bg:rgba(0,0,0,0.55);
+      /* Top bar Honda style: đỏ đậm, chữ trắng */
+      --header-bg:linear-gradient(135deg,#D6001C,#8B0000);
       --footer-bg:linear-gradient(135deg, #0f0f0f 10%, #1c1c1c 50%, #330000 100%);
 
       --fade-duration: 0.9s;
     }
+    /* END PATCH 1 */
 
     /* Dark mode overrides */
     :root[data-theme="dark"]{
@@ -451,6 +477,87 @@
       display:flex;
       flex-direction:column;
     }
+
+    /* PATCH 2: Thêm CSS cho offcanvas light mode */
+    /* Light mode: menu trắng, chữ đen */
+    :root[data-theme="light"] #offcanvasMenu .offcanvas-sheet{
+      background:#ffffff;
+      color:#111111;
+      box-shadow:0 22px 40px rgba(0,0,0,0.12);
+    }
+
+    /* Light mode: panel menu sáng hơn, giống card trắng */
+    :root[data-theme="light"] .menu-panel{
+      background:#f7f7f7;
+      box-shadow:0 10px 26px rgba(0,0,0,0.06);
+    }
+
+    /* Light mode: tile và icon sáng, đúng style đỏ – trắng – đen */
+    :root[data-theme="light"] .menu-tile{
+      background:#fafafa;
+      color:#111111;
+    }
+    :root[data-theme="light"] .menu-tile-icon,
+    :root[data-theme="light"] .menu-link-icon{
+      background:rgba(0,0,0,0.04);
+    }
+
+    /* Hover nhẹ màu xám, không phải nền đen */
+    :root[data-theme="light"] .menu-link-row:hover{
+      background:rgba(0,0,0,0.05);
+    }
+    /* END PATCH 2 */
+
+    /* PATCH 2.1 – Sửa nền panel trong Light Mode */
+    :root[data-theme="light"] .menu-panel{
+      background: #ffffff;
+      color:#111;
+      border:1px solid rgba(0,0,0,0.06);
+      box-shadow:0 12px 24px rgba(0,0,0,0.08);
+    }
+
+    /* PATCH 2.2 – Icon trong Light Mode rõ nét */
+    :root[data-theme="light"] .menu-link-icon{
+      background:rgba(0,0,0,0.06);
+      color:#000;
+    }
+
+    /* PATCH 2.3 – Các menu-tile trên Light Mode */
+    :root[data-theme="light"] .menu-tile{
+      background:#f6f6f6;
+      color:#111;
+    }
+
+    :root[data-theme="light"] .menu-tile-icon{
+      background:rgba(0,0,0,0.05);
+      color:#000;
+    }
+
+    /* PATCH 2.4 – Hover đúng Light Mode */
+    :root[data-theme="light"] .menu-link-row:hover{
+      background:rgba(0,0,0,0.06);
+    }
+
+    /* PATCH 2.5 – Submenu trong Light Mode */
+    :root[data-theme="light"] .submenu a{
+      color:#111;
+    }
+
+    /* PATCH 2.6 – Text menu rõ nét trong Light Mode */
+    :root[data-theme="light"] .menu-link-row {
+      color: #111111;        /* chữ đen rõ */
+    }
+
+    :root[data-theme="light"] .menu-link-row span {
+      color: #111111;
+    }
+
+    :root[data-theme="light"] .menu-section-title {
+      color: #555555;
+      opacity: 0.9;
+    }
+
+
     #offcanvasMenu .offcanvas-header{
       border-bottom:1px solid rgba(255,255,255,0.08);
       padding:0 0 10px 0;
@@ -904,27 +1011,57 @@
     }
 
     /* Nút bấm hero (copy từ file cũ, vì file mới ko có) */
+    /* PATCH 3.1: Đổi .btn-site */
     .btn-site{
-      background: linear-gradient(90deg,#FFD700,#FFB200);
-      color:#111;font-weight:800;padding:10px 18px;border-radius:999px;border:none;box-shadow:0 8px 26px rgba(255,182,0,0.18);
+      background: linear-gradient(90deg,#D6001C,#8B0000);
+      color:#fff;
+      font-weight:800;
+      padding:10px 18px;
+      border-radius:999px;
+      border:none;
+      box-shadow:0 8px 26px rgba(214,0,28,0.25);
       text-decoration:none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .btn-site:hover{transform:translateY(-4px)}
+    .btn-site:hover{transform:translateY(-4px); box-shadow:0 12px 30px rgba(214,0,28,0.35);}
+
+    /* PATCH 3.2: Đổi .btn-wp và @keyframes pulseGlow */
     .btn-wp {
-      background: linear-gradient(90deg, #25D366, #128C7E);
+      background: linear-gradient(90deg,#D6001C,#8B0000);
       color: #fff;
       border-radius: 999px;
       padding: 10px 18px;
       font-weight:800;
-      box-shadow:0 0 20px rgba(37,211,102,0.45);
-      display:inline-flex;align-items:center;gap:10px;border:none;cursor:pointer;
+      box-shadow:0 0 20px rgba(214,0,28,0.45);
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      border:none;
+      cursor:pointer;
       animation: pulseGlow 3s infinite ease-in-out, slightShake 6s infinite;
       text-decoration:none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+    .btn-wp:hover {
+      transform: translateY(-4px);
+      animation-play-state: paused; /* Tắt animation khi hover để giữ vị trí */
+    }
+    
     @keyframes pulseGlow {
-      0%,100%{box-shadow:0 0 12px rgba(37,211,102,0.45),0 0 24px rgba(37,211,102,0.3)}
-      50%{box-shadow:0 0 30px rgba(37,211,102,0.9),0 0 60px rgba(37,211,102,0.45)}
+      0%,100%{
+        box-shadow:0 0 12px rgba(214,0,28,0.45),
+                   0 0 24px rgba(214,0,28,0.3);
+      }
+      50%{
+        box-shadow:0 0 30px rgba(214,0,28,0.9),
+                   0 0 60px rgba(214,0,28,0.45);
+      }
     }
+    /* END PATCH 3 */
+
     @keyframes slightShake {
       0%,92%,100%{transform:translateX(0)}
       93%{transform:translateX(-2px)}
@@ -1225,6 +1362,11 @@
     .muted{color:var(--muted)}
     .text-center { text-align:center }
     .mb-2 { margin-bottom: .5rem; }
+    .mb-3 { margin-bottom: 1rem; }
+    .mb-4 { margin-bottom: 1.5rem; }
+    .mt-3 { margin-top: 1rem; }
+    .mt-4 { margin-top: 1.5rem; }
+    .fw-bold { font-weight: 700; }
 
     /* ========== RESPONSIVE HEADER FIXES (Optimized) ========== */
     
@@ -1302,21 +1444,204 @@
         font-size: 15px;
       }
     }
+
+    /* ===== Why Us Section (NEW) ===== */
+    .why-us-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .why-us-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 20px 18px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+      display: flex;
+      align-items: flex-start; /* Align icon and text */
+      gap: 14px;
+      text-align: left;
+    }
+    .why-us-icon {
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+    .why-us-card h5 {
+      font-weight: 700;
+      margin-bottom: 4px;
+      font-size: 1.05rem;
+    }
+    .why-us-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0;
+      line-height: 1.4;
+    }
+
+    /* Responsive grid */
+    @media (max-width: 991.98px) {
+      .why-us-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 575.98px) {
+      .why-us-grid {
+        grid-template-columns: 1fr;
+      }
+      .why-us-card {
+        padding: 16px 14px;
+      }
+    }
+
+    /* ===== CSS MỚI CHO TRANG CONTACT ===== */
+    
+    /* Tái sử dụng .hero-actions cho các nút hero contact */
+    #hero-contact .hero-actions {
+        margin-top: 20px;
+        justify-content: center;
+    }
+    
+    /* Thẻ thông tin liên hệ */
+    .contact-info-card {
+        background: var(--card-bg);
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+    :root[data-theme="dark"] .contact-info-card {
+        border-color: rgba(255,255,255,0.1);
+    }
+    
+    .contact-info-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 1.05rem;
+    }
+    .contact-info-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 14px;
+    }
+    .contact-info-list .icon {
+        font-size: 1.4rem;
+        color: var(--primary);
+        width: 28px;
+        text-align: center;
+        margin-top: 2px;
+    }
+    
+    .contact-info-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(0,0,0,0.1);
+    }
+    :root[data-theme="dark"] .contact-info-actions {
+        border-top-color: rgba(255,255,255,0.1);
+    }
+    
+    /* Nút Zalo (biểu tượng tùy chỉnh) */
+    .btn-zalo {
+        background: linear-gradient(90deg, #0068FF, #0054CE);
+        color: #fff;
+        font-weight: 800;
+        padding: 10px 18px;
+        border-radius: 999px;
+        border: none;
+        box-shadow: 0 8px 26px rgba(0, 104, 255, 0.25);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-zalo:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0, 104, 255, 0.35);
+        color: #fff;
+    }
+    
+    /* Nút WhatsApp (tái sử dụng .btn-wp nhưng bỏ animation) */
+    .btn-whatsapp {
+        background: linear-gradient(90deg, #25D366, #128C7E);
+        color: #fff;
+        font-weight: 800;
+        padding: 10px 18px;
+        border-radius: 999px;
+        border: none;
+        box-shadow: 0 8px 26px rgba(37, 211, 102, 0.25);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-whatsapp:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(37, 211, 102, 0.35);
+        color: #fff;
+    }
+    
+    /* Form */
+    #contact-form {
+        background: var(--card-bg);
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+     :root[data-theme="dark"] #contact-form {
+        border-color: rgba(255,255,255,0.1);
+        background: var(--card-bg); /* Đảm bảo nền dark mode */
+    }
+    
+    .form-control {
+        border-radius: 12px;
+        padding: 12px 16px;
+        background-color: rgba(0,0,0,0.03);
+        border: 1px solid rgba(0,0,0,0.1);
+    }
+    .form-control:focus {
+        background-color: var(--bg);
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(214, 0, 28, 0.15);
+    }
+    :root[data-theme="dark"] .form-control {
+        background-color: rgba(255,255,255,0.05);
+        border-color: rgba(255,255,255,0.15);
+        color: var(--text);
+    }
+    :root[data-theme="dark"] .form-control:focus {
+        background-color: var(--card-bg);
+    }
+    
   </style>
 </head>
-<body>
+<body id="top-of-page">
 
+<!-- 
+==================================================
+HEADER (GIỮ NGUYÊN)
+Yêu cầu 2: Sửa link active
+==================================================
+-->
 <header>
   <div class="brand-row">
-    <a href="index.html" class="brand-left">
+    <a href="index.html" class="brand-left" title="Nguyen Tu - Hanoi Motorbike Rental and Sale Home">
       <div class="logo-wrap">
         <img src="https://raw.githubusercontent.com/hanoimoto/app/refs/heads/main/IMG_0045.png"
-             alt="Nguyen Tu Motorbike logo">
+             alt="Nguyen Tu - Hanoi Motorbike Rental and Sale Logo">
         <span class="logo-tag">NT</span>
       </div>
       <div class="brand-text">
-        <div class="site-title">Hanoi Motorbike For Sale & Rent</div>
-        <div class="site-sub">Scooters & Motorbikes in Hanoi</div>
+        <div class="site-title">Hanoi Motorbike Sale & Rental</div>
+        <div class="site-sub">Top Scooter & Motorbike Rental in Hanoi</div>
       </div>
     </a>
 
@@ -1335,31 +1660,34 @@
 
       <nav class="desktop-nav d-none d-md-block" aria-label="Main navigation">
         <ul>
-          <li><a href="index.html" class="nav-link-item">Home</a></li> 
+          <!-- Yêu cầu 2: Gỡ .active khỏi Home -->
+          <li><a href="index.html" class="nav-link-item">Home</a></li>
 
           <li><a href="about.html" class="nav-link-item">About</a></li>
 
           <li class="has-dropdown">
-            <button class="dropdown-toggle" type="button">
+            <button class="dropdown-toggle" type="button" aria-expanded="false" aria-controls="desktop-service-menu">
               Service
               <i class="bi bi-chevron-down" aria-hidden="true" style="font-size:0.8rem;"></i>
             </button>
-            <ul class="dropdown-menu">
-              <li><a href="sale.html">Sale</a></li>
-              <li><a href="rental.html">Rental</a></li>
+            <ul class="dropdown-menu" id="desktop-service-menu">
+              <li><a href="sale.html">Motorbike Sale</a></li>
+              <li><a href="rental.html">Motorbike Rental</a></li>
             </ul>
           </li>
 
           <li><a href="faq.html" class="nav-link-item">FAQ</a></li>
           <li><a href="terms.html" class="nav-link-item">Terms</a></li>
           <li><a href="privacy.html" class="nav-link-item">Privacy</a></li>
-          <li><a href="contract.html" class="nav-link-item">Contract</a></li>
-          </ul>
+          
+          <!-- Yêu cầu 2: Thêm .active vào Contact -->
+          <li><a href="contact.html" class="nav-link-item active">Contact</a></li>
+        </ul>
       </nav>
       </div>
   </div>
 
-  <div class="status-popover" id="statusPopover" aria-hidden="true">
+  <div class="status-popover" id="statusPopover" aria-hidden="true" role="dialog">
     <div class="status-popover-header">
       <span class="status-popover-title">Opening hours</span>
       <span class="status-popover-tz">Asia/Bangkok (GMT+7)</span>
@@ -1374,7 +1702,7 @@
   </div>
 
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
-    <div class="offcanvas-sheet">
+    <div class="offcanvas-sheet" role="dialog" aria-modal="true">
       <div class="offcanvas-header">
         <h5 id="offcanvasMenuLabel">Menu</h5>
         <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -1394,7 +1722,7 @@
             </a>
             <a href="sale.html" class="menu-tile">
               <div class="menu-tile-icon"><i class="bi bi-tag-fill"></i></div>
-              <div>View Sale</div>
+              <div>View Bikes for Sale</div>
             </a>
             <a href="faq.html" class="menu-tile">
               <div class="menu-tile-icon"><i class="bi bi-question-circle-fill"></i></div>
@@ -1403,9 +1731,10 @@
           </div>
         </div>
 
-        <div class="menu-panel">
+        <nav class="menu-panel" aria-label="Mobile navigation">
           <div class="menu-section-title">Navigation</div>
 
+          <!-- Yêu cầu 2: Gỡ .active (nếu có) khỏi Home -->
           <a href="index.html" class="menu-link-row">
             <div class="menu-link-icon"><i class="bi bi-house-door-fill"></i></div>
             <span>Home</span>
@@ -1416,14 +1745,14 @@
             <span>About</span>
           </a>
 
-          <button type="button" class="menu-link-row service-toggle" id="mobileServiceToggle">
+          <button type="button" class="menu-link-row service-toggle" id="mobileServiceToggle" aria-expanded="false" aria-controls="mobileServiceSubmenu">
             <div class="menu-link-icon"><i class="bi bi-bicycle"></i></div>
             <span>Service</span>
             <i class="bi bi-chevron-right chevron" aria-hidden="true"></i>
           </button>
           <div class="submenu" id="mobileServiceSubmenu">
-            <a href="sale.html">Sale</a>
-            <a href="rental.html">Rental</a>
+            <a href="sale.html">Motorbike Sale</a>
+            <a href="rental.html">Motorbike Rental</a>
           </div>
 
           <a href="faq.html" class="menu-link-row">
@@ -1441,11 +1770,12 @@
             <span>Privacy</span>
           </a>
 
-          <a href="contract.html" class="menu-link-row">
+          <!-- Yêu cầu 2: Thêm .active vào Contact -->
+          <a href="contact.html" class="menu-link-row active">
             <div class="menu-link-icon"><i class="bi bi-telephone-outbound-fill"></i></div>
-            <span>Contract</span>
+            <span>Contact</span>
           </a>
-        </div>
+        </nav>
         <div class="menu-panel">
           <div class="menu-section-title">Display</div>
           <div class="offcanvas-theme-row">
@@ -1453,7 +1783,7 @@
               <i class="bi bi-brightness-high-fill"></i>
               <span>Theme</span>
             </div>
-            <label class="switch">
+            <label class="switch" aria-label="Theme toggle switch">
               <input type="checkbox" id="themeSwitch">
               <span class="slider"></span>
             </label>
@@ -1464,201 +1794,203 @@
   </div>
 </header>
 
-<section id="hero" class="fade-in" aria-label="Hero">
-  <div class="light-shimmer" aria-hidden="true"></div>
-  <div class="hero-inner">
-    <div class="hero-card" id="heroCard" role="region" aria-label="Main hero">
-      <div class="hero-main">
-        <h1 class="hero-title glow">Contact Nguyen Tu Motorbike in Hanoi</h1>
-        <p class="hero-sub">
-          Get in touch for the best deals on **Hanoi motorbike for sale** and **motorbike rental Hanoi**. We specialize in **long-term rental** with flexible **buy-back options**.
-        </p>
-        
-        <div class="hero-actions">
-          <a class="btn-wp" 
-             href="tel:+84812050090" 
-             aria-label="Call now" 
-             style="background: linear-gradient(90deg, #D6001C, #ff3c3c); box-shadow: 0 0 20px rgba(255,60,60,0.45); animation: none; transform: none;">
-             <i class="bi bi-telephone-fill"></i> 📞 Call now
-          </a>
-          <a class="btn-wp" 
-             href="https://zalo.me/0812050090" 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             aria-label="Chat on Zalo"
-             style="background: linear-gradient(90deg, #0068FF, #00A3FF); box-shadow: 0 0 20px rgba(0,104,255,0.45); animation: none; transform: none;">
-             <i class="bi bi-chat-dots-fill"></i> 💬 Chat on Zalo
-          </a>
-        </div>
-        
-        <div class="hero-mini-note">
-          We reply quickly between 09:00 – 21:00 (Hanoi time).
-        </div>
+<!-- 
+==================================================
+NỘI DUNG MAIN (ĐÃ THAY THẾ)
+Yêu cầu 3
+==================================================
+-->
+<main>
+
+  <!-- 3.1. Hero contact (Tái sử dụng #hero CSS) -->
+  <section id="hero" class="fade-in" aria-labelledby="hero-title-id">
+    <div class="light-shimmer" aria-hidden="true"></div>
+    <div class="hero-inner text-center">
+      <!-- Không dùng hero-card, dùng layout đơn giản hơn cho trang contact -->
+      <h1 class="hero-title glow" id="hero-title-id">Contact Hanoi Motorbike Rental & Sale</h1>
+      <p class="hero-sub mx-auto" style="max-width: 650px;">
+        Get in touch with us for any inquiries about motorbike rental or sales in Hanoi. We are here to help you 7 days a week.
+        Call, message, or visit our shop in Long Bien.
+      </p>
+      
+      <!-- Nút bấm (Yêu cầu 3.1) -->
+      <div class="hero-actions" style="margin-top: 24px; justify-content: center;">
+        <a class="btn-site"
+           href="tel:+84942467674"
+           aria-label="Call Hanoi Motorbike Rental">
+           <i class="bi bi-telephone-fill"></i> Call Now
+        </a>
+        <a class="btn-wp"
+           href="https://zalo.me/0942467674"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Chat on Zalo"
+           style="background: linear-gradient(90deg, #0068FF, #0054CE); box-shadow: 0 0 20px rgba(0, 104, 255, 0.45);">
+           <i class="bi bi-chat-dots-fill"></i> Chat on Zalo
+        </a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact-details" class="fade-in">
-  <div class="container-max">
-    <h2 class="text-center mb-4">Our Information</h2>
-    <div class="footer-box" style="background: var(--card-bg); color: var(--text); max-width: 600px; margin: 0 auto; box-shadow: 0 12px 30px rgba(0,0,0,0.06);">
-      <ul class="footer-contact-list" style="color: var(--text);">
-        <li>
-          <span class="icon">📍</span>
-          <span><strong>Address:</strong> 112 Nguyen Van Cu, Long Bien, Hanoi</span>
-        </li>
-        <li>
-          <span class="icon">📞</span>
-          <span>
-            <strong>Phone:</strong> 
-            <a href="tel:+84812050090" class="fw-bold" style="color: var(--primary);">
-              +84 81 205 0090
-            </a>
-          </span>
-        </li>
-        <li>
-          <span class="icon"><i class="bi bi-chat-dots-fill"></i></span>
-          <span>
-            <strong>Zalo:</strong> 
-            <a href="https://zalo.me/0812050090" target="_blank" rel="noopener noreferrer" style="color: var(--primary);">
-              Chat via Zalo
-            </a>
-          </span>
-        </li>
-        <li>
-          <span class="icon"><i class="bi bi-whatsapp"></i></span>
-          <span>
-            <strong>WhatsApp:</strong> 
-            <a href="https://wa.me/84812050090" target="_blank" rel="noopener noreferrer" style="color: var(--primary);">
-              Chat via WhatsApp
-            </a>
-          </span>
-        </li>
-        <li>
-          <span class="icon">✉️</span>
-          <span>
-            <strong>Email:</strong> 
-            <a href="mailto:nguyentuantu8@gmail.com" style="color: var(--primary);">
-              nguyentuantu8@gmail.com
-            </a>
-          </span>
-        </li>
-        <li>
-          <span class="icon">🕘</span>
-          <span><strong>Hours:</strong> 09:00 – 21:00, Mon–Sun</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="contact-form" class="fade-in" style="padding-top: 0;">
-  <div class="container-max">
-    <h2 class="text-center mb-3">Send Us a Request</h2>
-    <p class="text-center muted" style="max-width: 600px; margin: 0 auto 1.5rem auto;">
-      Send us your request for **motorbike for sale** or **long-term rental in Hanoi**, we will confirm availability and price.
-    </p>
-    <form action="#" method="POST" style="max-width: 600px; margin: 0 auto;">
-      <div class="mb-3">
-        <label for="contactName" class="form-label">Your Name</label>
-        <input type="text" class="form-control" id="contactName" placeholder="John Doe" required>
-      </div>
-      <div class="mb-3">
-        <label for="contactEmail" class="form-label">Email Address</label>
-        <input type="email" class="form-control" id="contactEmail" placeholder="name@example.com" required>
-      </div>
-      <div class="mb-3">
-        <label for="contactPhone" class="form-label">Phone / WhatsApp</label>
-        <input type="tel" class="form-control" id="contactPhone" placeholder="+84...">
-      </div>
-      <div class="mb-3">
-        <label for="contactMessage" class="form-label">Your Message</label>
-        <textarea class="form-control" id="contactMessage" rows="4" placeholder="Hi, I'd like to ask about..."></textarea>
-      </div>
-      <div class="text-center">
-        <button type="submit" class="btn btn-danger btn-lg" style="padding: 10px 24px;">Send request</button>
-      </div>
-    </form>
-  </div>
-</section>
-
-<section id="map" class="fade-in">
-  <div class="container-max text-center">
-    <h2 class="mb-2">Find us in Hanoi</h2>
-    <p class="muted mb-2">Our shop is in **Long Bien, near Old Quarter & Tay Ho**. Easy to find!</p>
-    <p><a class="btn btn-outline-primary" href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" target="_blank" rel="noopener noreferrer">📍 Open in Google Maps (App)</a></p>
-    <div style="max-width:960px;margin:14px auto 0;">
-      <iframe class="map-embed" src="https://www.google.com/maps?q=21.0409222,105.8692870&z=15&output=embed" allowfullscreen loading="lazy"></iframe>
-    </div>
-  </div>
-</section>
-
-<section id="faq-contact" class="fade-in">
-  <div class="container-max">
-    <h2 class="text-center mb-3">❓ FAQ – Contact & Booking</h2>
-    <div class="accordion" id="faqAccordionContact">
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingContactOne">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseContactOne" aria-expanded="true" aria-controls="collapseContactOne">
-            What's the fastest way to get a response?
-          </button>
-        </h2>
-        <div id="collapseContactOne" class="accordion-collapse collapse show" aria-labelledby="headingContactOne" data-bs-parent="#faqAccordionContact">
-          <div class="accordion-body">
-            The fastest way is to **Call** or chat via **Zalo / WhatsApp**. We reply very quickly during our opening hours (09:00 – 21:00 Hanoi time).
+  <!-- 3.2. Section “Contact Information” -->
+  <section id="contact-info" class="fade-in">
+    <div class="container-max">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-8">
+          <h2 class="text-center mb-4">Contact Information</h2>
+          
+          <div class="contact-info-card">
+            <ul class="contact-info-list">
+              <li>
+                <span class="icon"><i class="bi bi-geo-alt-fill"></i></span>
+                <div>
+                  <strong class="d-block">Address:</strong>
+                  112 Nguyen Van Cu, Long Bien, Hanoi, Vietnam
+                </div>
+              </li>
+              <li>
+                <span class="icon"><i class="bi bi-telephone-fill"></i></span>
+                <div>
+                  <strong class="d-block">Phone:</strong>
+                  <a href="tel:+84812050090" style="color: var(--primary);">+84 812 050 090</a>
+                </div>
+              </li>
+              <li>
+                <span class="icon"><i class="bi bi-envelope-fill"></i></span>
+                <div>
+                  <strong class="d-block">Email:</strong>
+                  <a href="mailto:nguyentuantu1102@gmail.com" style="color: var(--primary);">nguyentuantu1102@gmail.com</a>
+                </div>
+              </li>
+              <li>
+                <span class="icon"><i class="bi bi-clock-fill"></i></span>
+                <div>
+                  <strong class="d-block">Opening Hours:</strong>
+                  09:00 – 21:00 (Monday – Sunday)
+                </div>
+              </li>
+               <li>
+                <span class="icon"><i class="bi bi-map-fill"></i></span>
+                <div>
+                  <strong class="d-block">Google Maps:</strong>
+                  <a href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" target="_blank" rel="noopener noreferrer" style="color: var(--primary);">
+                    Click to open location
+                  </a>
+                </div>
+              </li>
+            </ul>
+            
+            <!-- Nút nhanh (Yêu cầu 3.2) -->
+            <div class="contact-info-actions">
+              <a href="tel:+84942467674" class="btn-site">
+                <i class="bi bi-telephone-fill"></i> Call Us
+              </a>
+              <a href="https://zalo.me/0942467674" target="_blank" rel="noopener noreferrer" class="btn-zalo">
+                <i class="bi bi-chat-dots-fill"></i> Chat on Zalo
+              </a>
+              <a href="https://wa.me/84942467674" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+                <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+              </a>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingContactTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseContactTwo" aria-expanded="false" aria-controls="collapseContactTwo">
-            Do I need to pay a deposit to book a bike?
-          </button>
-        </h2>
-        <div id="collapseContactTwo" class="accordion-collapse collapse" aria-labelledby="headingContactTwo" data-bs-parent="#faqAccordionContact">
-          <div class="accordion-body">
-            For most long-term rentals or sales, a small deposit may be required to reserve the specific bike for you. Please contact us to confirm.
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingContactThree">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseContactThree" aria-expanded="false" aria-controls="collapseContactThree">
-            Can I pick up the bike today?
-          </button>
-        </h2>
-        <div id="collapseContactThree" class="accordion-collapse collapse" aria-labelledby="headingContactThree" data-bs-parent="#faqAccordionContact">
-          <div class="accordion-body">
-            Yes! In most cases, you can come to our shop, complete the paperwork, and ride away the same day.
-          </div>
+          
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+  
+  <!-- 3.3. Section “Contact Form” -->
+  <section id="contact-form-section" class="fade-in" style="background-color: var(--bg);">
+      <div class="container-max">
+          <div class="row justify-content-center">
+              <div class="col-lg-10 col-xl-8">
+                  <div id="contact-form">
+                      <h2 class="text-center mb-4">Send Us a Message</h2>
+                      <p class="text-center muted mb-4">
+                          Have a question? Fill out the form below, or use our quick contact buttons for a faster response.
+                      </p>
+                      
+                      <!-- Form (Yêu cầu 3.3) -->
+                      <form action="https://formspree.io/f/mqkrvgzz" method="POST">
+                          <div class="row">
+                              <!-- Name -->
+                              <div class="col-md-6 mb-3">
+                                  <label for="contactName" class="form-label fw-bold">Your Name</label>
+                                  <input type="text" class="form-control" id="contactName" name="name" required>
+                              </div>
+                              <!-- Email -->
+                              <div class="col-md-6 mb-3">
+                                  <label for="contactEmail" class="form-label fw-bold">Your Email</label>
+                                  <input type="email" class="form-control" id="contactEmail" name="_replyto" required>
+                              </div>
+                          </div>
+                          <!-- Phone -->
+                          <div class="mb-3">
+                              <label for="contactPhone" class="form-label fw-bold">Phone Number (Optional)</label>
+                              <input type="tel" class="form-control" id="contactPhone" name="phone">
+                          </div>
+                          <!-- Message -->
+                          <div class="mb-3">
+                              <label for="contactMessage" class="form-label fw-bold">Message</label>
+                              <textarea class="form-control" id="contactMessage" name="message" rows="6" required></textarea>
+                          </div>
+                          <!-- Submit Button -->
+                          <div class="text-center mt-4">
+                              <button type="submit" class="btn-site" style="min-width: 200px;">
+                                  <i class="bi bi-send-fill"></i> Send Message
+                              </button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
 
-<footer id="footer" class="fade-in" role="contentinfo">
+  <!-- 3.4. Section bản đồ (Tái sử dụng #map từ index.html) -->
+  <section id="map" class="fade-in" aria-labelledby="map-title-id">
+    <div class="container-max text-center">
+      <h2 class="mb-2" id="map-title-id">Find Us in Hanoi – Contact & Pickup Point</h2>
+      <p class="muted mb-2">
+        Our shop is conveniently located at <strong>112 Nguyen Van Cu, Long Bien</strong>.
+        We are very close to the Old Quarter and Tay Ho (just across Chuong Duong Bridge).
+      </p>
+      <p><a class="btn btn-outline-primary" href="https://maps.app.goo.gl/c2sxNmnwuxMCo3bz7?g_st=ipc" target="_blank" rel="noopener noreferrer">📍 Open in Google Maps (App)</a></p>
+      <div style="max-width:960px;margin:14px auto 0;">
+        <iframe class="map-embed" title="Nguyen Tu Motorbike - Hanoi Rental and Sale Location Map" src="https://www.google.com/maps?q=21.0409222,105.8692870&z=15&output=embed" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- 
+==================================================
+FOOTER VÀ SCRIPTS (GIỮ NGUYÊN)
+Yêu cầu 1
+==================================================
+-->
+<footer id="footer" class="fade-in" role="contentinfo" aria-labelledby="footer-title-id">
   <div class="led-border" aria-hidden="true"></div>
 
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-col footer-col-about footer-box">
-        <h5 class="footer-col-title">About Nguyen Tu Motorbike</h5>
+        <h5 class="footer-col-title" id="footer-title-id">About Nguyen Tu Motorbike - Hanoi Rental & Sale</h5>
         <p class="footer-about-text">
-          We provide quality used motorbikes for sale and long-term rentals in Hanoi. Trusted by both
+          We provide quality used motorbikes for sale and long-term motorbike rentals in Hanoi. Trusted by both
           locals and expats for reliability, good service, and fair prices.
         </p>
         <ul class="footer-contact-list">
           <li>
             <span class="icon">📍</span>
-            <span>112 Nguyen Van Cu, Long Bien, Hanoi</span>
+            <span>112 Nguyen Van Cu, Long Bien, Hanoi (Near Old Quarter)</span>
           </li>
           <li>
             <span class="icon">📞</span>
             <span>
-              <a href="tel:+84812050090" class="fw-bold" style="color:#f5f5f5">
-                +84 81 205 0090
+              <a href="tel:+84812050090" class="fw-bold" style="color:#f5f5ff" title="Call Nguyen Tu Motorbike">
+                +84812050090
               </a>
             </span>
           </li>
@@ -1669,8 +2001,8 @@
           <li>
             <span class="icon">✉️</span>
             <span>
-              <a href="mailto:nguyentuantu8@gmail.com" style="color:#f5f5f5">
-                nguyentuantu8@gmail.com
+              <a href="mailto:nguyentuantu1102@gmail.com" style="color:#f5f5f5" title="Email Nguyen Tu Motorbike">
+                nguyentuantu1102@gmail.com
               </a>
             </span>
           </li>
@@ -1700,7 +2032,7 @@
             <a href="sale.html" class="footer-link">
               <span class="footer-link-pill">
                 <i class="bi bi-tag-fill"></i>
-                <span>Sale</span>
+                <span>Motorbike Sale</span>
               </span>
             </a>
           </li>
@@ -1708,7 +2040,7 @@
             <a href="rental.html" class="footer-link">
               <span class="footer-link-pill">
                 <i class="bi bi-bicycle"></i>
-                <span>Rental</span>
+                <span>Motorbike Rental</span>
               </span>
             </a>
           </li>
@@ -1737,10 +2069,10 @@
             </a>
           </li>
           <li>
-            <a href="contract.html" class="footer-link">
+            <a href="contact.html" class="footer-link">
               <span class="footer-link-pill">
                 <i class="bi bi-telephone-outbound-fill"></i>
-                <span>Contract</span>
+                <span>Contact</span>
               </span>
             </a>
           </li>
@@ -1748,15 +2080,15 @@
       </div>
 
       <div class="footer-col footer-box">
-        <h5 class="footer-col-title">Connect & Support</h5>
+        <h5 class="footer-col-title" title="Connect with Hanoi Motorbike Rental">Connect & Support</h5>
         <div class="footer-social-row">
-          <a href="https://zalo.me/0812050090" target="_blank" class="social-icon" title="Chat on Zalo" rel="noopener noreferrer">
+          <a href="https://zalo.me/0942467674" target="_blank" class="social-icon" title="Chat on Zalo" rel="noopener noreferrer">
             <i class="bi bi-chat-dots"></i>
           </a>
-          <a href="https://wa.me/84812050090" target="_blank" class="social-icon" title="Chat on WhatsApp" rel="noopener noreferrer">
+          <a href="https://wa.me/84942467674" target="_blank" class="social-icon" title="Chat on WhatsApp" rel="noopener noreferrer">
             <i class="bi bi-whatsapp"></i>
           </a>
-          <a href="https://www.facebook.com/chothuexemaynguyentu/" target="_blank" class="social-icon" title="Visit Facebook" rel="noopener noreferrer">
+          <a href="https://m.facebook.com/cheapmotorbikerentalhanoi/" target="_blank" class="social-icon" title="Visit Facebook" rel="noopener noreferrer">
             <i class="bi bi-facebook"></i>
           </a>
           <a href="https://athanoi.github.io/moto/" target="_blank" class="social-icon" title="Official Website" rel="noopener noreferrer">
@@ -1765,8 +2097,8 @@
         </div>
         <p class="mb-1" style="color:#f5f5f5">
           🌐 Official Website:<br>
-          <a href="https://athanoi.github.io/moto/" class="fw-bold" style="color:#FFD700" target="_blank" rel="noopener noreferrer">
-            athanoi.github.io/moto
+          <a href="https://rentbikehanoi.com" class="fw-bold" style="color:#FFD700" target="_blank" rel="noopener noreferrer">
+            https://rentbikehanoi.com
           </a>
         </p>
         <p class="mt-2" style="color:#f5f5f5">
@@ -1780,7 +2112,7 @@
 
     <hr class="footer-divider">
     <div class="footer-bottom">
-      <p class="mb-0">© 2025 Nguyen Tu Motorbike | Designed with ❤️ in Hanoi</p>
+      <p class="mb-0">© 2025 Hanoi Motorbike Rental and Sale | All Rights Reserved</p>
       <a href="#hero" class="back-to-top">↑ Back to Top</a>
     </div>
   </div>
@@ -1790,9 +2122,9 @@
   <div class="contact-options" id="contactOptions" aria-hidden="true">
     <a href="tel:+84942467674" title="Call" aria-label="Call"><i class="bi bi-telephone-fill"></i></a>
     
-    <a href="https://zalo.me/0812050090" target="_blank" aria-label="Zalo" rel="noopener noreferrer"><i class="bi bi-chat-dots-fill"></i></a>
+    <a href="https://zalo.me/0942467674" target="_blank" aria-label="Zalo" rel="noopener noreferrer"><i class="bi bi-chat-dots-fill"></i></a>
     
-    <a href="https://wa.me/84812050090" target="_blank" title="WhatsApp" aria-label="WhatsApp" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i></a>
+    <a href="https://wa.me/84942467674" target="_blank" title="WhatsApp" aria-label="WhatsApp" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i></a>
   </div>
   <button class="main-btn" id="mainContactBtn" aria-expanded="false" aria-controls="contactOptions" title="Contact menu">
     <i class="bi bi-person-lines-fill" aria-hidden="true"></i>
@@ -1832,7 +2164,12 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', function(e){
     const href = this.getAttribute('href');
     if (!href || href === '#') return;
-    const target = document.querySelector(href);
+    // SEO Fix: Use 'top-of-page' if it exists, else hero
+    const targetID = href === '#' ? 'top-of-page' : href.substring(1);
+    
+    // Đối với trang contact, #hero là #hero-contact
+    const target = document.getElementById(targetID) || document.getElementById('hero');
+    
     if (target) {
       e.preventDefault();
       window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
@@ -1842,10 +2179,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-/* ===== Swiper init for reviews ===== */
+/* ===== Swiper init for reviews (Không có trên trang contact, nhưng giữ lại để đồng bộ) ===== */
 try {
-  /* (Script Swiper giữ nguyên, dù trang contact không có slider,
-     để đảm bảo không bị lỗi và giữ nguyên JS) */
   const swiper = new Swiper('.mySwiper', {
     slidesPerView: 1,
     spaceBetween: 20,
@@ -1858,7 +2193,7 @@ try {
     swiper.el.addEventListener('mouseenter', ()=> swiper.autoplay.stop());
     swiper.el.addEventListener('mouseleave', ()=> swiper.autoplay.start());
   }
-} catch(e){ console.warn('Swiper init error', e); }
+} catch(e){ /* console.warn('Swiper init error', e); */ }
 
 /* ===== Fade-in observer ULTRA (0.9s + stagger) ===== */
 (function(){
@@ -1880,11 +2215,11 @@ try {
   });
 })();
 
-/* ===== Hero parallax (mouse & device tilt) ===== */
+/* ===== Hero parallax (mouse & device tilt) (Không có trên trang contact, nhưng giữ lại để đồng bộ) ===== */
 (function(){
   const hero = document.getElementById('hero');
-  const heroCard = document.getElementById('heroCard');
-  const layers = document.querySelectorAll('#hero .layer');
+  const heroCard = document.getElementById('heroCard'); // Sẽ null trên trang contact, không sao
+  const layers = document.querySelectorAll('#hero .layer'); // Sẽ null
   if (!hero) return;
 
   function handleMove(xRatio, yRatio){
@@ -1898,20 +2233,23 @@ try {
       el.style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px))`;
     });
   }
+  
+  // Chỉ chạy nếu có heroCard (trang index)
+  if (heroCard) {
+    window.addEventListener('mousemove', e=>{
+      const rect = hero.getBoundingClientRect();
+      const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
+      const y = Math.max(0, Math.min(e.clientY - rect.top, rect.height));
+      handleMove(x / rect.width, y / rect.height);
+    });
 
-  window.addEventListener('mousemove', e=>{
-    const rect = hero.getBoundingClientRect();
-    const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
-    const y = Math.max(0, Math.min(e.clientY - rect.top, rect.height));
-    handleMove(x / rect.width, y / rect.height);
-  });
-
-  window.addEventListener('deviceorientation', e=>{
-    if (e.gamma === null) return;
-    const xRatio = (e.gamma + 90) / 180;
-    const yRatio = (e.beta + 180) / 360;
-    handleMove(xRatio, yRatio);
-  }, true);
+    window.addEventListener('deviceorientation', e=>{
+      if (e.gamma === null) return;
+      const xRatio = (e.gamma + 90) / 180;
+      const yRatio = (e.beta + 180) / 360;
+      handleMove(xRatio, yRatio);
+    }, true);
+  }
 })();
 
 /* ===== Floating Contact Menu Pro toggle ===== */
@@ -1947,8 +2285,10 @@ try {
   const submenu = document.getElementById('mobileServiceSubmenu');
   if (!toggleBtn || !submenu) return;
   toggleBtn.addEventListener('click', () => {
+    const isOpening = !submenu.classList.contains('show');
     submenu.classList.toggle('show');
     toggleBtn.classList.toggle('open');
+    toggleBtn.setAttribute('aria-expanded', isOpening ? 'true' : 'false');
   });
 })();
 
@@ -2121,5 +2461,7 @@ try {
 /* ===== END: JS MỚI ===== */
 </script>
 
+<script src="https://hanoimoto.github.io/app/motoai_v38_1_modelfirst_nomarkdown_nolink.js" defer></script>
 </body>
 </html>
+
