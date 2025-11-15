@@ -72,3 +72,47 @@ All replies are plain text, **no markdown and no clickable links inside the repl
 
    ```html
    <script src="https://hanoimoto.github.io/app/motoai_v39_modelfirst_nomarkdown_nolink.js" defer></script>
+
+	4.	The chatbot bubble will appear automatically in the bottom-left corner on your page.
+
+⸻
+
+Example: Real business using this repo
+
+This chatbot is used in a real local service called Hanoi Motorbike Rental & Sale, providing:
+	•	Used Honda scooters (e.g. Vision, Airblade) with full Blue Card / paperwork.
+	•	Long-term and monthly rentals for expats and teachers.
+	•	Support in English and Vietnamese.
+
+You can see it in action here:
+	•	App/demo page: https://hanoimoto.github.io/app/
+	•	Main site: https://rentbikehanoi.com
+	•	Facebook: https://m.facebook.com/cheapmotorbikerentalhanoi/
+
+⸻
+
+Contact – Hanoi Motorbike Rental & Sale
+
+If you want to:
+	•	rent a scooter in Hanoi,
+	•	buy a used motorbike with full paperwork,
+	•	or ask about integrating this chatbot into your own website,
+
+you can contact the shop directly:
+	•	📍 Address:
+112 Nguyen Van Cu, Long Bien, Hanoi (Near Old Quarter)
+	•	📞 Phone / Zalo / WhatsApp:
++84 812 050 090
+	•	🕘 Opening hours:
+09:00 – 21:00 (Open daily)
+	•	✉️ Email:
+nguyentuantu1102@gmail.com
+
+⸻
+
+Notes
+	•	This project is intentionally lightweight and works well on static HTML sites (GitHub Pages, simple hosting, etc.).
+	•	No build step, no dependencies, just a single JS file.
+	•	Good for local services that want a “smart” FAQ & price helper without paying for external AI APIs.
+
+Feel free to fork this repo, adapt the script for your own city or niche (e.g. car rental, tours, small hotel), and improve the logic to better match your content.
