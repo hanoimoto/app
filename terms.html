@@ -1473,46 +1473,122 @@
       }
     }
 
-    /* === CSS CHO NỘI DUNG TRANG TERMS === */
-    #terms-content h3 {
+    /* === CSS CHO NỘI DUNG TRANG TERMS (BẢN XỊN) === */
+    #terms-content{
+      padding: 40px 16px 56px;
+      background:
+        radial-gradient(circle at top, rgba(214,0,28,0.12), transparent 60%);
+    }
+    
+    :root[data-theme="dark"] #terms-content{
+       background:
+        radial-gradient(circle at top, rgba(214,0,28,0.25), transparent 60%);
+    }
+
+    #terms-content .container-max{
+      max-width: 900px;
+      margin: 0 auto;
+      padding-bottom: 0; /* Reset padding từ style inline cũ */
+    }
+
+    /* Card chính cho toàn bộ điều khoản */
+    .terms-card{
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 24px 20px 28px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    :root[data-theme="dark"] .terms-card{
+      box-shadow: 0 18px 40px rgba(0,0,0,0.75);
+      border-color: rgba(255,255,255,0.08);
+    }
+
+    /* Tiêu đề trang */
+    #terms-content h2{
+      font-weight: 800;
+      font-size: 1.8rem;
+    }
+
+    /* Subtitle dưới H2 */
+    #terms-content .page-subtitle{
+      font-size: 1.02rem;
+      color: var(--muted);
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 18px;
+    }
+
+    /* Heading từng mục */
+    #terms-content h3{
       font-weight: 700;
-      margin-top: 24px;
-      margin-bottom: 12px;
+      margin-top: 28px;
+      margin-bottom: 10px;
+      font-size: 1.25rem;
       color: var(--primary);
+      position: relative;
+      padding-left: 10px;
     }
-    #terms-content h4 {
+    #terms-content h3::before{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 4px;
+      bottom: 4px;
+      width: 3px;
+      border-radius: 999px;
+      background: linear-gradient(180deg,#D6001C,#ff9900);
+    }
+
+    #terms-content h4{
       font-weight: 600;
-      font-size: 1.15rem;
+      font-size: 1.08rem;
       margin-top: 18px;
-    }
-    #terms-content ul {
-      margin-top: 8px;
-      padding-left: 24px;
-    }
-    #terms-content li {
       margin-bottom: 6px;
     }
-    #terms-content p, #terms-content li {
-      line-height: 1.6;
+
+    /* Đoạn & list */
+    #terms-content p,
+    #terms-content li{
+      line-height: 1.65;
+      font-size: 0.96rem;
     }
-    #terms-content a {
+
+    #terms-content ul{
+      margin-top: 6px;
+      margin-bottom: 10px;
+      padding-left: 22px;
+    }
+    #terms-content li{
+      margin-bottom: 6px;
+    }
+
+    /* Link trong body */
+    #terms-content a{
       text-decoration: underline;
       color: var(--primary);
       font-weight: 600;
     }
-    #terms-content .page-subtitle {
-      font-size: 1.1rem;
-      color: var(--muted);
-      text-align: center;
-      max-width: 750px;
-      margin: 0 auto 16px;
+    :root[data-theme="dark"] #terms-content h3{
+      color: #FFD700;
+    }
+    :root[data-theme="dark"] #terms-content a{
+      color: #FFD700;
     }
 
-    :root[data-theme="dark"] #terms-content h3 {
-      color: #FFD700;
+    /* Hộp lưu ý quan trọng (nếu cần dùng) */
+    .terms-callout{
+      margin: 18px 0;
+      border-radius: 14px;
+      padding: 12px 14px;
+      background: rgba(214,0,28,0.04);
+      border-left: 4px solid var(--primary);
+      font-size: 0.94rem;
     }
-    :root[data-theme="dark"] #terms-content a {
-      color: #FFD700;
+    :root[data-theme="dark"] .terms-callout{
+      background: rgba(0,0,0,0.45);
+      border-left-color: #FFD700;
     }
 
   </style>
@@ -1752,84 +1828,93 @@
     </div>
   </section>
 
-  <!-- ===== START: NỘI DUNG MỚI THAY THẾ ===== -->
+  <!-- ===== START: NỘI DUNG ĐÃ CẬP NHẬT ===== -->
   <section id="terms-content" class="fade-in" aria-labelledby="terms-title-id">
-    <div class="container-max" style="max-width: 900px; padding-bottom: 32px;">
-      <h2 class="text-center mb-3" id="terms-title-id" style="padding-top: 16px;">Terms of Service: Hanoi Motorbike Rental & Sale</h2>
-      <p class="page-subtitle">
-        Please review these terms carefully before using our Hanoi motorbike rental or sale services. By renting or purchasing a motorbike, you agree to these conditions.
-      </p>
+    <!-- Đã bỏ style inline padding-bottom: 32px; -->
+    <div class="container-max" style="max-width: 900px;">
       
-      <hr class="my-4" style="opacity: 0.2;">
+      <!-- ===== THÊM DÒNG NÀY ===== -->
+      <div class="terms-card">
 
-      <!-- 1. General Terms -->
-      <h3>1. General Service Agreement</h3>
-      <p>
-        These terms apply to all services provided by "Hanoi Motorbike Rental and Sale" (referred to as "we", "us", or "our"), including motorbike rentals and used motorbike sales in Hanoi. We reserve the right to modify these terms at any time.
-      </p>
+        <h2 class="text-center mb-3" id="terms-title-id" style="padding-top: 16px;">
+          Terms of Service: Hanoi Motorbike Rental & Sale
+        </h2>
+        <p class="page-subtitle">
+          Please review these terms carefully before using our Hanoi motorbike rental or sale services. 
+          By renting or purchasing a motorbike, you agree to these conditions.
+        </p>
+        
+        <hr class="my-4" style="opacity: 0.2;">
 
-      <!-- 2. Motorbike Rental Terms -->
-      <h3>2. Motorbike Rental Conditions</h3>
-      
-      <h4>2.1. Rental Requirements</h4>
-      <p>
-        Renters must provide a valid original Passport or Vietnamese ID (CCCD). For some high-value models, a cash deposit may be required. Renters must be legally eligible to operate a motorbike in Vietnam.
-      </p>
+        <!-- 1. General Terms -->
+        <h3>1. General Service Agreement</h3>
+        <p>
+          These terms apply to all services provided by "Hanoi Motorbike Rental and Sale" (referred to as "we", "us", or "our"), including motorbike rentals and used motorbike sales in Hanoi. We reserve the right to modify these terms at any time.
+        </p>
 
-      <h4>2.2. Rental Agreement & Payment</h4>
-      <p>
-        All rentals require a signed rental agreement. Payment for the rental period is due in advance. For <strong><a href="rental.html" title="Hanoi Long-Term Motorbike Rental">long-term motorbike rental</a></strong>, monthly payments can be arranged. We accept cash (VND) and bank transfers.
-      </p>
+        <!-- 2. Motorbike Rental Terms -->
+        <h3>2. Motorbike Rental Conditions</h3>
+        
+        <h4>2.1. Rental Requirements</h4>
+        <p>
+          Renters must provide a valid original Passport or Vietnamese ID (CCCD). For some high-value models, a cash deposit may be required. Renters must be legally eligible to operate a motorbike in Vietnam.
+        </p>
 
-      <h4>2.3. Renter's Responsibility (Damage, Loss, Theft)</h4>
-      <p>
-        The renter is fully responsible for the motorbike from the time of pickup until its return.
-      </p>
-      <ul>
-        <li><strong>Damage:</strong> The renter is liable for all costs associated with damage to the motorbike during the rental period, including parts, labor, and loss of rental income.</li>
-        <li><strong>Loss/Theft:</strong> In the event of theft or total loss, the renter is liable for the full market value of the motorbike. We strongly recommend always locking the motorbike securely and parking in designated areas.</li>
-        <li><strong>Traffic Violations:</strong> The renter is responsible for all traffic violations and fines incurred during the rental period.</li>
-      </ul>
+        <h4>2.2. Rental Agreement & Payment</h4>
+        <p>
+          All rentals require a signed rental agreement. Payment for the rental period is due in advance. For <strong><a href="rental.html" title="Hanoi Long-Term Motorbike Rental">long-term motorbike rental</a></strong>, monthly payments can be arranged. We accept cash (VND) and bank transfers.
+        </p>
 
-      <h4>2.4. Maintenance and Breakdown</h4>
-      <p>
-        We provide well-maintained motorbikes. For rentals over one month, we provide free periodic maintenance. In case of a breakdown, please <strong><a href="contact.html" title="Contact Hanoi Motorbike Rental">contact us</a></strong> immediately for assistance. Do not attempt major repairs without our authorization. Flat tires are the responsibility of the renter.
-      </p>
+        <h4>2.3. Renter's Responsibility (Damage, Loss, Theft)</h4>
+        <p>
+          The renter is fully responsible for the motorbike from the time of pickup until its return.
+        </p>
+        <ul>
+          <li><strong>Damage:</strong> The renter is liable for all costs associated with damage to the motorbike during the rental period, including parts, labor, and loss of rental income.</li>
+          <li><strong>Loss/Theft:</strong> In the event of theft or total loss, the renter is liable for the full market value of the motorbike. We strongly recommend always locking the motorbike securely and parking in designated areas.</li>
+          <li><strong>Traffic Violations:</strong> The renter is responsible for all traffic violations and fines incurred during the rental period.</li>
+        </ul>
 
-      <!-- 3. Motorbike Sale Terms -->
-      <h3>3. Used Motorbike Sale Conditions</h3>
-      
-      <h4>3.1. Paperwork and Ownership</h4>
-      <p>
-        All motorbikes for sale include the official "Blue Card" (Cavet) and necessary paperwork for legal ownership. We assist with the ownership transfer process. The transfer process and any associated fees are handled according to Vietnamese law.
-      </p>
-      
-      <h4>3.2. Bike Condition & Warranty</h4>
-      <p>
-        All used motorbikes are sold in "as-is" condition after being fully serviced. We ensure the bike is in good running order at the time of <strong><a href="sale.html" title="Used Motorbikes for Sale in Hanoi">sale</a></strong>. We offer a limited engine warranty for a specified period (e.g., 30 days) on most models, covering major internal engine failure. This warranty does not cover wearable parts (tires, brakes, chain) or damage caused by misuse or accidents.
-      </p>
-      
-      <h4>3.3. Buy-Back Guarantee</h4>
-      <p>
-        We offer a buy-back guarantee for motorbikes sold by us. The buy-back price will be
-        determined based on the bike's condition and the duration of use.
-      </p>
+        <h4>2.4. Maintenance and Breakdown</h4>
+        <p>
+          We provide well-maintained motorbikes. For rentals over one month, we provide free periodic maintenance. In case of a breakdown, please <strong><a href="contact.html" title="Contact Hanoi Motorbike Rental">contact us</a></strong> immediately for assistance. Do not attempt major repairs without our authorization. Flat tires are the responsibility of the renter.
+        </p>
 
-      <!-- 4. Privacy -->
-      <h3>4. Privacy Policy</h3>
-      <p>
-        We collect personal information (name, passport/ID, contact details) solely for the purpose of the rental or sale agreement. We do not share your data with third parties, except as required by law. Please see our full <strong><a href="privacy.html" title="Privacy Policy">Privacy Policy</a></strong> for more details.
-      </p>
-      
-      <!-- 5. Limitation of Liability -->
-      <h3>5. Limitation of Liability</h3>
-      <p>
-        Riding a motorbike in Hanoi carries significant risks. We are not responsible for any injury, death, or property damage sustained by the renter or any third party. The renter assumes all risks associated with operating the motorbike. We do not provide personal medical or liability insurance.
-      </p>
+        <!-- 3. Motorbike Sale Terms -->
+        <h3>3. Used Motorbike Sale Conditions</h3>
+        
+        <h4>3.1. Paperwork and Ownership</h4>
+        <p>
+          All motorbikes for sale include the official "Blue Card" (Cavet) and necessary paperwork for legal ownership. We assist with the ownership transfer process. The transfer process and any associated fees are handled according to Vietnamese law.
+        </p>
+        
+        <h4>3.2. Bike Condition & Warranty</h4>
+        <p>
+          All used motorbikes are sold in "as-is" condition after being fully serviced. We ensure the bike is in good running order at the time of <strong><a href="sale.html" title="Used Motorbikes for Sale in Hanoi">sale</a></strong>. We offer a limited engine warranty for a specified period (e.g., 30 days) on most models, covering major internal engine failure. This warranty does not cover wearable parts (tires, brakes, chain) or damage caused by misuse or accidents.
+        </p>
+        
+        <h4>3.3. Buy-Back Guarantee</h4>
+        <p>
+          We offer a buy-back guarantee for motorbikes sold by us. The buy-back price will be
+          determined based on the bike's condition and the duration of use.
+        </p>
 
+        <!-- 4. Privacy -->
+        <h3>4. Privacy Policy</h3>
+        <p>
+          We collect personal information (name, passport/ID, contact details) solely for the purpose of the rental or sale agreement. We do not share your data with third parties, except as required by law. Please see our full <strong><a href="privacy.html" title="Privacy Policy">Privacy Policy</a></strong> for more details.
+        </p>
+        
+        <!-- 5. Limitation of Liability -->
+        <h3>5. Limitation of Liability</h3>
+        <p>
+          Riding a motorbike in Hanoi carries significant risks. We are not responsible for any injury, death, or property damage sustained by the renter or any third party. The renter assumes all risks associated with operating the motorbike. We do not provide personal medical or liability insurance.
+        </p>
+
+      </div><!-- ===== HẾT .terms-card ===== -->
     </div>
   </section>
-  <!-- ===== END: NỘI DUNG MỚI THAY THẾ ===== -->
+  <!-- ===== END: NỘI DUNG ĐÃ CẬP NHẬT ===== -->
 </main>
 <!-- ===== FOOTER (GIỮ NGUYÊN) ===== -->
 <footer id="footer" class="fade-in" role="contentinfo" aria-labelledby="footer-title-id">
