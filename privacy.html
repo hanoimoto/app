@@ -1,0 +1,2130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- YÊU CẦU 3: Cập nhật Title, Description, Canonical cho trang Privacy -->
+  <title>Privacy Policy | Hanoi Motorbike Rental and Sale</title>
+  <meta name="description" content="Read the Privacy Policy for Hanoi Motorbike Rental and Sale. We explain how we collect and use your data for our motorbike rental and sale services in Hanoi." />
+  <meta name="keywords" content="Hanoi motorbike rental privacy, Hanoi motorbike sale policy" />
+  
+  <meta name="author" content="Hanoi Motorbike Rental and Sale" />
+  <meta http-equiv="Content-Language" content="en-US" />
+  
+  <!-- Trang policy nên được index -->
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://hanoimoto.github.io/app/privacy.html" />
+
+  <link rel="icon" href="https://raw.githubusercontent.com/hanoimoto/app/refs/heads/main/IMG_0045.png" type="image/png" />
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/hanoimoto/app/refs/heads/main/IMG_0045.png" />
+
+  <meta name="theme-color" content="#D6001C" />
+  
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+
+  <meta property="og:title" content="Privacy Policy | Hanoi Motorbike Rental & Sale" />
+  <meta property="og:description" content="Read the Privacy Policy for Hanoi Motorbike Rental and Sale. We explain how we collect and use your data for our motorbike rental and sale services in Hanoi." />
+  <meta property="og:url" content="https://hanoimoto.github.io/app/privacy.html" />
+  <meta property="og:site_name" content="Hanoi Motorbike Rental and Sale" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/hanoimoto/app/refs/heads/main/IMG_0045.png" />
+  <meta property="og:image:alt" content="Hanoi motorbike rental and sale shop in Long Bien, Hanoi" />
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Privacy Policy | Hanoi Motorbike Rental & Sale" />
+  <meta name="twitter:description" content="Read the Privacy Policy for Hanoi Motorbike Rental and Sale. We explain how we collect and use your data." />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/hanoimoto/app/refs/heads/main/IMG_0045.png" />
+
+  <meta name="geo.region" content="VN-HN" />
+  <meta name="geo.placename" content="Hanoi" />
+  <meta name="geo.position" content="21.040922;105.869287" />
+  <meta name="ICBM" content="21.040922, 105.869287" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+ 
+  <!-- CSS NGUYÊN BẢN TỪ INDEX.HTML -->
+  <style>
+    :root{
+      --primary:#D6001C;
+      --accent:#fff;
+      --muted:#7a7a7a;
+
+      --bg:#ffffff;
+      --text:#111111;
+      --card-bg:#ffffff;
+      --header-bg:linear-gradient(135deg,#D6001C,#8B0000);
+      --footer-bg:linear-gradient(135deg, #0f0f0f 10%, #1c1c1c 50%, #330000 100%);
+
+      --fade-duration: 0.9s;
+    }
+
+    :root[data-theme="dark"]{
+      --bg:#050509;
+      --text:#f5f5f5;
+      --card-bg:#11111a;
+      --header-bg:rgba(0,0,0,0.9);
+      --footer-bg:linear-gradient(135deg,#000000 10%, #141414 50%, #330000 100%);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      font-family:Inter, "Be Vietnam Pro", Arial, sans-serif;
+      margin:0;
+      color:var(--text);
+      background:var(--bg);
+      -webkit-font-smoothing:antialiased;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(18px) scale(0.98);
+      filter: blur(4px);
+      transition:
+        opacity var(--fade-duration) ease-out,
+        transform var(--fade-duration) ease-out,
+        filter var(--fade-duration) ease-out;
+      transition-delay: var(--fade-delay, 0s);
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+
+    /* ===== HEADER ===== */
+    header{
+      position:sticky;
+      top:0;
+      z-index:1200;
+      background:var(--header-bg);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color:#fff;
+      box-shadow:0 4px 14px rgba(0,0,0,0.12);
+      transition: padding 0.3s ease;
+    }
+    
+    .brand-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:10px 16px;
+      gap:12px;
+      max-width:1200px;
+      margin:auto;
+      transition: padding 0.3s ease;
+    }
+
+    header.header-compact .brand-row{
+      padding-top:6px;
+      padding-bottom:6px;
+    }
+    header.header-compact .logo-wrap{
+      transform:scale(0.88);
+    }
+
+    .brand-left{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:#fff;
+    }
+
+    .logo-wrap{
+      position:relative;
+      width:52px;
+      height:52px;
+      border-radius:16px;
+      overflow:hidden;
+      background:linear-gradient(135deg,var(--primary),#FF3C3C);
+      box-shadow:0 6px 18px rgba(0,0,0,0.45);
+      flex-shrink:0;
+      transition: transform .2s ease;
+    }
+    .logo-wrap img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .logo-tag{
+      position:absolute;
+      bottom:2px;
+      right:4px;
+      font-size:11px;
+      font-weight:800;
+      padding:2px 6px;
+      border-radius:999px;
+      background:rgba(0,0,0,0.7);
+      color:#FFD700;
+      letter-spacing:0.06em;
+      text-transform:uppercase;
+    }
+
+    .brand-text .site-title{
+      font-weight:800;
+      color:#fff;
+      margin:0;
+      font-size:16px;
+      line-height: 1.2;
+    }
+    .brand-text .site-sub{
+      font-size:12px;
+      color:rgba(255,255,255,0.9);
+      line-height: 1.2;
+    }
+
+    .brand-right{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .status-pill{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      padding:6px 11px;
+      border-radius:999px;
+      background:rgba(0,0,0,0.55);
+      box-shadow:0 6px 18px rgba(0,0,0,0.15);
+      font-size:12px;
+      font-weight:600;
+      white-space:nowrap;
+      border:1px solid rgba(255,255,255,0.16);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      cursor:pointer;
+    }
+    .status-dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:#22c55e;
+      box-shadow:0 0 0 6px rgba(34,197,94,0.25);
+      animation:pulseStatus 1.7s ease-out infinite;
+    }
+    .status-label-main{
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      font-size:10px;
+      opacity:0.9;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+    .status-label-hours{
+      font-weight:700;
+      font-size:12px;
+      line-height: 1;
+    }
+    @keyframes pulseStatus{
+      0%{ transform:scale(1); box-shadow:0 0 0 0px rgba(34,197,94,0.6); }
+      70%{ transform:scale(1); box-shadow:0 0 0 6px rgba(34,197,94,0); }
+      100%{ transform:scale(1); box-shadow:0 0 0 0px rgba(34,197,94,0); }
+    }
+
+    .status-pill.closed{
+      background:rgba(0,0,0,0.7);
+      border-color:rgba(248,113,113,0.7);
+    }
+    .status-pill.closed .status-dot{
+      background:#ef4444;
+      box-shadow:0 0 0 4px rgba(248,113,113,0.55);
+      animation:none;
+    }
+
+    .status-popover{
+      position:fixed;
+      top:64px;
+      right:16px;
+      background:rgba(10,10,15,0.97);
+      color:#f5f5f5;
+      padding:10px 12px;
+      border-radius:14px;
+      box-shadow:0 18px 40px rgba(0,0,0,0.6);
+      font-size:12px;
+      width:230px;
+      max-width:calc(100% - 32px);
+      z-index:1300;
+      opacity:0;
+      transform:translateY(-10px);
+      pointer-events:none;
+      transition:opacity .2s ease, transform .2s ease;
+      border:1px solid rgba(255,255,255,0.12);
+    }
+    .status-popover.show{
+      opacity:1;
+      transform:translateY(0);
+      pointer-events:auto;
+    }
+    .status-popover-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:6px;
+    }
+    .status-popover-title{
+      font-weight:700;
+      font-size:12px;
+    }
+    .status-popover-tz{
+      font-size:10px;
+      opacity:0.7;
+    }
+    .status-popover-row{
+      display:flex;
+      justify-content:space-between;
+      font-size:12px;
+      margin-bottom:4px;
+    }
+    .status-popover-note{
+      margin-top:6px;
+      font-size:11px;
+      opacity:0.8;
+    }
+
+    @media (max-width: 575.98px) {
+      .status-popover{
+        left:8px;
+        right:8px;
+        width:auto;
+        top:70px;
+      }
+    }
+
+    .mobile-menu-btn{background:transparent;border:2px solid rgba(255,255,255,0.08);color:#fff;padding:6px 10px;border-radius:8px;}
+
+    /* ===== Desktop Navigation & Dropdowns (UPDATED) ===== */
+    nav.desktop-nav ul{
+      display:flex;
+      gap:14px;
+      list-style:none;
+      margin:0;
+      padding:0;
+      align-items:center;
+    }
+    
+    nav.desktop-nav a.nav-link-item{
+      position:relative;
+      color:#fff;
+      font-weight:700;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:8px 6px;
+      border-radius:8px;
+      text-decoration:none;
+      transition:transform .18s, color .18s;
+    }
+
+    nav.desktop-nav a.nav-link-item::after{
+      content:"";
+      position:absolute;
+      left:10px;
+      right:10px;
+      bottom:3px;
+      height:2px;
+      border-radius:999px;
+      background:linear-gradient(90deg,#FFD700,#FF3C3C);
+      transform:scaleX(0);
+      transform-origin:center;
+      transition:transform .2s ease-out, opacity .2s;
+      opacity:0;
+    }
+
+    nav.desktop-nav a.nav-link-item:hover{
+      transform:translateY(-3px);
+    }
+    nav.desktop-nav a.nav-link-item:hover::after{
+      transform:scaleX(1);
+      opacity:1;
+    }
+
+    nav.desktop-nav a.nav-link-item.active{
+      color:#FFD700;
+    }
+    nav.desktop-nav a.nav-link-item.active::after{
+      transform:scaleX(1);
+      opacity:1;
+    }
+
+    .has-dropdown{ position:relative; }
+    .has-dropdown .dropdown-toggle{
+      background:transparent;
+      border:none;
+      color:#fff;
+      font-weight:700;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:8px 6px;
+      border-radius:8px;
+      cursor:pointer;
+      font-family: inherit;
+      font-size: inherit;
+    }
+    .has-dropdown .dropdown-toggle:hover{
+      transform:translateY(-3px);
+    }
+    .has-dropdown .dropdown-menu{
+      position:absolute;
+      top:110%;
+      left:0;
+      min-width:180px;
+      padding:8px 0;
+      margin:0;
+      list-style:none;
+      background:rgba(0,0,0,0.9);
+      border-radius:10px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.5);
+      opacity:0;
+      visibility:hidden;
+      transform:translateY(8px);
+      transition:opacity .2s ease, transform .2s ease, visibility .2s;
+      z-index:1500;
+    }
+    .has-dropdown .dropdown-menu li a{
+      display:block;
+      width:100%;
+      padding:8px 14px;
+      border-radius:0;
+      justify-content:flex-start;
+      color: #fff;
+      font-weight: 600;
+    }
+    .has-dropdown .dropdown-menu li a:hover{
+      background:rgba(255,255,255,0.06);
+      color: #FFD700;
+    }
+    .has-dropdown:hover .dropdown-menu{
+      opacity:1;
+      visibility:visible;
+      transform:translateY(0);
+    }
+
+    .theme-toggle{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.35);
+      color:#fff;
+      border-radius:999px;
+      padding:6px 10px;
+      font-size:0.9rem;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      cursor:pointer;
+    }
+
+    #offcanvasMenu{
+      background:transparent;
+      border:0;
+    }
+    .offcanvas-backdrop.show{
+      background-color:rgba(0,0,0,0.7);
+    }
+    #offcanvasMenu .offcanvas-sheet{
+      background:rgba(10,10,15,0.98);
+      border-radius:22px;
+      margin:8px;
+      padding:16px 14px 18px;
+      box-shadow:0 22px 60px rgba(0,0,0,0.8);
+      color:#f5f5f5;
+
+      height:calc(100vh - 16px);
+      display:flex;
+      flex-direction:column;
+    }
+
+    :root[data-theme="light"] #offcanvasMenu .offcanvas-sheet{
+      background:#ffffff;
+      color:#111111;
+      box-shadow:0 22px 40px rgba(0,0,0,0.12);
+    }
+
+    :root[data-theme="light"] .menu-panel{
+      background:#ffffff;
+      color:#111;
+      border:1px solid rgba(0,0,0,0.06);
+      box-shadow:0 12px 24px rgba(0,0,0,0.08);
+    }
+
+    :root[data-theme="light"] .menu-link-icon{
+      background:rgba(0,0,0,0.06);
+      color:#000;
+    }
+
+    :root[data-theme="light"] .menu-tile{
+      background:#f6f6f6;
+      color:#111;
+    }
+
+    :root[data-theme="light"] .menu-tile-icon{
+      background:rgba(0,0,0,0.05);
+      color:#000;
+    }
+
+    :root[data-theme="light"] .menu-link-row:hover{
+      background:rgba(0,0,0,0.06);
+    }
+
+    :root[data-theme="light"] .submenu a{
+      color:#111;
+    }
+
+    :root[data-theme="light"] .menu-link-row {
+      color: #111111;
+    }
+
+    :root[data-theme="light"] .menu-link-row span {
+      color: #111111;
+    }
+
+    :root[data-theme="light"] .menu-section-title {
+      color: #555555;
+      opacity: 0.9;
+    }
+
+
+    #offcanvasMenu .offcanvas-header{
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      padding:0 0 10px 0;
+      margin-bottom:10px;
+      flex-shrink:0;
+    }
+    #offcanvasMenu .offcanvas-header h5{
+      margin:0;
+      font-weight:700;
+    }
+    
+    #offcanvasMenu .offcanvas-body{
+      padding: 0 0 80px 0;
+      overflow-y:auto;
+    }
+    @supports (padding: max(0px)) {
+      #offcanvasMenu .offcanvas-body{
+        padding-bottom: max(80px, env(safe-area-inset-bottom) + 24px);
+      }
+    }
+
+    .menu-panel{
+      background:rgba(22,22,30,0.98);
+      border-radius:18px;
+      padding:14px;
+      margin-bottom:14px;
+      box-shadow:0 10px 26px rgba(0,0,0,0.6);
+    }
+
+    .menu-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+    }
+    .menu-tile{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      justify-content:flex-start;
+      gap:4px;
+      padding:10px 9px;
+      border-radius:14px;
+      background:rgba(0,0,0,0.45);
+      color:#f5f5f5;
+      text-decoration:none;
+      font-size:0.87rem;
+      font-weight:600;
+    }
+    .menu-tile-icon{
+      width:30px;
+      height:30px;
+      border-radius:999px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(255,255,255,0.1);
+      margin-bottom:2px;
+      font-size:1.1rem;
+    }
+
+    .menu-link-row{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:9px 6px;
+      border-radius:12px;
+      text-decoration:none;
+      color:#f5f5f5;
+      font-weight:600;
+      font-size:0.95rem;
+    }
+
+    button.menu-link-row,
+    .menu-link-row.service-toggle {
+      background: transparent;
+      border: 0;
+      color: #f5f5f5;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .menu-link-row + .menu-link-row{
+      margin-top:4px;
+    }
+    .menu-link-row:hover{
+      background:rgba(255,255,255,0.06);
+    }
+    .menu-link-icon{
+      width:30px;
+      height:30px;
+      border-radius:999px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(255,255,255,0.06);
+      font-size:1.1rem;
+    }
+    .menu-section-title{
+      font-size:0.85rem;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      opacity:0.7;
+      margin-bottom:6px;
+    }
+
+    .submenu {
+      margin-left: 46px;
+      margin-top: 4px;
+      display: none;
+      flex-direction: column;
+    }
+    .submenu a {
+      padding: 7px 6px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      opacity: 0.9;
+      color: #fff;
+      text-decoration: none;
+    }
+    .submenu a::before {
+      content: "• ";
+      opacity: 0.85;
+    }
+    .submenu.show {
+      display: flex;
+    }
+    .service-toggle .chevron {
+      margin-left:auto;
+      transition: transform .25s;
+    }
+    .service-toggle.open .chevron {
+      transform: rotate(90deg);
+    }
+
+    .offcanvas-theme-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-top:6px;
+      padding-top:8px;
+      border-top:1px solid rgba(255,255,255,0.08);
+    }
+    .offcanvas-theme-label{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-weight:600;
+      color:#f5f5f5;
+    }
+
+    .switch{
+      position:relative;
+      display:inline-block;
+      width:46px;
+      height:24px;
+      margin-bottom:0;
+    }
+    .switch input{
+      opacity:0;
+      width:0;
+      height:0;
+    }
+    .slider{
+      position:absolute;
+      cursor:pointer;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      background-color:#666;
+      transition:.3s;
+      border-radius:34px;
+    }
+    .slider:before{
+      position:absolute;
+      content:"";
+      height:18px;
+      width:18px;
+      left:3px;
+      bottom:3px;
+      background-color:#fff;
+      transition:.3s;
+      border-radius:50%;
+    }
+    .switch input:checked + .slider{
+      background-color:#22c55e;
+    }
+    .switch input:checked + .slider:before{
+      transform:translateX(22px);
+    }
+
+    /* ===== HERO – Mini App Ultra 2025 (text only, no image) ===== */
+    #hero{
+      min-height:78vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      padding:72px 16px 48px;
+      color:var(--accent);
+      overflow:hidden;
+      background: linear-gradient(135deg,#050509 0%, #2a0000 50%, #120000 100%);
+    }
+
+    #hero .light-shimmer{
+      position:absolute;
+      left:-20%;
+      top:-30%;
+      width:180%;
+      height:180%;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(255,255,255,0.08), transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(255,0,0,0.12), transparent 55%);
+      mix-blend-mode:screen;
+      pointer-events:none;
+      animation:shimmer 14s linear infinite;
+    }
+    @keyframes shimmer{
+      0%{transform:translateX(-10%) translateY(0)}
+      50%{transform:translateX(12%) translateY(4%)}
+      100%{transform:translateX(-10%) translateY(0)}
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:4;
+      max-width:1100px;
+      margin:auto;
+    }
+
+    .hero-card{
+      display:block;
+      border-radius:26px;
+      background:linear-gradient(135deg,rgba(255,255,255,0.06),rgba(0,0,0,0.7));
+      border:1px solid rgba(255,255,255,0.10);
+      box-shadow:
+        0 24px 70px rgba(0,0,0,0.65),
+        0 0 0 1px rgba(255,255,255,0.05) inset;
+      padding:24px 22px 22px;
+      backdrop-filter:blur(22px);
+      -webkit-backdrop-filter:blur(22px);
+      transform-style:preserve-3d;
+      transition:transform 0.15s ease, box-shadow .25s ease;
+    }
+
+    .hero-main{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+
+    .hero-top-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .hero-chip-main{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:4px 10px;
+      border-radius:999px;
+      background:rgba(0,0,0,0.7);
+      border:1px solid rgba(255,255,255,0.18);
+      text-transform:uppercase;
+      letter-spacing:0.12em;
+      font-size:0.7rem;
+      color:#FFD700;
+    }
+    .hero-chip-dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:#22c55e;
+      box-shadow:0 0 0 6px rgba(34,197,94,0.4);
+    }
+
+    .hero-chip-side{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:4px 10px;
+      border-radius:999px;
+      background:rgba(0,0,0,0.45);
+      border:1px solid rgba(255,255,255,0.12);
+      font-size:0.75rem;
+      color:rgba(255,255,255,0.9);
+    }
+
+    .hero-title{
+      font-size:2.6rem;
+      font-weight:800;
+      margin:2px 0 2px;
+      line-height:1.02;
+      color:#fff;
+    }
+    .hero-title.glow{
+      text-shadow:
+        0 0 16px rgba(255,0,0,0.7),
+        0 0 40px rgba(255,255,255,0.6);
+      animation:glowPulse 3s ease-in-out infinite alternate;
+    }
+    @keyframes glowPulse{
+      from { text-shadow:0 0 10px rgba(255,0,0,0.7),0 0 30px rgba(255,96,0,0.8); }
+      to   { text-shadow:0 0 18px rgba(255,255,255,0.9),0 0 60px rgba(255,0,0,0.9); }
+    }
+
+    .hero-sub{
+      font-size:1.05rem;
+      margin-bottom:0;
+      color:rgba(255,255,255,0.92);
+      max-width:620px;
+    }
+
+    .hero-specs-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:8px;
+    }
+
+    .hero-spec-card{
+      min-width:150px;
+      padding:8px 10px;
+      border-radius:16px;
+      background:rgba(0,0,0,0.6);
+      border:1px solid rgba(255,255,255,0.16);
+      box-shadow:0 12px 30px rgba(0,0,0,0.6);
+      font-size:0.8rem;
+    }
+    .hero-spec-label{
+      text-transform:uppercase;
+      letter-spacing:0.14em;
+      font-size:0.68rem;
+      opacity:0.75;
+    }
+    .hero-spec-main{
+      font-size:0.98rem;
+      font-weight:700;
+    }
+    .hero-spec-sub{
+      font-size:0.78rem;
+      opacity:0.82;
+    }
+
+    .hero-tags-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:10px;
+    }
+    .hero-tag{
+      font-size:0.75rem;
+      padding:4px 9px;
+      border-radius:999px;
+      background:rgba(0,0,0,0.55);
+      border:1px solid rgba(255,255,255,0.14);
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
+    .hero-mini-note{
+      margin-top:6px;
+      font-size:0.86rem;
+      opacity:0.9;
+      color:rgba(255,255,255,0.86);
+    }
+
+    .bike-anim{
+      position:absolute;
+      bottom:4%;
+      left:-18%;
+      font-size:48px;
+      transform-origin:center;
+      z-index:5;
+      will-change:transform,left,opacity;
+      animation:bikeRun 8s linear infinite;
+      filter: drop-shadow(0 16px 18px rgba(0,0,0,0.6));
+      user-select:none;
+      pointer-events:none;
+    }
+    @keyframes bikeRun{
+      0% { left:-20%; transform: translateY(0) scale(0.9); opacity:0; }
+      8% { opacity:1; }
+      45% { left:50%; transform: translateY(-8px) scale(1.05); }
+      90% { left:115%; opacity:1; transform: translateY(0) scale(0.98); }
+      100% { left:125%; opacity:0; transform: translateY(0) scale(1); }
+    }
+
+    @media (min-width: 992px){
+      .hero-title{ font-size:3rem; }
+    }
+
+    @media (max-width: 991.98px){
+      .hero-card{
+        padding:20px 18px 18px;
+        border-radius:22px;
+      }
+    }
+
+    @media (max-width: 575.98px){
+      #hero{
+        padding-top:64px;
+      }
+      .hero-card{
+        padding:18px 14px 16px;
+      }
+      .hero-specs-row{
+        gap:8px;
+      }
+      .hero-spec-card{
+        min-width:0;
+        flex:1;
+      }
+      .hero-main{
+        align-items:flex-start;
+      }
+      .hero-top-row{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+
+    .btn-site{
+      background: linear-gradient(90deg,#D6001C,#8B0000);
+      color:#fff;
+      font-weight:800;
+      padding:10px 18px;
+      border-radius:999px;
+      border:none;
+      box-shadow:0 8px 26px rgba(214,0,28,0.25);
+      text-decoration:none;
+    }
+    .btn-site:hover{transform:translateY(-4px)}
+
+    .btn-wp {
+      background: linear-gradient(90deg,#D6001C,#8B0000);
+      color: #fff;
+      border-radius: 999px;
+      padding: 10px 18px;
+      font-weight:800;
+      box-shadow:0 0 20px rgba(214,0,28,0.45);
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      border:none;
+      cursor:pointer;
+      animation: pulseGlow 3s infinite ease-in-out, slightShake 6s infinite;
+      text-decoration:none;
+    }
+    @keyframes pulseGlow {
+      0%,100%{
+        box-shadow:0 0 12px rgba(214,0,28,0.45),
+                   0 0 24px rgba(214,0,28,0.3);
+      }
+      50%{
+        box-shadow:0 0 30px rgba(214,0,28,0.9),
+                   0 0 60px rgba(214,0,28,0.45);
+      }
+    }
+
+    @keyframes slightShake {
+      0%,92%,100%{transform:translateX(0)}
+      93%{transform:translateX(-2px)}
+      94%{transform:translateX(2px)}
+      95%{transform:translateX(-1px)}
+      96%{transform:translateX(1px)}
+    }
+
+    /* ===== SECTIONS & CARDS ===== */
+    section{padding:48px 16px}
+    .container-max{max-width:1100px;margin:0 auto}
+    .bike-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media(max-width:992px){.bike-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:576px){.bike-grid{grid-template-columns:1fr}}
+
+    .bike-card{
+      background:var(--card-bg);
+      border-radius:12px;
+      padding:14px;
+      text-align:center;
+      box-shadow:0 12px 30px rgba(0,0,0,0.06);
+      transition:transform .28s;
+      overflow:hidden;
+    }
+    .bike-card:hover{transform:translateY(-8px)}
+    
+    .bike-card img{
+      width:100%;
+      height:auto;
+      max-height:260px;
+      object-fit:contain;
+      border-radius:8px;
+      margin-bottom:10px;
+    }
+
+    @media (max-width: 576px){
+      .bike-card img{
+        max-height:220px;
+      }
+    }
+    
+    .bike-card h4{font-weight:700;margin-bottom:6px}
+    .bike-note{color:var(--muted);font-size:0.95rem;margin-top:12px;text-align:center}
+
+    /* ===== FAQ ===== */
+    .accordion-button { transition: all 0.25s ease; }
+    .accordion-button:hover { transform: scale(1.01); background: #fff7f5; }
+    :root[data-theme="dark"] .accordion-item { background-color: var(--card-bg); border-color: rgba(255,255,255,0.1); }
+    :root[data-theme="dark"] .accordion-button { background-color: var(--card-bg); color: var(--text); }
+    :root[data-theme="dark"] .accordion-button:not(.collapsed) { background-color: #1a1a22; color: #fff; }
+    :root[data-theme="dark"] .accordion-button:focus { box-shadow: 0 0 0 0.25rem rgba(214, 0, 28, 0.25); }
+    :root[data-theme="dark"] .accordion-body { color: var(--text); }
+    :root[data-theme="dark"] .accordion-button:hover { background: #1a1a22; }
+
+    /* ===== Reviews (Swiper) ===== */
+    .swiper-slide{background:var(--card-bg); border-radius:12px;padding:18px;box-shadow:0 8px 30px rgba(0,0,0,0.06)}
+    .swiper-pagination-bullet{background:var(--primary) !important}
+    :root[data-theme="dark"] .swiper-slide { box-shadow:0 8px 30px rgba(255,255,255,0.03); }
+
+    /* ===== Map ===== */
+    .map-embed{width:100%;height:320px;border-radius:10px;border:0;box-shadow:0 8px 28px rgba(0,0,0,0.08)}
+    :root[data-theme="dark"] .map-embed { filter: invert(0.9) hue-rotate(180deg); }
+
+    /* ===== FOOTER (NEW) ===== */
+    footer{
+      background: var(--footer-bg);
+      color: #f5f5f5;
+      padding:40px 16px 26px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .led-border{
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      border-radius:18px;
+    }
+    .led-border::before{
+      content:"";
+      position:absolute;
+      top:-2px;left:-2px;right:-2px;bottom:-2px;
+      background:linear-gradient(90deg,#FFD700,#FF0000,#FFD700,#FF0000);
+      background-size:400% 400%;
+      z-index:1;
+      animation:moveLights 10s linear infinite;
+      border-radius:18px;
+      filter:blur(4px);
+      opacity:0.55;
+    }
+    @keyframes moveLights{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+
+    .footer-inner{
+      max-width:1100px;
+      margin:0 auto;
+      position:relative;
+      z-index:2;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:minmax(0,2fr) minmax(0,1.2fr) minmax(0,1.6fr);
+      gap:26px;
+      align-items:flex-start;
+    }
+
+    .footer-box{
+      background: rgba(0,0,0,0.22);
+      border-radius: 16px;
+      padding: 14px 16px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.55);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .footer-col-title{
+      color:#FFD700;
+      text-shadow:0 0 6px rgba(255,215,0,0.25);
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      font-size:0.9rem;
+      margin-bottom:10px;
+    }
+
+    .footer-about-text{
+      color:#f5f5f5;
+      margin-bottom:10px;
+    }
+
+    .footer-contact-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+    .footer-contact-list li{
+      display:flex;
+      gap:7px;
+      align-items:flex-start;
+      font-size:0.95rem;
+    }
+    .footer-contact-list span.icon{
+      width:18px;
+    }
+
+    .footer-link-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      column-count:1;
+      column-gap:18px;
+    }
+
+    .footer-link{
+      color:#f5f5f5;
+      display:block;
+      margin:6px 0;
+      text-decoration:none;
+    }
+
+    .footer-link-pill{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(0,0,0,0.25);
+      box-shadow:0 6px 18px rgba(0,0,0,0.4);
+      transition:transform .25s, background .25s, color .25s;
+    }
+
+    .footer-link-pill i{
+      font-size:1rem;
+    }
+
+    .footer-link:hover .footer-link-pill{
+      transform:translateX(4px);
+      background:rgba(255,215,0,0.18);
+      color:#FFD700;
+    }
+
+    .footer-social-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:10px;
+    }
+    .social-icon{
+      font-size:1.6rem;
+      color:#f5f5f5;
+      transition:transform .3s,color .3s,text-shadow .3s;
+    }
+    .social-icon:hover{
+      color:#FFD700;
+      transform:scale(1.15) rotate(-6deg);
+      text-shadow:0 0 10px #FFD700;
+    }
+
+    .footer-divider{
+      border-color:rgba(255,255,255,0.18);
+      margin-top:26px;
+      margin-bottom:14px;
+    }
+
+    .footer-bottom{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      font-size:0.85rem;
+    }
+    .back-to-top{
+      font-weight:700;
+      text-decoration:none;
+      color:#FFD700;
+      transition:all .3s;
+    }
+    .back-to-top:hover{
+      text-shadow:0 0 10px #FFD700;
+    }
+
+    @media (max-width: 992px){
+      .footer-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+      .footer-col-about{
+        grid-column:1 / -1;
+      }
+    }
+
+    @media (min-width: 768px){
+      .footer-link-list{
+        column-count:2;
+      }
+    }
+
+    @media (max-width: 575.98px){
+      .footer-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+      .footer-contact-list li{
+        justify-content:center;
+      }
+      .footer-social-row{
+        justify-content:center;
+      }
+      .footer-bottom{
+        flex-direction:column;
+        text-align:center;
+      }
+      .footer-inner{
+        padding-inline:4px;
+      }
+    }
+
+    /* ===== Floating Contact Menu Pro ===== */
+    .contact-floating{position:fixed;bottom:22px;right:18px;z-index:1000}
+    .main-btn{width:60px;height:60px;background:linear-gradient(135deg,#D6001C,#ff3c3c);border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.6rem;cursor:pointer;box-shadow:0 0 15px rgba(255,60,60,0.6);animation:pulse 2s infinite;transition:transform .2s}
+    .main-btn:hover{transform:scale(1.06)}
+    .contact-options{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:10px;opacity:0;pointer-events:none;transform:translateY(20px);transition:all .4s ease}
+    .contact-options a{width:50px;height:50px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;text-decoration:none;box-shadow:0 3px 12px rgba(0,0,0,0.25);background:linear-gradient(135deg,#ff3c3c,#ff7070);transition:all .25s}
+    .contact-options a:hover{transform:scale(1.12)}
+    .contact-floating.active .contact-options{opacity:1;pointer-events:auto;transform:translateY(0)}
+    @keyframes pulse{0%{box-shadow:0 0 10px rgba(255,60,60,0.35),0 0 20px rgba(255,60,60,0.15)}50%{box-shadow:0 0 25px rgba(255,60,60,0.6),0 0 40px rgba(255,60,60,0.25)}100%{box-shadow:0 0 10px rgba(255,60,60,0.35),0 0 20px rgba(255,60,60,0.15)}}
+
+    body.offcanvas-open-custom .contact-floating{
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px);
+      transition: opacity .3s ease, transform .3s ease; 
+    }
+
+    .muted{color:var(--muted)}
+    .text-center { text-align:center }
+    .mb-2 { margin-bottom: .5rem; }
+
+    /* ========== RESPONSIVE HEADER FIXES (Optimized) ========== */
+    
+    @media (max-width: 575.98px) {
+      .brand-row {
+        flex-wrap: wrap;
+        row-gap: 8px;
+      }
+
+      .brand-right {
+        width: 100%;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+
+      .brand-left {
+        flex: 1;
+      }
+
+      .status-pill{
+        padding:4px 9px;
+        font-size:11px;
+      }
+      .status-label-main{
+        font-size:9px;
+      }
+      .status-label-hours{
+        font-size:11px;
+      }
+
+      .theme-toggle {
+        display: none !important;
+      }
+
+      .mobile-menu-btn {
+        padding: 6px 10px;
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      #offcanvasMenu .offcanvas-sheet {
+        margin: 0;
+        border-radius: 0;
+        height: 100vh;
+      }
+    }
+
+    @media (min-width: 576px) and (max-width: 991.98px) {
+      .brand-row {
+        padding-inline: 20px;
+      }
+
+      .desktop-nav ul {
+        gap: 10px;
+      }
+
+      .desktop-nav a {
+        font-size: 14px;
+        padding: 6px 4px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .brand-row {
+        padding-inline: 24px;
+      }
+      .desktop-nav a {
+        font-size: 15px;
+      }
+    }
+
+    /* ===== Why Us Section (NEW) ===== */
+    .why-us-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .why-us-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 20px 18px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      text-align: left;
+    }
+    .why-us-icon {
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+    .why-us-card h5 {
+      font-weight: 700;
+      margin-bottom: 4px;
+      font-size: 1.05rem;
+    }
+    .why-us-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 991.98px) {
+      .why-us-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 575.98px) {
+      .why-us-grid {
+        grid-template-columns: 1fr;
+      }
+      .why-us-card {
+        padding: 16px 14px;
+      }
+    }
+  </style>
+</head>
+
+<!-- GIỮ NGUYÊN HEADER -->
+<body id="top-of-page"> 
+<header>
+  <div class="brand-row">
+    <a href="index.html" class="brand-left" title="Nguyen Chinh - Hanoi Motorbike Rental and Sale Home">
+      <div class="logo-wrap">
+        <img src="https://raw.githubusercontent.com/hanoimoto/app/refs/heads/main/IMG_0045.png"
+             alt="Nguyen Chinh - Hanoi Motorbike Rental and Sale Logo">
+        <span class="logo-tag">NC</span>
+      </div>
+      <div class="brand-text">
+        <div class="site-title">Hanoi Motorbike Sale & Rental</div>
+        <div class="site-sub">Top Scooter & Motorbike Rental in Hanoi</div>
+      </div>
+    </a>
+
+    <div class="brand-right">
+      <div class="status-pill" id="statusPill" aria-label="Opening hours (tap to view schedule)" role="button" tabindex="0">
+        <span class="status-dot" aria-hidden="true"></span>
+        <div>
+          <div class="status-label-main" id="statusLabelMain">Open today</div>
+          <div class="status-label-hours" id="statusLabelHours">09:00 – 21:00</div>
+        </div>
+      </div>
+
+      <button class="theme-toggle" id="themeToggle" type="button">🌙 Dark</button>
+
+      <button class="mobile-menu-btn d-md-none" id="mobileMenuBtn" aria-label="Open menu">☰</button>
+
+      <!-- YÊU CẦU 3: CẬP NHẬT LINK ACTIVE TRÊN DESKTOP NAV -->
+      <nav class="desktop-nav d-none d-md-block" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" class="nav-link-item">Home</a></li>
+          <li><a href="about.html" class="nav-link-item">About</a></li>
+          <li class="has-dropdown">
+            <button class="dropdown-toggle" type="button" aria-expanded="false" aria-controls="desktop-service-menu">
+              Service
+              <i class="bi bi-chevron-down" aria-hidden="true" style="font-size:0.8rem;"></i>
+            </button>
+            <ul class="dropdown-menu" id="desktop-service-menu">
+              <li><a href="sale.html">Motorbike Sale</a></li>
+              <li><a href="rental.html">Motorbike Rental</a></li>
+            </ul>
+          </li>
+          <li><a href="faq.html" class="nav-link-item">FAQ</a></li>
+          <li><a href="terms.html" class="nav-link-item">Terms</a></li>
+          <li><a href="privacy.html" class="nav-link-item active">Privacy</a></li>
+          <li><a href="contact.html" class="nav-link-item">Contact</a></li>
+        </ul>
+      </nav>
+      </div>
+  </div>
+
+  <div class="status-popover" id="statusPopover" aria-hidden="true" role="dialog">
+    <div class="status-popover-header">
+      <span class="status-popover-title">Opening hours</span>
+      <span class="status-popover-tz">Asia/Bangkok (GMT+7)</span>
+    </div>
+    <div class="status-popover-row">
+      <span>Mon – Sun</span>
+      <span>09:00 – 21:00</span>
+    </div>
+    <div class="status-popover-note">
+      * Holiday hours may vary — message us via Zalo / WhatsApp.
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+    <div class="offcanvas-sheet" role="dialog" aria-modal="true">
+      <div class="offcanvas-header">
+        <h5 id="offcanvasMenuLabel">Menu</h5>
+        <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="menu-panel">
+          <div class="menu-section-title">Quick actions</div>
+          <div class="menu-grid">
+            <a href="tel:+84942467674" class="menu-tile">
+              <div class="menu-tile-icon"><i class="bi bi-telephone-fill"></i></div>
+              <div>Call now</div>
+            </a>
+            <a href="https://maps.app.goo.gl/AQfB4c9MmfBJpP7QA?g_st=ipc" class="menu-tile"
+               target="_blank" rel="noopener noreferrer">
+              <div class="menu-tile-icon"><i class="bi bi-geo-alt-fill"></i></div>
+              <div>Open map</div>
+            </a>
+            <a href="sale.html" class="menu-tile">
+              <div class="menu-tile-icon"><i class="bi bi-tag-fill"></i></div>
+              <div>View Bikes for Sale</div>
+            </a>
+            <a href="faq.html" class="menu-tile">
+              <div class="menu-tile-icon"><i class="bi bi-question-circle-fill"></i></div>
+              <div>FAQ</div>
+            </a>
+          </div>
+        </div>
+
+        <!-- YÊU CẦU 3: CẬP NHẬT LINK ACTIVE (Mobile nav không có 'active' class, nên giữ nguyên) -->
+        <nav class="menu-panel" aria-label="Mobile navigation">
+          <div class="menu-section-title">Navigation</div>
+          <a href="index.html" class="menu-link-row">
+            <div class="menu-link-icon"><i class="bi bi-house-door-fill"></i></div>
+            <span>Home</span>
+          </a>
+          <a href="about.html" class="menu-link-row">
+            <div class="menu-link-icon"><i class="bi bi-info-circle-fill"></i></div>
+            <span>About</span>
+          </a>
+          <button type="button" class="menu-link-row service-toggle" id="mobileServiceToggle" aria-expanded="false" aria-controls="mobileServiceSubmenu">
+            <div class="menu-link-icon"><i class="bi bi-bicycle"></i></div>
+            <span>Service</span>
+            <i class="bi bi-chevron-right chevron" aria-hidden="true"></i>
+          </button>
+          <div class="submenu" id="mobileServiceSubmenu">
+            <a href="sale.html">Motorbike Sale</a>
+            <a href="rental.html">Motorbike Rental</a>
+          </div>
+          <a href="faq.html" class="menu-link-row">
+            <div class="menu-link-icon"><i class="bi bi-patch-question-fill"></i></div>
+            <span>FAQ</span>
+          </a>
+          <a href="terms.html" class="menu-link-row">
+            <div class="menu-link-icon"><i class="bi bi-file-earmark-text-fill"></i></div>
+            <span>Terms</span>
+          </a>
+          <a href="privacy.html" class="menu-link-row">
+            <div class="menu-link-icon"><i class="bi bi-shield-lock-fill"></i></div>
+            <span>Privacy</span>
+          </a>
+          <a href="contact.html" class="menu-link-row">
+            <div class="menu-link-icon"><i class="bi bi-telephone-outbound-fill"></i></div>
+            <span>Contact</span>
+          </a>
+        </nav>
+        <div class="menu-panel">
+          <div class="menu-section-title">Display</div>
+          <div class="offcanvas-theme-row">
+            <div class="offcanvas-theme-label">
+              <i class="bi bi-brightness-high-fill"></i>
+              <span>Theme</span>
+            </div>
+            <label class="switch" aria-label="Theme toggle switch">
+              <input type="checkbox" id="themeSwitch">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main> 
+  <!-- GIỮ NGUYÊN HERO SECTION -->
+  <section id="hero" class="fade-in" aria-labelledby="hero-title-id">
+  <div class="light-shimmer" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <div class="hero-card" id="heroCard" role="region" aria-label="Main hero">
+      <div class="hero-main">
+        <div class="hero-top-row">
+          <div class="hero-chip-main">
+            <span class="hero-chip-dot"></span>
+            <span>2025 • Mini app</span>
+          </div>
+          <div class="hero-chip-side">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>Long Bien, Hanoi Motorbike Hub</span>
+          </div>
+        </div>
+
+        <h1 class="hero-title glow" id="hero-title-id">Hanoi Motorbike Rental and Sale</h1>
+        <p class="hero-sub">
+          Reliable scooter & motorbike rental and sale in Hanoi. All bikes have full paperwork – ready to ride the same day.
+          Pickup in Long Bien, close to Old Quarter & Tay Ho.
+        </p>
+
+        <div class="hero-specs-row">
+          <div class="hero-spec-card">
+            <div class="hero-spec-label">Stock</div>
+            <div class="hero-spec-main">Honda Vision Fleet</div>
+            <div class="hero-spec-sub">Smart key • Full papers</div>
+          </div>
+          <div class="hero-spec-card">
+            <div class="hero-spec-label">Sale Price</div>
+            <div class="hero-spec-main">From 10M VND</div>
+            <div class="hero-spec-sub">Used Honda scooters</div>
+          </div>
+          <div class="hero-spec-card">
+            <div class="hero-spec-label">Service</div>
+            <div class="hero-spec-main">Expat & Tourist Support</div>
+            <div class="hero-spec-sub">EN / VI Speaking</div>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn-site"
+             href="https://athanoi.github.io/moto/"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Visit official Hanoi Motorbike site"> 🌐 Visit Official Website
+          </a>
+          <a class="btn-wp"
+             href="https://wa.me/84942467674"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Chat on WhatsApp for Hanoi motorbike rental"> <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+          </a>
+        </div>
+
+        <div class="hero-tags-row">
+          <span class="hero-tag">Hanoi Motorbike Sale & Rent</span>
+          <span class="hero-tag">Long-term Rental Hanoi</span>
+          <span class="hero-tag">Buy-Back Guarantee</span>
+          <span class="hero-tag">Free Helmets & Support</span>
+        </div>
+
+        <div class="hero-mini-note">
+          Your trusted Hanoi motorbike rental: No hidden deposit • Flexible long-term rental & buy-back options • Easy pickup near Old Quarter.
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <!-- YÊU CẦU 3: NỘI DUNG MỚI (PRIVACY POLICY) -->
+  <section id="privacy-policy-content" class="fade-in" aria-labelledby="privacy-title-id">
+    <div class="container-max" style="max-width: 900px; margin: 0 auto; text-align: left; line-height: 1.6;">
+      
+      <!-- Sử dụng h2, p.muted giống như các section khác -->
+      <h2 class="text-center mb-3" id="privacy-title-id">Privacy Policy</h2>
+      <p class="muted text-center" style="margin-bottom: 24px;">Last updated: November 15, 2025</p>
+
+      <!-- Nội dung policy text -->
+      <p>Welcome to Hanoi Motorbike Rental and Sale ("us", "we", or "our"). We are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and disclose information when you use our website (the "Service").</p>
+
+      <h3 style="font-weight: 700; margin-top: 24px; margin-bottom: 12px;">1. Information We Collect</h3>
+      <p>We only collect information that is necessary to provide our services. This may include:</p>
+      <ul style="margin-left: 20px;">
+        <li><strong>Personal Information:</strong> When you contact us for a motorbike rental or sale (e.g., via Zalo, WhatsApp, or email), we may collect your name, phone number, and email address to facilitate communication.</li>
+        <li><strong>Rental Information:</strong> For rental agreements, we may require a copy of your passport or ID card and a deposit, as stated in our terms.</li>
+        <li><strong>Usage Data:</strong> Our website may collect anonymous data about your visit, such as your IP address and pages visited, to help us improve our service. This is done through standard analytics tools.</li>
+      </ul>
+
+      <h3 style="font-weight: 700; margin-top: 24px; margin-bottom: 12px;">2. How We Use Your Information</h3>
+      <p>Your information is used solely for the following purposes:</p>
+      <ul style="margin-left: 20px;">
+        <li>To respond to your inquiries about motorbike sales and rentals.</li>
+        <li>To process your rental agreements and manage your booking.</li>
+        <li>To provide customer support.</li>
+        <li>To improve our website and services.</li>
+      </ul>
+
+      <h3 style="font-weight: 700; margin-top: 24px; margin-bottom: 12px;">3. Information Sharing and Disclosure</h3>
+      <p><strong>We do not sell, trade, or rent your personal information to third parties.</strong></p>
+      <p>We will not share your personal information with anyone, except in the following limited circumstances:</p>
+      <ul style="margin-left: 20px;">
+        <li><strong>Legal Requirements:</strong> If required by law or in response to a valid legal request by public authorities.</li>
+        <li><strong>Service Provision:</strong> To complete your rental or sale transaction (e.g., for paperwork).</li>
+      </ul>
+
+      <h3 style="font-weight: 700; margin-top: 24px; margin-bottom: 12px;">4. Data Security</h3>
+      <p>We take reasonable precautions to protect your personal information. However, no method of transmission over the internet or electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your data, we cannot guarantee its absolute security.</p>
+
+      <h3 style="font-weight: 700; margin-top: 24px; margin-bottom: 12px;">5. Third-Party Links</h3>
+      <p>Our website may contain links to third-party sites (like Zalo, WhatsApp, Facebook, and Google Maps). We are not responsible for the privacy practices of these other sites. We encourage you to read their privacy policies.</p>
+
+      <h3 style="font-weight: 700; margin-top: 24px; margin-bottom: 12px;">6. Changes to This Privacy Policy</h3>
+      <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page. You are advised to review this Privacy Policy periodically for any changes.</p>
+
+      <h3 style="font-weight: 700; margin-top: 24px; margin-bottom: 12px;">7. Contact Us</h3>
+      <p>If you have any questions about this Privacy Policy, please contact us via Zalo or WhatsApp at <a href="tel:+84942467674" style="text-decoration: underline; color: var(--primary);">+84942467674</a>.</p>
+    </div>
+  </section>
+  <!-- KẾT THÚC NỘI DUNG MỚI -->
+
+</main> 
+
+<!-- GIỮ NGUYÊN FOOTER -->
+<footer id="footer" class="fade-in" role="contentinfo" aria-labelledby="footer-title-id">
+  <div class="led-border" aria-hidden="true"></div>
+
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col footer-col-about footer-box">
+        <h5 class="footer-col-title" id="footer-title-id">Contact Us Motorbike Hanoi Rental & Sale</h5>
+        <p class="footer-about-text">
+          We provide quality used motorbikes for sale and long-term motorbike rentals in Hanoi. Trusted by both
+          locals and expats for reliability, good service, and fair prices.
+        </p>
+        <ul class="footer-contact-list">
+          <li>
+            <span class="icon">📍</span>
+            <span>112 Nguyen Van Cu, Long Bien, Hanoi (Near Old Quarter)</span>
+          </li>
+          <li>
+            <span class="icon">📞</span>
+            <span>
+              <a href="tel:+84812050090" class="fw-bold" style="color:#f5f5ff" title="Call Nguyen Chinh Motorbike">
+                +84812050090
+              </a>
+            </span>
+          </li>
+          <li>
+            <span class="icon">🕘</span>
+            <span>09:00 – 21:00 (Open Daily)</span>
+          </li>
+          <li>
+            <span class="icon">✉️</span>
+            <span>
+              <a href="mailto:nguyentuantu1102@gmail.com" style="color:#f5f5f5" title="Email Nguyen Chinh Motorbike">
+                nguyentuantu1102@gmail.com
+              </a>
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-box">
+        <h5 class="footer-col-title">Quick Links</h5>
+        <ul class="footer-link-list">
+          <li>
+            <a href="index.html" class="footer-link">
+              <span class="footer-link-pill">
+                <i class="bi bi-house-door-fill"></i>
+                <span>Home</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="about.html" class="footer-link">
+              <span class="footer-link-pill">
+                <i class="bi bi-info-circle-fill"></i>
+                <span>About</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="sale.html" class="footer-link">
+              <span class="footer-link-pill">
+                <i class="bi bi-tag-fill"></i>
+                <span>Motorbike Sale</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="rental.html" class="footer-link">
+              <span class="footer-link-pill">
+                <i class="bi bi-bicycle"></i>
+                <span>Motorbike Rental</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="faq.html" class="footer-link">
+              <span class="footer-link-pill">
+                <i class="bi bi-question-circle-fill"></i>
+                <span>FAQ</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="terms.html" class="footer-link">
+              <span class="footer-link-pill">
+                <i class="bi bi-file-earmark-text-fill"></i>
+                <span>Terms</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="privacy.html" class="footer-link">
+              <span class="footer-link-pill">
+                <i class="bi bi-shield-lock-fill"></i>
+                <span>Privacy</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="footer-link">
+              <span class="footer-link-pill">
+                <i class="bi bi-telephone-outbound-fill"></i>
+                <span>Contact</span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-box">
+        <h5 class="footer-col-title" title="Connect with Hanoi Motorbike Rental">Connect & Support</h5>
+        <div class="footer-social-row">
+          <a href="https://zalo.me/0942467674" target="_blank" class="social-icon" title="Chat on Zalo" rel="noopener noreferrer">
+            <i class="bi bi-chat-dots"></i>
+          </a>
+          <a href="https://wa.me/84942467674" target="_blank" class="social-icon" title="Chat on WhatsApp" rel="noopener noreferrer">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+          <a href="https://m.facebook.com/cheapmotorbikerentalhanoi/" target="_blank" class="social-icon" title="Visit Facebook" rel="noopener noreferrer">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="https://athanoi.github.io/moto/" target="_blank" class="social-icon" title="Official Website" rel="noopener noreferrer">
+            <i class="bi bi-globe"></i>
+          </a>
+        </div>
+        <p class="mb-1" style="color:#f5f5f5">
+          🌐 Official Website:<br>
+          <a href="https://rentbikehanoi.com" class="fw-bold" style="color:#FFD700" target="_blank" rel="noopener noreferrer">
+            https://rentbikehanoi.com
+          </a>
+        </p>
+        <p class="mt-2" style="color:#f5f5f5">
+          📍
+          <a href="https://maps.app.goo.gl/AQfB4c9MmfBJpP7QA?g_st=ipc" style="color:#f5f5f5" target="_blank" rel="noopener noreferrer">
+            Find us on Google Maps
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <hr class="footer-divider">
+    <div class="footer-bottom">
+      <p class="mb-0">© 2025 Hanoi Motorbike Rental and Sale | All Rights Reserved</p>
+      <a href="#hero" class="back-to-top">↑ Back to Top</a>
+    </div>
+  </div>
+</footer>
+
+<!-- GIỮ NGUYÊN NÚT LIÊN HỆ NỔI -->
+<div class="contact-floating" aria-hidden="false" aria-label="Quick contact">
+  <div class="contact-options" id="contactOptions" aria-hidden="true">
+    <a href="tel:+84942467674" title="Call" aria-label="Call"><i class="bi bi-telephone-fill"></i></a>
+    <a href="https://zalo.me/0942467674" target="_blank" aria-label="Zalo" rel="noopener noreferrer"><i class="bi bi-chat-dots-fill"></i></a>
+    <a href="https://wa.me/84942467674" target="_blank" title="WhatsApp" aria-label="WhatsApp" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i></a>
+  </div>
+  <button class="main-btn" id="mainContactBtn" aria-expanded="false" aria-controls="contactOptions" title="Contact menu">
+    <i class="bi bi-person-lines-fill" aria-hidden="true"></i>
+  </button>
+</div>
+
+<!-- GIỮ NGUYÊN TẤT CẢ SCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script>
+/* ===== Header shrink on scroll (NEW) ===== */
+(function(){
+  const header = document.querySelector('header');
+  if (!header) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      header.classList.add('header-compact');
+    } else {
+      header.classList.remove('header-compact');
+    }
+  });
+})();
+
+/* ===== Offcanvas mobile toggle ===== */
+(function(){
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const offcanvasEl = document.getElementById('offcanvasMenu');
+  if (mobileBtn && offcanvasEl && bootstrap?.Offcanvas) {
+    const off = new bootstrap.Offcanvas(offcanvasEl);
+    mobileBtn.addEventListener('click', ()=> off.toggle());
+  }
+})();
+
+/* ===== Smooth internal anchor scrolling ===== */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e){
+    const href = this.getAttribute('href');
+    if (!href || href === '#') return;
+    const targetID = href === '#' ? 'top-of-page' : href.substring(1);
+    const target = document.getElementById(targetID);
+    
+    if (target) {
+      e.preventDefault();
+      window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
+      const off = document.getElementById('offcanvasMenu');
+      if (off && off.classList.contains('show')) bootstrap.Offcanvas.getInstance(off).hide();
+    }
+  });
+});
+
+/* ===== Swiper init for reviews ===== */
+try {
+  /* Vì trang này không có swiper, nên có thể bỏ qua, nhưng giữ lại cũng không sao */
+  const swiper = new Swiper('.mySwiper', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: { delay: 4200, disableOnInteraction: false },
+    pagination: { el: '.swiper-pagination', clickable: true },
+    breakpoints: { 700: { slidesPerView: 1.05 }, 1000: { slidesPerView: 1.2 } }
+  });
+  if (swiper.el) {
+    swiper.el.addEventListener('mouseenter', ()=> swiper.autoplay.stop());
+    swiper.el.addEventListener('mouseleave', ()=> swiper.autoplay.start());
+  }
+} catch(e){ console.warn('Swiper init error', e); }
+
+/* ===== Fade-in observer ULTRA (0.9s + stagger) ===== */
+(function(){
+  const sections = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  sections.forEach((el, index) => {
+    const delay = index * 90; // ms
+    el.style.setProperty('--fade-delay', delay + 'ms');
+    observer.observe(el);
+  });
+})();
+
+/* ===== Hero parallax (mouse & device tilt) ===== */
+(function(){
+  const hero = document.getElementById('hero');
+  const heroCard = document.getElementById('heroCard');
+  const layers = document.querySelectorAll('#hero .layer');
+  if (!hero) return;
+
+  function handleMove(xRatio, yRatio){
+    const rx = (yRatio - 0.5) * 8;
+    const ry = (xRatio - 0.5) * -12;
+    if (heroCard) heroCard.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
+    layers.forEach((el, i)=>{
+      const depth = (i+1) * 6;
+      const moveX = (xRatio - 0.5) * depth;
+      const moveY = (yRatio - 0.5) * depth * 0.6;
+      el.style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px))`;
+    });
+  }
+
+  window.addEventListener('mousemove', e=>{
+    const rect = hero.getBoundingClientRect();
+    const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
+    const y = Math.max(0, Math.min(e.clientY - rect.top, rect.height));
+    handleMove(x / rect.width, y / rect.height);
+  });
+
+  window.addEventListener('deviceorientation', e=>{
+    if (e.gamma === null) return;
+    const xRatio = (e.gamma + 90) / 180;
+    const yRatio = (e.beta + 180) / 360;
+    handleMove(xRatio, yRatio);
+  }, true);
+})();
+
+/* ===== Floating Contact Menu Pro toggle ===== */
+(function(){
+  const mainContactBtn = document.getElementById('mainContactBtn');
+  const contactFloating = document.querySelector('.contact-floating');
+  const opts = document.getElementById('contactOptions') || document.querySelector('.contact-options');
+  if (!mainContactBtn || !contactFloating) return;
+
+  mainContactBtn.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    contactFloating.classList.toggle('active');
+    const expanded = contactFloating.classList.contains('active');
+    mainContactBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    if (opts) opts.setAttribute('aria-hidden', expanded ? 'false' : 'true');
+  });
+
+  document.addEventListener('click', (e)=>{
+    if (!contactFloating.contains(e.target) && contactFloating.classList.contains('active')) {
+      contactFloating.classList.remove('active');
+      if (opts) opts.setAttribute('aria-hidden','true');
+      mainContactBtn.setAttribute('aria-expanded','false');
+    }
+  });
+
+  mainContactBtn.addEventListener('touchstart', ev=>{ ev.preventDefault(); mainContactBtn.click(); }, { passive: false });
+})();
+
+/* ===== Mobile Service submenu toggle ===== */
+(function(){
+  const toggleBtn = document.getElementById('mobileServiceToggle');
+  const submenu = document.getElementById('mobileServiceSubmenu');
+  if (!toggleBtn || !submenu) return;
+  toggleBtn.addEventListener('click', () => {
+    const isOpening = !submenu.classList.contains('show');
+    submenu.classList.toggle('show');
+    toggleBtn.classList.toggle('open');
+    toggleBtn.setAttribute('aria-expanded', isOpening ? 'true' : 'false');
+  });
+})();
+
+/* ===== Theme Logic (Sync Button & Switch) ===== */
+(function(){
+  const html = document.documentElement;
+  const btn = document.getElementById('themeToggle');
+  const switchInput = document.getElementById('themeSwitch');
+
+  if (!btn && !switchInput) return;
+
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const saved = localStorage.getItem('theme');
+  const initial = saved || (prefersDark ? 'dark' : 'light');
+
+  setTheme(initial);
+
+  if (btn){
+    btn.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      setTheme(next);
+    });
+  }
+
+  if (switchInput){
+    switchInput.addEventListener('change', () => {
+      const next = switchInput.checked ? 'dark' : 'light';
+      setTheme(next);
+    });
+  }
+
+  function setTheme(mode){
+    html.setAttribute('data-theme', mode);
+    localStorage.setItem('theme', mode);
+    syncControls(mode);
+  }
+
+  function syncControls(mode){
+    if (btn){
+      btn.innerHTML = mode === 'dark' ? '☀️ Light' : '🌙 Dark';
+    }
+    if (switchInput){
+      switchInput.checked = (mode === 'dark');
+    }
+  }
+})();
+
+/* ===== Opening hours mini-app (auto open/closed + popover) ===== */
+(function(){
+  const pill = document.getElementById('statusPill');
+  const labelMain = document.getElementById('statusLabelMain');
+  const labelHours = document.getElementById('statusLabelHours');
+  const popover = document.getElementById('statusPopover');
+
+  if (!pill || !labelMain || !labelHours || !popover) return;
+
+  const OPEN_HOUR = 9;
+  const CLOSE_HOUR = 21;
+
+  function getHanoiDate(){
+    const now = new Date();
+    const hanoiString = now.toLocaleString('en-US', { timeZone: 'Asia/Bangkok' });
+    return new Date(hanoiString);
+  }
+
+  function updateStatus(){
+    const now = getHanoiDate();
+    const hour = now.getHours();
+
+    const isOpen = hour >= OPEN_HOUR && hour < CLOSE_HOUR;
+
+    if (isOpen){
+      pill.classList.remove('closed');
+      labelMain.textContent = 'Open now';
+      labelHours.textContent = '09:00 – 21:00';
+    } else {
+      pill.classList.add('closed');
+      labelMain.textContent = 'Closed now';
+
+      if (hour < OPEN_HOUR){
+        labelHours.textContent = 'Opens today at 09:00';
+      } else {
+        labelHours.textContent = 'Opens tomorrow at 09:00';
+      }
+    }
+  }
+
+  function togglePopover(){
+    const isShown = popover.classList.contains('show');
+    if (isShown){
+      popover.classList.remove('show');
+      popover.setAttribute('aria-hidden', 'true');
+    } else {
+      popover.classList.add('show');
+      popover.setAttribute('aria-hidden', 'false');
+    }
+  }
+
+  pill.addEventListener('click', togglePopover);
+  pill.addEventListener('keydown', (e)=>{
+    if (e.key === 'Enter' || e.key === ' '){
+      e.preventDefault();
+      togglePopover();
+    }
+  });
+
+  document.addEventListener('click', (e)=>{
+    if (!popover.classList.contains('show')) return;
+    if (pill.contains(e.target) || popover.contains(e.target)) return;
+    popover.classList.remove('show');
+    popover.setAttribute('aria-hidden', 'true');
+  });
+
+  document.addEventListener('keydown', (e)=>{
+    if (e.key === 'Escape' && popover.classList.contains('show')){
+      popover.classList.remove('show');
+      popover.setAttribute('aria-hidden', 'true');
+    }
+  });
+
+  updateStatus();
+  setInterval(updateStatus, 5 * 60 * 1000);
+})();
+
+/* ===== YÊU CẦU 5: Thêm JS để đóng offcanvas khi nhấp link ===== */
+(function(){
+  const offcanvasEl = document.getElementById('offcanvasMenu');
+  if (!offcanvasEl || !bootstrap?.Offcanvas) return;
+
+  const links = offcanvasEl.querySelectorAll('.offcanvas-body a[href]');
+  
+  links.forEach(link => {
+    link.addEventListener('click', function() {
+      const offcanvasInstance = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl);
+      
+      if (offcanvasInstance && offcanvasEl.classList.contains('show')) {
+        offcanvasInstance.hide();
+      }
+    });
+  });
+})();
+
+/* ===== START: JS MỚI - Ẩn / hiện nút contact khi mở / đóng offcanvas ===== */
+(function(){
+  const offcanvasEl = document.getElementById('offcanvasMenu');
+  if (!offcanvasEl || !bootstrap?.Offcanvas) return;
+
+  offcanvasEl.addEventListener('show.bs.offcanvas', function(){
+    document.body.classList.add('offcanvas-open-custom');
+  });
+
+  offcanvasEl.addEventListener('hidden.bs.offcanvas', function(){
+    document.body.classList.remove('offcanvas-open-custom');
+  });
+})();
+</script>
+
+<script src="https://hanoimoto.github.io/app/motoai_v39_modelfirst_nomarkdown_nolink.js" defer></script>
+</body>
+</html>
+
