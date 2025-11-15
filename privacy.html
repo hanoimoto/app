@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- YÊU CẦU 3: Cập nhật Title, Description, Canonical cho trang Privacy -->
+  <!-- YÊU CẦU 3 & 7: Cập nhật Title, Description, Keywords -->
   <title>Privacy Policy | Hanoi Motorbike Rental and Sale</title>
   <meta name="description" content="Read the Privacy Policy for Hanoi Motorbike Rental and Sale. We explain how we collect and use your data for our motorbike rental and sale services in Hanoi." />
-  <meta name="keywords" content="Hanoi motorbike rental privacy, Hanoi motorbike sale policy" />
+  <!-- Mod: Cập nhật keywords tag -->
+  <meta name="keywords" content="hanoi motorbike rental privacy, hanoi motorbike sale policy, scooter rental hanoi data, privacy policy, hanoi motorbike terms" />
   
   <meta name="author" content="Hanoi Motorbike Rental and Sale" />
   <meta http-equiv="Content-Language" content="en-US" />
@@ -1372,6 +1373,95 @@
         padding: 16px 14px;
       }
     }
+
+    /* YÊU CẦU 2: Thêm CSS “body xịn” cho Privacy */
+    /* === PRIVACY POLICY CARD – BODY XỊN === */
+    #privacy-policy-content{
+      padding: 40px 16px 56px;
+      background:
+        radial-gradient(circle at top, rgba(214,0,28,0.10), transparent 60%);
+    }
+    
+    #privacy-policy-content .container-max{
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    /* Card chứa toàn bộ policy */
+    .privacy-card{
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 24px 20px 28px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+    
+    :root[data-theme="dark"] .privacy-card{
+      box-shadow: 0 18px 40px rgba(0,0,0,0.75);
+      border-color: rgba(255,255,255,0.08);
+    }
+    
+    /* Tiêu đề & subtitle */
+    /* Mod: Đổi h2 thành h1 cho SEO */
+    #privacy-policy-content h1{
+      font-weight: 800;
+      font-size: 1.8rem;
+    }
+    
+    #privacy-policy-content .muted{
+      font-size: 0.96rem;
+    }
+    
+    /* Heading từng mục */
+    /* Mod: Đổi h3 thành h2 cho SEO */
+    #privacy-policy-content h3{
+      font-weight: 700;
+      margin-top: 26px;
+      margin-bottom: 10px;
+      font-size: 1.18rem;
+      color: var(--primary);
+      position: relative;
+      padding-left: 10px;
+    }
+    #privacy-policy-content h3::before{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 4px;
+      bottom: 4px;
+      width: 3px;
+      border-radius: 999px;
+      background: linear-gradient(180deg,#D6001C,#ff9900);
+    }
+    
+    /* Paragraph & list */
+    #privacy-policy-content p,
+    #privacy-policy-content li{
+      line-height: 1.65;
+      font-size: 0.96rem;
+    }
+    
+    #privacy-policy-content ul{
+      margin-top: 6px;
+      margin-bottom: 10px;
+      padding-left: 22px;
+    }
+    #privacy-policy-content li{
+      margin-bottom: 6px;
+    }
+    
+    /* Link trong policy */
+    #privacy-policy-content a{
+      text-decoration: underline;
+      color: var(--primary);
+      font-weight: 600;
+    }
+    :root[data-theme="dark"] #privacy-policy-content h3{
+      color: #FFD700;
+    }
+    :root[data-theme="dark"] #privacy-policy-content a{
+      color: #FFD700;
+    }
   </style>
 </head>
 
@@ -1546,7 +1636,8 @@
           </div>
         </div>
 
-        <h1 class="hero-title glow" id="hero-title-id">Hanoi Motorbike Rental and Sale</h1>
+        <!-- YÊU CẦU 6: Thay đổi tiêu đề hero -->
+        <h1 class="hero-title glow" id="hero-title-id">Trusted Hanoi Motorbike Rental and Sale</h1>
         <p class="hero-sub">
           Reliable scooter & motorbike rental and sale in Hanoi. All bikes have full paperwork – ready to ride the same day.
           Pickup in Long Bien, close to Old Quarter & Tay Ho.
@@ -1600,53 +1691,62 @@
   </div>
   </section>
 
-  <!-- YÊU CẦU 3: NỘI DUNG MỚI (PRIVACY POLICY) -->
+  <!-- YÊU CẦU 1: Bọc nội dung vào .privacy-card VÀ YÊU CẦU 4: Thêm internal links -->
   <section id="privacy-policy-content" class="fade-in" aria-labelledby="privacy-title-id">
-    <div class="container-max" style="max-width: 900px; margin: 0 auto; text-align: left; line-height: 1.6;">
-      
-      <!-- Sử dụng h2, p.muted giống như các section khác -->
-      <h2 class="text-center mb-3" id="privacy-title-id">Privacy Policy</h2>
-      <p class="muted text-center" style="margin-bottom: 24px;">Last updated: November 15, 2025</p>
-
-      <!-- Nội dung policy text -->
-      <p>Welcome to Hanoi Motorbike Rental and Sale ("us", "we", or "our"). We are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and disclose information when you use our website (the "Service").</p>
-
-      <h3 style="font-weight: 700; margin-top: 24px; margin-bottom: 12px;">1. Information We Collect</h3>
-      <p>We only collect information that is necessary to provide our services. This may include:</p>
-      <ul style="margin-left: 20px;">
-        <li><strong>Personal Information:</strong> When you contact us for a motorbike rental or sale (e.g., via Zalo, WhatsApp, or email), we may collect your name, phone number, and email address to facilitate communication.</li>
-        <li><strong>Rental Information:</strong> For rental agreements, we may require a copy of your passport or ID card and a deposit, as stated in our terms.</li>
-        <li><strong>Usage Data:</strong> Our website may collect anonymous data about your visit, such as your IP address and pages visited, to help us improve our service. This is done through standard analytics tools.</li>
-      </ul>
-
-      <h3 style="font-weight: 700; margin-top: 24px; margin-bottom: 12px;">2. How We Use Your Information</h3>
-      <p>Your information is used solely for the following purposes:</p>
-      <ul style="margin-left: 20px;">
-        <li>To respond to your inquiries about motorbike sales and rentals.</li>
-        <li>To process your rental agreements and manage your booking.</li>
-        <li>To provide customer support.</li>
-        <li>To improve our website and services.</li>
-      </ul>
-
-      <h3 style="font-weight: 700; margin-top: 24px; margin-bottom: 12px;">3. Information Sharing and Disclosure</h3>
-      <p><strong>We do not sell, trade, or rent your personal information to third parties.</strong></p>
-      <p>We will not share your personal information with anyone, except in the following limited circumstances:</p>
-      <ul style="margin-left: 20px;">
-        <li><strong>Legal Requirements:</strong> If required by law or in response to a valid legal request by public authorities.</li>
-        <li><strong>Service Provision:</strong> To complete your rental or sale transaction (e.g., for paperwork).</li>
-      </ul>
-
-      <h3 style="font-weight: 700; margin-top: 24px; margin-bottom: 12px;">4. Data Security</h3>
-      <p>We take reasonable precautions to protect your personal information. However, no method of transmission over the internet or electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your data, we cannot guarantee its absolute security.</p>
-
-      <h3 style="font-weight: 700; margin-top: 24px; margin-bottom: 12px;">5. Third-Party Links</h3>
-      <p>Our website may contain links to third-party sites (like Zalo, WhatsApp, Facebook, and Google Maps). We are not responsible for the privacy practices of these other sites. We encourage you to read their privacy policies.</p>
-
-      <h3 style="font-weight: 700; margin-top: 24px; margin-bottom: 12px;">6. Changes to This Privacy Policy</h3>
-      <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page. You are advised to review this Privacy Policy periodically for any changes.</p>
-
-      <h3 style="font-weight: 700; margin-top: 24px; margin-bottom: 12px;">7. Contact Us</h3>
-      <p>If you have any questions about this Privacy Policy, please contact us via Zalo or WhatsApp at <a href="tel:+84942467674" style="text-decoration: underline; color: var(--primary);">+84942467674</a>.</p>
+    <div class="container-max" style="max-width: 900px; margin: 0 auto; text-align: left;">
+  
+      <!-- THÊM LỚP BỌC NÀY -->
+      <div class="privacy-card">
+  
+        <!-- Mod: Đổi h2 thành h1 cho SEO (CSS đã được sửa để target h1) -->
+        <h1 class="text-center mb-3" id="privacy-title-id">Privacy Policy</h1>
+        <p class="muted text-center" style="margin-bottom: 24px;">Last updated: November 15, 2025</p>
+  
+        <p>Welcome to Hanoi Motorbike Rental and Sale ("us", "we", or "our"). We are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and disclose information when you use our website (the "Service").</p>
+  
+        <!-- Mod: Đổi h3 thành h2 cho SEO (CSS đã được sửa để target h2) -->
+        <h3>1. Information We Collect</h3>
+        <p>We only collect information that is necessary to provide our services. This may include:</p>
+        <ul>
+          <li><strong>Personal Information:</strong> When you contact us for a motorbike rental or sale (e.g., via Zalo, WhatsApp, or email), we may collect your name, phone number, and email address to facilitate communication.</li>
+          <!-- YÊU CẦU 4: Internal Link 1 -->
+          <li><strong>Rental Information:</strong> For rental agreements, we may require a copy of your passport or ID card and a deposit, as stated in our <a href="terms.html" title="Read our rental terms">Terms of Service</a>.</li>
+          <li><strong>Usage Data:</strong> Our website may collect anonymous data about your visit, such as your IP address and pages visited, to help us improve our service. This is done through standard analytics tools.</li>
+        </ul>
+  
+        <h3>2. How We Use Your Information</h3>
+        <p>Your information is used solely for the following purposes:</p>
+        <ul>
+          <!-- YÊU CẦU 4: Internal Link 2 -->
+          <li>To respond to your inquiries about our <a href="sale.html" title="See motorbikes for sale">motorbike sales</a> and <a href="rental.html" title="See motorbikes for rent">rentals</a>.</li>
+          <li>To process your rental agreements and manage your booking.</li>
+          <li>To provide customer support.</li>
+          <li>To improve our website and services.</li>
+        </ul>
+  
+        <h3>3. Information Sharing and Disclosure</h3>
+        <p><strong>We do not sell, trade, or rent your personal information to third parties.</strong></p>
+        <p>We will not share your personal information with anyone, except in the following limited circumstances:</p>
+        <ul>
+          <li><strong>Legal Requirements:</strong> If required by law or in response to a valid legal request by public authorities.</li>
+          <li><strong>Service Provision:</strong> To complete your rental or sale transaction (e.g., for paperwork).</li>
+        </ul>
+  
+        <h3>4. Data Security</h3>
+        <p>We take reasonable precautions to protect your personal information. However, no method of transmission over the internet or electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your data, we cannot guarantee its absolute security.</p>
+  
+        <h3>5. Third-Party Links</h3>
+        <p>Our website may contain links to third-party sites (like Zalo, WhatsApp, Facebook, and Google Maps). We are not responsible for the privacy practices of these other sites. We encourage you to read their privacy policies.</p>
+  
+        <h3>6. Changes to This Privacy Policy</h3>
+        <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page. You are advised to review this Privacy Policy periodically for any changes.</p>
+  
+        <h3>7. Contact Us</h3>
+        <p>If you have any questions about this Privacy Policy, please contact us via Zalo or WhatsApp at
+          <a href="tel:+84942467674">+84942467674</a>.
+        </p>
+  
+      </div><!-- /privacy-card -->
     </div>
   </section>
   <!-- KẾT THÚC NỘI DUNG MỚI -->
