@@ -7,14 +7,14 @@
 
   <!-- Basic meta only, no extra SEO content -->
   <meta name="description"
-        content="Short info card for Hanoi Motorbike Rental & Sale: daily, weekly, monthly rental prices, deposit rules and contact buttons.">
+        content="Quick info for Hanoi Motorbike Rental & Sale: rental prices, deposits and contact.">
 
   <style>
     :root{
       --primary:#D6001C;      /* Honda red */
       --primary-dark:#8B0000;
       --accent:#F97316;
-      --bg:#F3F4F6;           /* light grey background */
+      --bg:#F3F4F6;
       --card:#FFFFFF;
       --text:#111827;
       --muted:#6B7280;
@@ -29,7 +29,6 @@
       --easing-out:cubic-bezier(.22,1,.36,1);
     }
 
-    /* dark theme override (toggle by data-theme on html) */
     html[data-theme="dark"]{
       --bg:#020617;
       --card:#020617;
@@ -53,7 +52,6 @@
       transition:background-color var(--dur-med) linear,color var(--dur-med) linear;
     }
 
-    /* subtle grid background */
     body::before{
       content:"";
       position:fixed;
@@ -84,13 +82,18 @@
       isolation:isolate;
       transform-origin:50% 100%;
       animation:pageIntro .45s var(--easing-out) both;
+      will-change:transform;
+      transition:transform .25s var(--easing-out),max-width .25s var(--easing-out),border-radius .25s var(--easing-out);
+    }
+    .page.compact{
+      max-width:720px;
+      border-radius:18px;
     }
     html[data-theme="dark"] .page{
       background:radial-gradient(circle at top left,#020617,#020617);
       box-shadow:var(--shadow-soft),0 0 0 1px rgba(148,163,184,0.16);
     }
 
-    /* animated edge glow */
     .page::before{
       content:"";
       position:absolute;
@@ -125,7 +128,7 @@
       100%{transform:translateY(0) scale(1);opacity:1;}
     }
 
-    /* HEADER / TOP BAR */
+    /* HEADER */
     .top-bar{
       display:flex;
       align-items:center;
@@ -140,8 +143,6 @@
     html[data-theme="dark"] .top-bar{
       background:radial-gradient(circle at top left,#020617,#020617);
     }
-
-    /* subtle shine */
     .top-bar::before{
       content:"";
       position:absolute;
@@ -234,7 +235,6 @@
       color:var(--muted);
     }
 
-    /* SIMPLE NAV (one-page anchors) */
     .nav{
       display:flex;
       align-items:center;
@@ -300,7 +300,6 @@
       border-color:transparent;
     }
 
-    /* Quick actions (top-right icons) */
     .quick-actions{
       display:flex;
       gap:6px;
@@ -355,10 +354,30 @@
       opacity:.4;
     }
 
-    /* MAIN CONTENT */
+    /* Ripple */
+    .ripple{
+      position:absolute;
+      border-radius:999px;
+      transform:scale(0);
+      background:rgba(255,255,255,0.45);
+      pointer-events:none;
+      animation:rippleAnim .6s ease-out;
+    }
+    @keyframes rippleAnim{
+      to{
+        transform:scale(3.2);
+        opacity:0;
+      }
+    }
+
+    /* MAIN */
     main{
       padding:18px 18px 16px;
       position:relative;
+      transition:padding .2s var(--easing-out);
+    }
+    .page.compact main{
+      padding:12px 14px 10px;
     }
 
     .eyebrow{
@@ -388,7 +407,6 @@
       margin-bottom:12px;
     }
 
-    /* PRICE GRID */
     .price-grid{
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
@@ -467,14 +485,12 @@
       padding-bottom:1px;
     }
     .note a:hover{
-      text-decoration:none;
       border-bottom-style:solid;
     }
     html[data-theme="dark"] .note a{
       color:#fecaca;
     }
 
-    /* HOW TO RENT */
     .section-title{
       font-size:14px;
       font-weight:600;
@@ -492,7 +508,6 @@
       margin-bottom:14px;
     }
 
-    /* 4 BIG CTA BUTTONS (3D style) */
     .cta-grid{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
@@ -553,7 +568,6 @@
       opacity:.7;
     }
 
-    /* FOOTER INFO */
     .divider{
       border-top:1px dashed var(--border);
       margin-bottom:8px;
@@ -588,7 +602,7 @@
       text-align:right;
     }
 
-    /* FLOATING SIDE BAR (for extra interactions) */
+    /* FLOATING SIDE BAR */
     .side-bar{
       position:fixed;
       right:14px;
@@ -650,6 +664,10 @@
       box-shadow:0 18px 36px rgba(37,99,235,0.8);
       filter:brightness(1.05);
     }
+    .side-compact-btn{
+      background:radial-gradient(circle at 20% 0,#22C55E,#15803D);
+      box-shadow:0 14px 28px rgba(22,163,74,0.7);
+    }
     @keyframes chipIntro{
       0%{opacity:0;transform:translateY(10px) scale(.96);}
       100%{opacity:1;transform:translateY(0) scale(1);}
@@ -673,26 +691,69 @@
       gap:6px;
       box-shadow:0 16px 32px rgba(15,23,42,0.75);
       z-index:60;
-      transition:
-        opacity .18s ease,
-        transform .18s ease;
+      transition:opacity .18s ease,transform .18s ease;
     }
     .toast.show{
       opacity:1;
       transform:translateX(-50%) translateY(0);
     }
 
-    /* SMOOTH SECTION REVEAL */
+    /* REVEAL */
     .reveal{
       opacity:0;
       transform:translateY(10px);
-      transition:
-        opacity .4s var(--easing-out),
-        transform .4s var(--easing-out);
+      transition:opacity .4s var(--easing-out),transform .4s var(--easing-out);
     }
     .reveal.visible{
       opacity:1;
       transform:translateY(0);
+    }
+
+    /* SKELETON OVERLAY */
+    .skeleton-overlay{
+      position:fixed;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:radial-gradient(circle at top,var(--card),var(--bg));
+      z-index:80;
+      pointer-events:none;
+      transition:opacity .35s ease,visibility .35s ease;
+    }
+    .skeleton-overlay.hidden{
+      opacity:0;
+      visibility:hidden;
+    }
+    .sk-card{
+      width:min(880px,100% - 40px);
+      border-radius:22px;
+      padding:18px;
+      box-shadow:0 18px 50px rgba(15,23,42,0.28);
+      background:rgba(15,23,42,0.98);
+      display:grid;
+      gap:10px;
+    }
+    .sk-line,
+    .sk-block{
+      border-radius:999px;
+      background:linear-gradient(
+        90deg,
+        rgba(148,163,184,0.18),
+        rgba(55,65,81,0.85),
+        rgba(148,163,184,0.2)
+      );
+      background-size:200% 100%;
+      animation:skPulse 1.2s linear infinite;
+    }
+    .sk-line{height:9px;}
+    .sk-line.sm{width:45%;}
+    .sk-line.md{width:70%;}
+    .sk-line.lg{width:90%;}
+    .sk-block{height:40px;border-radius:16px;}
+    @keyframes skPulse{
+      0%{background-position:200% 0;}
+      100%{background-position:-200% 0;}
     }
 
     /* RESPONSIVE */
@@ -707,7 +768,7 @@
         justify-content:space-between;
       }
       .nav-links{
-        display:none; /* anchors not necessary on small screens */
+        display:none;
       }
       .quick-actions{
         margin-left:auto;
@@ -734,6 +795,18 @@
   </style>
 </head>
 <body>
+  <!-- Skeleton loading -->
+  <div class="skeleton-overlay" id="skeletonLayer" aria-hidden="true">
+    <div class="sk-card">
+      <div class="sk-line lg"></div>
+      <div class="sk-line md"></div>
+      <div class="sk-line sm"></div>
+      <div class="sk-block"></div>
+      <div class="sk-block"></div>
+      <div class="sk-line lg"></div>
+    </div>
+  </div>
+
   <div class="page" id="page-root">
     <header class="top-bar">
       <div class="brand">
@@ -759,11 +832,9 @@
           <a href="#contact" class="nav-link" data-nav="contact">Contact</a>
         </div>
         <div class="quick-actions">
-          <!-- theme toggle -->
           <button class="quick-btn theme-toggle" type="button" id="themeToggleBtn" aria-label="Toggle theme">
             <span id="themeIcon">☀️</span>
           </button>
-          <!-- 4 quick-call ultra buttons (top-right) -->
           <a class="quick-btn" data-action="whatsapp"
              href="https://wa.me/84942467674"
              target="_blank" rel="noopener" title="WhatsApp">
@@ -779,7 +850,7 @@
             <span>📞</span>
           </a>
           <a class="quick-btn" data-action="map"
-             href="https://maps.app.goo.gl/AQfB4c9MmfBJpP7QA?g_st=ipc"
+             href="https://maps.app.goo.gl/hEMDwqdn8rtyayG7A?g_st=ipc"
              target="_blank" rel="noopener" title="Shop map">
             <span>📍</span>
           </a>
@@ -795,8 +866,7 @@
           <span class="h1-dot" aria-hidden="true"></span>
         </h1>
         <p class="intro">
-          Simple overview for daily, weekly and monthly rental prices and basic rental deposit rules.
-          You can send this page directly to customers.
+          Short overview of rental prices and deposit rules. You can send this page to customers.
         </p>
       </div>
 
@@ -821,7 +891,7 @@
 
         <p class="note">
           Motorbikes for sale from <strong>6,000,000 VND to 26,000,000 VND</strong>.
-          See more details here:
+          See more:
           <a href="https://hanoimoto.github.io/app/sale.html" target="_blank" rel="noopener">
             Motorbikes for sale
           </a>.
@@ -863,7 +933,7 @@
           </a>
 
           <a class="cta-btn" data-action="map"
-             href="https://maps.app.goo.gl/AQfB4c9MmfBJpP7QA?g_st=ipc"
+             href="https://maps.app.goo.gl/hEMDwqdn8rtyayG7A?g_st=ipc"
              target="_blank" rel="noopener">
             <div class="cta-main">📍 Shop map</div>
             <div class="cta-sub">112 Nguyen Van Cu, Long Bien, Hanoi</div>
@@ -876,7 +946,12 @@
         <div class="footer-info">
           <span>📍 <strong>Address:</strong> 112 Nguyen Van Cu, Bo De, Long Bien, Hanoi</span>
           <span>🕘 <strong>Opening Hours:</strong> 09:00 – 21:00 (Daily, including holidays &amp; Tet)</span>
-          <span>🌐 <strong>Website:</strong> <a href="https://hanoimoto.github.io/app" target="_blank" rel="noopener">https://hanoimoto.github.io/app</a></span>
+          <span>🌐 
+            <strong>Web:</strong>
+            <a href="https://thuexemaynguyentu.com" target="_blank" rel="noopener">thuexemaynguyentu.com</a>
+            • <a href="https://hanoimoto.github.io/app" target="_blank" rel="noopener">app</a>
+            • <a href="https://about.me/hanoimotoapp" target="_blank" rel="noopener">about.me</a>
+          </span>
         </div>
         <div class="copyright">
           © 2025 Nguyen Tu
@@ -885,7 +960,7 @@
     </main>
   </div>
 
-  <!-- Floating side info (no extra text paragraphs) -->
+  <!-- Floating side info -->
   <aside class="side-bar" aria-hidden="false">
     <div class="side-chip">
       <div class="side-chip-dot" aria-hidden="true"></div>
@@ -893,6 +968,9 @@
     </div>
     <button class="side-copy-btn" type="button" id="copyInfoBtn">
       <span>📋 Copy main prices</span>
+    </button>
+    <button class="side-copy-btn side-compact-btn" type="button" id="compactBtn">
+      <span>🧩 Compact</span>
     </button>
   </aside>
 
@@ -902,7 +980,7 @@
     <span id="toastText">Copied</span>
   </div>
 
-  <!-- Nhúng script chatbot của bạn -->
+  <!-- Chatbot -->
   <script src="https://hanoimoto.github.io/app/motoai_v39_hanoi_motorbike.js"></script>
 
   <script>
@@ -921,8 +999,20 @@
       const toastIcon = document.getElementById("toastIcon");
       const toastText = document.getElementById("toastText");
       const copyBtn = document.getElementById("copyInfoBtn");
+      const compactBtn = document.getElementById("compactBtn");
+      const page = document.getElementById("page-root");
+      const skeleton = document.getElementById("skeletonLayer");
 
-      /* ===== Theme ===== */
+      /* ===== Skeleton hide ===== */
+      if (skeleton){
+        window.addEventListener("load", function(){
+          setTimeout(function(){
+            skeleton.classList.add("hidden");
+          }, 650);
+        });
+      }
+
+      /* ===== Theme (auto dark after 19:00 if no saved) ===== */
       const PREF_KEY = "hm_quick_theme";
       function applyTheme(mode){
         if (mode !== "dark" && mode !== "light") return;
@@ -938,8 +1028,10 @@
         if (saved === "dark" || saved === "light"){
           applyTheme(saved);
         } else {
-          const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-          applyTheme(prefersDark ? "dark" : "light");
+          const now = new Date();
+          const h = now.getHours(); // local time ~ Hanoi
+          const darkTime = (h >= 19 || h < 6);
+          applyTheme(darkTime ? "dark" : "light");
         }
       })();
 
@@ -1016,7 +1108,7 @@
         items.forEach(el=>io.observe(el));
       })();
 
-      /* ===== Toast helper ===== */
+      /* ===== Toast ===== */
       let toastTimeout;
       function showToast(icon, text){
         if (!toast) return;
@@ -1029,7 +1121,7 @@
         }, 2200);
       }
 
-      /* ===== Copy main prices (no new text content, same info) ===== */
+      /* ===== Copy main prices ===== */
       if (copyBtn){
         copyBtn.addEventListener("click", function(){
           const copyText =
@@ -1060,7 +1152,15 @@
         });
       }
 
-      /* ===== Click tracking for contact buttons (toast only) ===== */
+      /* ===== Compact mode ===== */
+      if (compactBtn && page){
+        compactBtn.addEventListener("click", function(){
+          const isCompact = page.classList.toggle("compact");
+          showToast("🧩", isCompact ? "Compact on" : "Compact off");
+        });
+      }
+
+      /* ===== Click toast for contact ===== */
       function attachActionToast(selector){
         document.querySelectorAll(selector).forEach(el=>{
           el.addEventListener("click", function(){
@@ -1086,20 +1186,61 @@
           return;
         }
         const key = e.key.toLowerCase();
-        if (key === "w"){ // WhatsApp
+        if (key === "w"){
           const a = document.querySelector('.cta-btn[data-action="whatsapp"]');
           if (a){ a.click(); }
-        } else if (key === "z"){ // Zalo
+        } else if (key === "z"){
           const a = document.querySelector('.cta-btn[data-action="zalo"]');
           if (a){ a.click(); }
-        } else if (key === "c"){ // Call
+        } else if (key === "c"){
           const a = document.querySelector('.cta-btn[data-action="call"]');
           if (a){ a.click(); }
-        } else if (key === "m"){ // Map
+        } else if (key === "m"){
           const a = document.querySelector('.cta-btn[data-action="map"]');
           if (a){ a.click(); }
         }
       });
+
+      /* ===== Ripple effect ===== */
+      function attachRipple(selector){
+        document.querySelectorAll(selector).forEach(el=>{
+          el.addEventListener("click", function(e){
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height) * 2;
+            const ripple = document.createElement("span");
+            ripple.className = "ripple";
+            ripple.style.width = ripple.style.height = size + "px";
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            ripple.style.left = x + "px";
+            ripple.style.top = y + "px";
+            this.appendChild(ripple);
+            ripple.addEventListener("animationend", function(){
+              ripple.remove();
+            });
+          });
+        });
+      }
+      attachRipple(".quick-btn");
+      attachRipple(".cta-btn");
+
+      /* ===== Tilt on mouse move ===== */
+      if (page && window.matchMedia && !window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+        const maxTilt = 6;
+        page.addEventListener("mousemove", function(e){
+          const rect = page.getBoundingClientRect();
+          const cx = rect.left + rect.width / 2;
+          const cy = rect.top + rect.height / 2;
+          const dx = (e.clientX - cx) / rect.width;
+          const dy = (e.clientY - cy) / rect.height;
+          const rx = (-dy * maxTilt).toFixed(2);
+          const ry = (dx * maxTilt).toFixed(2);
+          page.style.transform = "perspective(1200px) rotateX(" + rx + "deg) rotateY(" + ry + "deg)";
+        });
+        page.addEventListener("mouseleave", function(){
+          page.style.transform = "translateY(0) scale(1)";
+        });
+      }
 
       /* Initial nav highlight */
       updateActiveNav();
