@@ -220,6 +220,13 @@
       align-items:center;
       gap:6px;
     }
+    .brand-link{
+      text-decoration:none;
+      color:inherit;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+    }
     .brand-title-pill{
       font-size:9px;
       text-transform:uppercase;
@@ -230,14 +237,48 @@
       color:var(--muted);
       border:1px solid rgba(220,38,38,0.16);
     }
+    .brand-link:hover .brand-title-pill{
+      border-color:rgba(220,38,38,0.4);
+      background:rgba(220,38,38,0.08);
+    }
     html[data-theme="dark"] .brand-title-pill{
       background:rgba(248,113,113,0.1);
       color:#fecaca;
       border-color:rgba(248,113,113,0.4);
     }
+    html[data-theme="dark"] .brand-link:hover .brand-title-pill{
+      background:rgba(248,113,113,0.18);
+    }
     .brand-sub{
       font-size:12px;
       color:var(--muted);
+    }
+    .brand-open-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      font-size:11px;
+      color:var(--muted);
+    }
+    .brand-open-dot{
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:radial-gradient(circle,#22C55E,#15803D);
+      box-shadow:0 0 0 3px rgba(34,197,94,0.35);
+    }
+    .brand-open-status{
+      display:block;
+      font-size:11px;
+      margin-top:2px;
+      color:var(--muted);
+    }
+    .brand-open-status.closed{
+      color:#DC2626;
+    }
+    .brand-open-dot.closed{
+      background:radial-gradient(circle,#EF4444,#991B1B);
+      box-shadow:0 0 0 3px rgba(239,68,68,0.45);
     }
 
     .nav{
@@ -880,11 +921,20 @@
           <span class="logo-tag">HM</span>
         </div>
         <div class="brand-text">
-          <div class="brand-title">
+          <a href="https://hanoimoto.github.io/app/sale.html"
+             target="_blank"
+             rel="noopener"
+             class="brand-title brand-link">
             <span>Hanoi Motorbike</span>
-            <span class="brand-title-pill">QUICK CARD</span>
+            <span class="brand-title-pill">Sale 6m – 26m VND</span>
+          </a>
+          <div class="brand-sub">
+            <span class="brand-open-pill">
+              <span class="brand-open-dot" id="openDot"></span>
+              <span>09:00 – 21:00</span>
+            </span>
+            <span class="brand-open-status" id="openStatus">Checking…</span>
           </div>
-          <div class="brand-sub">Rental &amp; Sale • Quick Info</div>
         </div>
       </div>
 
@@ -972,14 +1022,6 @@
             </tbody>
           </table>
         </div>
-
-        <p class="note">
-          Motorbikes for sale from <strong>6,000,000 VND to 26,000,000 VND</strong>.
-          See more:
-          <a href="https://hanoimoto.github.io/app/sale.html" target="_blank" rel="noopener">
-            Motorbikes for sale
-          </a>.
-        </p>
       </section>
 
       <section id="how-to-rent" class="reveal" data-obs>
@@ -1029,7 +1071,6 @@
         <div class="divider"></div>
         <div class="footer-info">
           <span>📍 <strong>Address:</strong> 112 Nguyen Van Cu, Bo De, Long Bien, Hanoi</span>
-          <span>🕘 <strong>Opening Hours:</strong> 09:00 – 21:00 (Daily, including holidays &amp; Tet)</span>
           <span>🌐 
             <strong>Web:</strong>
             <a href="https://thuexemaynguyentu.com" target="_blank" rel="noopener">thuexemaynguyentu.com</a>
@@ -1088,6 +1129,9 @@
       const skeleton = document.getElementById("skeletonLayer");
       const installFab = document.getElementById("installFab");
 
+      const openStatusEl = document.getElementById("openStatus");
+      const openDot = document.getElementById("openDot");
+
       const PREF_KEY = "hm_quick_theme";
       const COMPACT_KEY = "hm_quick_compact";
 
@@ -1139,6 +1183,26 @@
           applyTheme(current === "dark" ? "light" : "dark");
         });
       }
+
+      /* ===== Open now / Closed (local time ~ Hanoi) ===== */
+      function updateOpenStatus(){
+        if (!openStatusEl || !openDot) return;
+        const now = new Date();
+        const h = now.getHours();
+        const isOpen = (h >= 9 && h < 21); // 09:00–20:59 open, 21:00+ closed
+
+        if (isOpen){
+          openStatusEl.textContent = "Open now";
+          openStatusEl.classList.remove("closed");
+          openDot.classList.remove("closed");
+        } else {
+          openStatusEl.textContent = "Closed";
+          openStatusEl.classList.add("closed");
+          openDot.classList.add("closed");
+        }
+      }
+      updateOpenStatus();
+      setInterval(updateOpenStatus, 5 * 60 * 1000);
 
       /* ===== Smooth scroll + active nav ===== */
       function smoothScrollTo(target){
