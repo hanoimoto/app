@@ -1,415 +1,466 @@
 <!doctype html>
-<html lang="vi">
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Nguyen Chinh • Hanoi Motorbike</title>
+  <title>Quick Info | Hanoi Motorbike Rental & Sale</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-        content="Trang giới thiệu nhanh của Nguyen Chinh - Hanoi Motorbike Rental & Sale. Thông tin liên hệ, giờ mở cửa, gọi, Zalo, WhatsApp, Google Maps.">
+        content="Short info card for Hanoi Motorbike Rental & Sale: daily, weekly, monthly prices and simple rental deposit rules, plus quick contact buttons.">
   <style>
     :root{
-      --primary:#D6001C;
+      --primary:#D6001C;      /* Honda red */
       --primary-dark:#8B0000;
-      --accent:#FACC15;
-      --bg:#020617;
-      --card:#020617;
-      --card2:#020617;
-      --text:#E5E7EB;
-      --muted:#9CA3AF;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:16px;
-      color:var(--text);
-      background:
-        radial-gradient(circle at top,#1F2937,#020617 55%) fixed;
-    }
-    .wrap{
-      width:100%;
-      max-width:520px;
-    }
-    .card{
-      background: radial-gradient(circle at top left,#111827,#020617 55%);
-      border-radius:24px;
-      padding:18px 16px 16px;
-      box-shadow:
-        0 20px 60px rgba(0,0,0,0.7),
-        0 0 0 1px rgba(148,163,184,0.35);
-      position:relative;
-      overflow:hidden;
-    }
-    .glow{
-      position:absolute;
-      inset:-40%;
-      background:
-        radial-gradient(circle at 10% 0%,rgba(248,250,252,0.12),transparent 45%),
-        radial-gradient(circle at 90% 0%,rgba(248,113,113,0.25),transparent 55%);
-      opacity:0.55;
-      pointer-events:none;
-      mix-blend-mode:screen;
-    }
-    .content{
-      position:relative;
-      z-index:2;
+      --bg:#F3F4F6;           /* light grey background */
+      --card:#FFFFFF;
+      --text:#111827;
+      --muted:#6B7280;
+      --border:#E5E7EB;
     }
 
-    .top-row{
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      min-height:100vh;
+      background:var(--bg);
+      color:var(--text);
+      display:flex;
+      justify-content:center;
+      padding:16px;
+    }
+
+    .page{
+      width:100%;
+      max-width:900px;
+      background:var(--card);
+      border-radius:24px;
+      box-shadow:
+        0 18px 50px rgba(15,23,42,0.15),
+        0 0 0 1px rgba(15,23,42,0.06);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+    }
+
+    /* HEADER / TOP BAR */
+    .top-bar{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:12px;
+      padding:12px 18px;
+      border-bottom:1px solid var(--border);
+      background:linear-gradient(90deg,#FFFFFF,#FDF2F2);
     }
-    .avatar{
-      width:60px;height:60px;border-radius:999px;
-      background:radial-gradient(circle at 30% 0%,#F9FAFB,#111827);
-      display:flex;align-items:center;justify-content:center;
-      font-size:32px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.7);
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .logo-wrap{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      overflow:hidden;
+      background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+      box-shadow:0 8px 24px rgba(0,0,0,0.25);
+      position:relative;
       flex-shrink:0;
     }
-    .title-block{
-      flex:1;
+    .logo-wrap img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
     }
-    .label{
+    .logo-tag{
+      position:absolute;
+      bottom:3px;
+      right:6px;
+      font-size:10px;
+      font-weight:800;
+      padding:2px 6px;
+      border-radius:999px;
+      background:rgba(0,0,0,0.75);
+      color:#F9FAFB;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+    }
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+    }
+    .brand-title{
+      font-weight:800;
+      font-size:16px;
+    }
+    .brand-sub{
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    /* SIMPLE NAV (one-page anchors) */
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:13px;
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      margin-right:8px;
+    }
+    .nav-link{
+      padding:3px 8px;
+      border-radius:999px;
+      border:1px solid rgba(0,0,0,0.04);
+      background:rgba(255,255,255,0.9);
+      color:var(--muted);
+      text-decoration:none;
+      white-space:nowrap;
+      font-size:11px;
+      font-weight:500;
+    }
+    .nav-link:hover{
+      border-color:rgba(0,0,0,0.16);
+      color:var(--text);
+    }
+    .nav-link.active{
+      border-color:var(--primary);
+      color:var(--primary);
+      font-weight:600;
+    }
+
+    /* QUICK CALL BUTTONS (top-right) */
+    .quick-actions{
+      display:flex;
+      gap:6px;
+    }
+    .quick-btn{
+      width:34px;
+      height:34px;
+      border-radius:999px;
+      border:none;
+      background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+      color:#FFFFFF;
+      font-size:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      text-decoration:none;
+      box-shadow:0 8px 22px rgba(214,0,28,0.4);
+      transition:transform .12s ease, box-shadow .12s ease;
+    }
+    .quick-btn:hover{
+      transform:translateY(-1px) scale(1.03);
+      box-shadow:0 10px 30px rgba(214,0,28,0.55);
+    }
+
+    /* MAIN CONTENT */
+    main{
+      padding:18px 18px 16px;
+    }
+
+    .eyebrow{
       font-size:11px;
       text-transform:uppercase;
-      letter-spacing:0.16em;
+      letter-spacing:0.15em;
       color:var(--muted);
       margin-bottom:4px;
     }
     h1{
       font-size:20px;
-      line-height:1.2;
-      display:flex;
-      gap:6px;
-      align-items:center;
+      margin-bottom:6px;
     }
-    .tag-pill{
-      font-size:10px;
-      padding:2px 7px;
-      border-radius:999px;
-      border:1px solid rgba(248,250,252,0.18);
-      background:rgba(15,23,42,0.7);
-      color:var(--accent);
-    }
-    .sub{
-      font-size:12px;
-      color:var(--muted);
-      margin-top:2px;
-    }
-
-    .status-pill{
-      display:inline-flex;
-      flex-direction:column;
-      align-items:flex-start;
-      gap:3px;
-      padding:6px 10px;
-      border-radius:16px;
-      background:rgba(15,23,42,0.9);
-      border:1px solid rgba(148,163,184,0.5);
-      font-size:11px;
-      white-space:nowrap;
-    }
-    .status-top{
-      display:flex;
-      align-items:center;
-      gap:6px;
-    }
-    .status-dot{
-      width:8px;height:8px;border-radius:999px;
-      background:#22C55E;
-      box-shadow:0 0 0 4px rgba(34,197,94,0.45);
-    }
-    .status-pill.closed .status-dot{
-      background:#EF4444;
-      box-shadow:0 0 0 4px rgba(248,113,113,0.45);
-    }
-    .status-text-main{
-      font-weight:600;
-    }
-    .status-text-sub{
-      font-size:10px;
-      color:var(--muted);
-    }
-
-    .section{
-      margin-top:14px;
-    }
-    .section-title{
+    .intro{
       font-size:13px;
-      font-weight:600;
+      color:var(--muted);
+      margin-bottom:12px;
+    }
+
+    /* PRICE GRID */
+    .price-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:10px;
+      margin-bottom:10px;
+    }
+    .price-card{
+      border-radius:14px;
+      border:1px solid var(--border);
+      padding:10px 10px 9px;
+      background:#FFFFFF;
+      box-shadow:0 6px 18px rgba(15,23,42,0.08);
+    }
+    .price-label{
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:0.14em;
+      color:var(--muted);
       margin-bottom:4px;
     }
-    .section-text{
-      font-size:13px;
-      color:var(--muted);
-      line-height:1.4;
-    }
-
-    .info-row{
-      display:flex;
-      align-items:flex-start;
-      gap:8px;
-      margin-top:6px;
-      font-size:13px;
-    }
-    .info-row .icon{
+    .price-main{
       font-size:15px;
+      font-weight:700;
+      margin-bottom:2px;
+      color:var(--primary-dark);
     }
-
-    .chip-row{
-      margin-top:8px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:6px;
-    }
-    .chip{
+    .price-sub{
       font-size:11px;
-      border-radius:999px;
-      padding:4px 9px;
-      background:rgba(15,23,42,0.9);
-      border:1px solid rgba(148,163,184,0.45);
-    }
-
-    .btn-grid{
-      margin-top:14px;
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:9px;
-    }
-    .btn{
-      border:none;
-      border-radius:14px;
-      padding:9px 9px;
-      font-size:13px;
-      font-weight:600;
-      cursor:pointer;
-      display:flex;
-      flex-direction:column;
-      align-items:flex-start;
-      justify-content:center;
-      gap:3px;
-      text-align:left;
-      color:#F9FAFB;
-      text-decoration:none;
-      transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
-    }
-    .btn-main{
-      font-size:13px;
-    }
-    .btn-sub{
-      font-size:11px;
-      opacity:0.9;
-    }
-    .btn-primary{
-      background:linear-gradient(135deg,var(--primary),var(--primary-dark));
-      box-shadow:0 10px 26px rgba(214,0,28,0.7);
-    }
-    .btn-secondary{
-      background:rgba(15,23,42,0.95);
-      border:1px solid rgba(148,163,184,0.6);
-    }
-    .btn:hover{
-      transform:translateY(-1px);
-      box-shadow:0 12px 30px rgba(0,0,0,0.6);
+      color:var(--muted);
     }
 
     .note{
-      margin-top:10px;
-      padding-top:8px;
-      border-top:1px dashed rgba(148,163,184,0.4);
       font-size:11px;
       color:var(--muted);
-      line-height:1.4;
-    }
-    .quick-line{
-      margin-top:6px;
-      font-size:12px;
-      padding:7px 9px;
-      border-radius:12px;
-      background:rgba(22,163,74,0.08);
-      border:1px solid rgba(34,197,94,0.5);
-      color:#BBF7D0;
-      display:none;
-    }
-    .quick-line.show{
-      display:block;
-    }
-    .footer{
-      margin-top:10px;
-      font-size:10px;
-      color:var(--muted);
-      text-align:center;
+      margin-bottom:12px;
     }
 
-    @media(max-width:480px){
-      .card{border-radius:20px;padding:16px 14px 14px;}
-      h1{font-size:18px;}
-      .avatar{width:52px;height:52px;font-size:28px;}
+    /* HOW TO RENT */
+    .section-title{
+      font-size:14px;
+      font-weight:600;
+      margin-bottom:6px;
+      margin-top:4px;
+    }
+    .steps{
+      list-style:decimal;
+      padding-left:18px;
+      font-size:13px;
+      color:var(--text);
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      margin-bottom:14px;
+    }
+
+    /* 4 BIG CTA BUTTONS (3D style) */
+    .cta-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+      margin-bottom:14px;
+    }
+    .cta-btn{
+      border:none;
+      border-radius:16px;
+      padding:10px 11px;
+      text-align:left;
+      display:flex;
+      flex-direction:column;
+      gap:3px;
+      cursor:pointer;
+      text-decoration:none;
+      color:#FFFFFF;
+      background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+      box-shadow:0 12px 28px rgba(214,0,28,0.55);
+      transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+    }
+    .cta-btn.secondary{
+      background:linear-gradient(135deg,#111827,#374151);
+      box-shadow:0 10px 24px rgba(15,23,42,0.45);
+    }
+    .cta-main{
+      font-size:14px;
+      font-weight:700;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+    .cta-sub{
+      font-size:11px;
+      opacity:0.9;
+    }
+    .cta-btn:hover{
+      transform:translateY(-2px) scale(1.02);
+      box-shadow:0 16px 36px rgba(0,0,0,0.35);
+    }
+
+    /* FOOTER INFO */
+    .divider{
+      border-top:1px dashed var(--border);
+      margin-bottom:8px;
+    }
+    .footer-info{
+      font-size:12px;
+      color:var(--text);
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      margin-bottom:4px;
+    }
+    .footer-info span{
+      display:block;
+    }
+    .footer-info a{
+      color:var(--primary-dark);
+      text-decoration:none;
+      font-weight:600;
+    }
+    .footer-info a:hover{
+      text-decoration:underline;
+    }
+
+    .copyright{
+      font-size:11px;
+      color:var(--muted);
+      text-align:right;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:640px){
+      .top-bar{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+      }
+      .nav{
+        width:100%;
+        justify-content:space-between;
+      }
+      .nav-links{
+        display:none; /* menu anchors not so important on mobile */
+      }
+      .quick-actions{
+        margin-left:auto;
+      }
+      .price-grid{
+        grid-template-columns:1fr;
+      }
+      .cta-grid{
+        grid-template-columns:1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <article class="card" aria-label="Giới thiệu Nguyen Chinh - Hanoi Motorbike">
-      <div class="glow" aria-hidden="true"></div>
-
-      <div class="content">
-        <header class="top-row">
-          <div style="display:flex;align-items:center;gap:10px;">
-            <div class="avatar" aria-hidden="true">🛵</div>
-            <div class="title-block">
-              <div class="label">About • Hanoi Motorbike</div>
-              <h1>
-                Nguyen Chinh
-                <span class="tag-pill">Motorbike Expert</span>
-              </h1>
-              <div class="sub">Hanoi Motorbike Rental &amp; Sale • Long Bien, Hanoi</div>
-            </div>
-          </div>
-
-          <div class="status-pill" id="statusPill">
-            <div class="status-top">
-              <span class="status-dot"></span>
-              <span class="status-text-main" id="statusMain">Đang kiểm tra...</span>
-            </div>
-            <div class="status-text-sub" id="statusSub">09:00 – 21:00 (giờ Hà Nội)</div>
-          </div>
-        </header>
-
-        <section class="section" aria-label="Thông tin chính">
-          <div class="section-title">Thông tin nhanh</div>
-          <p class="section-text">
-            Chuyên hỗ trợ thuê và mua xe máy cũ giấy tờ rõ ràng tại Hà Nội.
-            Tư vấn khách du lịch, expat và người Việt cần xe đi lâu dài.
-          </p>
-
-          <div class="info-row">
-            <span class="icon">📍</span>
-            <span>112 Nguyen Van Cu, Long Bien, Hanoi (Near Old Quarter)</span>
-          </div>
-          <div class="info-row">
-            <span class="icon">📞</span>
-            <span>+84 94 246 7674 • +84 81 205 0090</span>
-          </div>
-
-          <div class="chip-row">
-            <span class="chip">Honda Vision / Airblade</span>
-            <span class="chip">Thuê theo ngày / tháng</span>
-            <span class="chip">Giấy tờ đầy đủ (Blue Card)</span>
-          </div>
-        </section>
-
-        <section class="section" aria-label="Hành động nhanh">
-          <div class="section-title">Liên hệ & điều hướng</div>
-
-          <div class="btn-grid">
-            <a class="btn btn-primary" href="tel:+84942467674">
-              <div class="btn-main">📞 Gọi ngay</div>
-              <div class="btn-sub">+84 94 246 7674</div>
-            </a>
-
-            <a class="btn btn-secondary" href="https://zalo.me/0942467674" target="_blank" rel="noopener">
-              <div class="btn-main">💬 Zalo</div>
-              <div class="btn-sub">Chat Zalo trực tiếp</div>
-            </a>
-
-            <a class="btn btn-secondary" href="https://wa.me/84942467674" target="_blank" rel="noopener">
-              <div class="btn-main">🟢 WhatsApp</div>
-              <div class="btn-sub">wa.me/84942467674</div>
-            </a>
-
-            <a class="btn btn-primary" href="https://maps.app.goo.gl/AQfB4c9MmfBJpP7QA?g_st=ipc"
-               target="_blank" rel="noopener">
-              <div class="btn-main">📍 Google Maps</div>
-              <div class="btn-sub">Mở app Maps / chỉ đường</div>
-            </a>
-          </div>
-
-          <div style="margin-top:10px;">
-            <button id="quickHelpBtn" class="btn btn-secondary" type="button" style="width:100%;align-items:center;">
-              <div class="btn-main">⚡ Yêu cầu tư vấn nhanh</div>
-              <div class="btn-sub">Nhấn khi khách muốn được gọi lại / tư vấn</div>
-            </button>
-          </div>
-
-          <div id="quickLine" class="quick-line">
-            Chúng tôi sẽ tư vấn nhanh cho quý khách qua điện thoại, Zalo hoặc WhatsApp trong giờ làm việc.
-          </div>
-        </section>
-
-        <div class="note">
-          Gợi ý khi gửi cho khách:
-          <br>• Nếu khách cần địa chỉ: gửi luôn link trang này hoặc copy dòng địa chỉ phía trên.
-          <br>• Nếu khách bận: bảo họ nhấn nút “Yêu cầu tư vấn nhanh”, bạn sẽ chủ động gọi lại.
+  <div class="page">
+    <header class="top-bar">
+      <div class="brand">
+        <div class="logo-wrap">
+          <img src="https://raw.githubusercontent.com/hanoimoto/app/refs/heads/main/IMG_0045.png"
+               alt="Hanoi Motorbike Logo">
+          <span class="logo-tag">HM</span>
         </div>
-
-        <div class="footer">
-          © 2025 Nguyen Chinh • Hanoi Motorbike
+        <div class="brand-text">
+          <div class="brand-title">Hanoi Motorbike</div>
+          <div class="brand-sub">Rental &amp; Sale • Quick Info</div>
         </div>
       </div>
-    </article>
+
+      <div class="nav">
+        <div class="nav-links">
+          <a href="#top" class="nav-link active">Overview</a>
+          <a href="#pricing" class="nav-link">Pricing</a>
+          <a href="#how-to-rent" class="nav-link">How to rent</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <div class="quick-actions">
+          <!-- 4 quick-call ultra buttons (top-right) -->
+          <a class="quick-btn" href="https://wa.me/84942467674" target="_blank" rel="noopener" title="WhatsApp">
+            🟢
+          </a>
+          <a class="quick-btn" href="https://zalo.me/0942467674" target="_blank" rel="noopener" title="Zalo">
+            💬
+          </a>
+          <a class="quick-btn" href="tel:+84942467674" title="Call now">
+            📞
+          </a>
+          <a class="quick-btn" href="https://maps.app.goo.gl/AQfB4c9MmfBJpP7QA?g_st=ipc"
+             target="_blank" rel="noopener" title="Shop map">
+            📍
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <div class="eyebrow">Short info card</div>
+      <h1>Short Info – Hanoi Motorbike Rental &amp; Sale</h1>
+      <p class="intro">
+        Simple overview for daily, weekly and monthly rental prices and basic rental deposit rules.
+        You can send this page directly to customers.
+      </p>
+
+      <section id="pricing">
+        <div class="price-grid">
+          <div class="price-card">
+            <div class="price-label">Daily rental</div>
+            <div class="price-main">150k – 200k / day</div>
+            <div class="price-sub">Typical scooter rental in Hanoi</div>
+          </div>
+          <div class="price-card">
+            <div class="price-label">Weekly rental</div>
+            <div class="price-main">600k – 900k / week</div>
+            <div class="price-sub">Good for short trips &amp; tourists</div>
+          </div>
+          <div class="price-card">
+            <div class="price-label">Monthly rental</div>
+            <div class="price-main">800k – 2,000k / month</div>
+            <div class="price-sub">Best value for long stays &amp; expats</div>
+          </div>
+        </div>
+
+        <p class="note">
+          * All prices are in VND. “1k” means 1,000 VND (for example: 150k = 150,000 VND).
+          Actual price depends on motorbike model and condition.
+        </p>
+      </section>
+
+      <section id="how-to-rent">
+        <div class="section-title">Simple rental deposit rules</div>
+        <ol class="steps">
+          <li>
+            Motorbike rental deposit from <strong>1.5 million VND to 5 million VND</strong>,
+            paid when you sign the rental contract.
+          </li>
+          <li>
+            If you do not have cash for deposit, you can leave your
+            <strong>original passport</strong> as deposit and pay the rental fee.
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <div class="section-title">Quick contact (mini app)</div>
+        <div class="cta-grid">
+          <a class="cta-btn" href="https://wa.me/84942467674" target="_blank" rel="noopener">
+            <div class="cta-main">🟢 WhatsApp</div>
+            <div class="cta-sub">Chat in English / Vietnamese</div>
+          </a>
+
+          <a class="cta-btn secondary" href="https://zalo.me/0942467674" target="_blank" rel="noopener">
+            <div class="cta-main">💬 Zalo</div>
+            <div class="cta-sub">Fast reply during opening hours</div>
+          </a>
+
+          <a class="cta-btn secondary" href="tel:+84942467674">
+            <div class="cta-main">📞 Call</div>
+            <div class="cta-sub">Talk directly for quick advice</div>
+          </a>
+
+          <a class="cta-btn" href="https://maps.app.goo.gl/AQfB4c9MmfBJpP7QA?g_st=ipc"
+             target="_blank" rel="noopener">
+            <div class="cta-main">📍 Shop map</div>
+            <div class="cta-sub">112 Nguyen Van Cu, Long Bien, Hanoi</div>
+          </a>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="divider"></div>
+        <div class="footer-info">
+          <span>📍 <strong>Address:</strong> 112 Nguyen Van Cu, Bo De, Long Bien, Hanoi</span>
+          <span>🕘 <strong>Opening Hours:</strong> 09:00 – 21:00 (Daily, including holidays &amp; Tet)</span>
+          <span>🌐 <strong>Website:</strong> <a href="https://hanoimoto.github.io/app" target="_blank" rel="noopener">https://hanoimoto.github.io/app</a></span>
+        </div>
+        <div class="copyright">
+          © 2025 Nguyen Tu
+        </div>
+      </section>
+    </main>
   </div>
-
-  <script>
-    // === Giờ mở cửa (Asia/Bangkok) ===
-    (function(){
-      const pill  = document.getElementById('statusPill');
-      const main  = document.getElementById('statusMain');
-      const sub   = document.getElementById('statusSub');
-      if (!pill || !main || !sub) return;
-
-      const OPEN  = 9;
-      const CLOSE = 21;
-
-      function getHanoiNow(){
-        const now = new Date();
-        const s = now.toLocaleString('en-US',{ timeZone:'Asia/Bangkok' });
-        return new Date(s);
-      }
-
-      function updateStatus(){
-        const now = getHanoiNow();
-        const h = now.getHours();
-
-        if (h >= OPEN && h < CLOSE){
-          pill.classList.remove('closed');
-          main.textContent = 'Đang mở cửa';
-          sub.textContent  = '09:00 – 21:00 (giờ Hà Nội)';
-        } else {
-          pill.classList.add('closed');
-          main.textContent = 'Hiện đang đóng cửa';
-          if (h < OPEN){
-            sub.textContent = 'Hôm nay mở từ 09:00 – 21:00';
-          } else {
-            sub.textContent = 'Ngày mai mở từ 09:00 – 21:00';
-          }
-        }
-      }
-
-      updateStatus();
-      setInterval(updateStatus, 5 * 60 * 1000);
-    })();
-
-    // === Nút "Yêu cầu tư vấn nhanh" ===
-    (function(){
-      const btn  = document.getElementById('quickHelpBtn');
-      const line = document.getElementById('quickLine');
-      if (!btn || !line) return;
-
-      btn.addEventListener('click', function(){
-        line.classList.add('show');
-        btn.disabled = true;
-        btn.style.opacity = '0.8';
-        btn.querySelector('.btn-main').textContent = '✅ Đã ghi nhận yêu cầu';
-        btn.querySelector('.btn-sub').textContent  = 'Bạn có thể gửi trang này cho khách';
-      });
-    })();
-  </script>
 </body>
 </html>
