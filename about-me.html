@@ -98,6 +98,34 @@
       color:var(--muted);
     }
 
+    /* LIVE STATUS PILL */
+    .status-pill{
+      margin-top:4px;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:2px 8px;
+      border-radius:999px;
+      background:rgba(16,185,129,0.08);
+      font-size:11px;
+      color:#059669;
+    }
+    .status-pill .dot{
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:#22c55e;
+      box-shadow:0 0 0 4px rgba(34,197,94,0.35);
+    }
+    .status-pill.closed{
+      background:rgba(239,68,68,0.08);
+      color:#b91c1c;
+    }
+    .status-pill.closed .dot{
+      background:#ef4444;
+      box-shadow:0 0 0 4px rgba(239,68,68,0.25);
+    }
+
     /* SIMPLE NAV (one-page anchors) */
     .nav{
       display:flex;
@@ -347,6 +375,11 @@
         <div class="brand-text">
           <div class="brand-title">Hanoi Motorbike</div>
           <div class="brand-sub">Rental &amp; Sale • Quick Info</div>
+          <!-- Live status pill -->
+          <div class="status-pill" id="shop-status">
+            <span class="dot"></span>
+            <span class="status-text">Checking status...</span>
+          </div>
         </div>
       </div>
 
@@ -403,7 +436,6 @@
           </div>
         </div>
 
-        <!-- New line: bike sale price range + backlink -->
         <p class="note">
           Motorbikes for sale from <strong>6,000,000 VND to 26,000,000 VND</strong>.
           See more details here:
@@ -428,7 +460,6 @@
       </section>
 
       <section>
-        <!-- Removed "Quick contact (mini app)" title as requested -->
         <div class="cta-grid">
           <a class="cta-btn" href="https://wa.me/84942467674" target="_blank" rel="noopener">
             <div class="cta-main">🟢 WhatsApp</div>
@@ -466,6 +497,30 @@
       </section>
     </main>
   </div>
+
+  <!-- Script nhỏ update trạng thái mở cửa -->
+  <script>
+    (function(){
+      function updateStatus(){
+        var box = document.getElementById("shop-status");
+        if(!box) return;
+        var txt = box.querySelector(".status-text");
+        var now = new Date();
+        var h = now.getHours();
+        var open = (h >= 9 && h < 21); // 09:00 – 21:00
+        if(open){
+          box.classList.remove("closed");
+          txt.textContent = "Open now · 09:00 – 21:00";
+        }else{
+          box.classList.add("closed");
+          txt.textContent = "Closed now · 09:00 – 21:00";
+        }
+      }
+      updateStatus();
+      setInterval(updateStatus, 60000);
+    })();
+  </script>
+
   <!-- Nhúng script chatbot của bạn -->
   <script src="https://hanoimoto.github.io/app/motoai_v39_hanoi_motorbike.js"></script>
 </body>
