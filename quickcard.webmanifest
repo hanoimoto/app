@@ -1,0 +1,20 @@
+{
+  "name": "Hanoi Motorbike Quick Card",
+  "short_name": "HM Quick",
+  "start_url": "./quick-info.html",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#D6001C",
+  "icons": [
+    {
+      "src": "IMG_0045.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "IMG_0045.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
