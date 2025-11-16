@@ -2718,5 +2718,31 @@ try {
 
 <!-- Nhúng script chatbot của bạn -->
   <script src="https://hanoimoto.github.io/app/motoai_v39_hanoi_motorbike.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('#bikes-for-sale .bike-card');
+
+    cards.forEach(function (card) {
+      card.addEventListener('click', function (e) {
+        // Nếu click vào nút Zalo thì để nó mở Zalo, KHÔNG mở chatbot
+        if (e.target.closest('a')) return;
+
+        const titleEl = card.querySelector('h4');
+        const priceEl = card.querySelector('p');
+
+        const name = titleEl ? titleEl.textContent.trim() : 'motorbike';
+        const priceText = priceEl ? priceEl.textContent.trim() : '';
+
+        const msg = 'Hi, I am interested in "' + name +
+          '". I see on your website it is ' + priceText +
+          '. I want to buy this bike. Please tell me more about this bike and the paperwork.';
+
+        if (window.MotoAI_open) {
+          window.MotoAI_open(msg);
+        }
+      });
+    });
+  });
+</script>
 </body>
 </html>
