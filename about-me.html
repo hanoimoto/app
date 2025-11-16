@@ -4,41 +4,125 @@
   <meta charset="utf-8">
   <title>Quick Info | Hanoi Motorbike Rental & Sale</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Basic meta only, no extra SEO content -->
   <meta name="description"
-        content="Short info card for Hanoi Motorbike Rental & Sale: daily, weekly, monthly prices and simple rental deposit rules, plus quick contact buttons.">
+        content="Short info card for Hanoi Motorbike Rental & Sale: daily, weekly, monthly rental prices, deposit rules and contact buttons.">
+
   <style>
     :root{
       --primary:#D6001C;      /* Honda red */
       --primary-dark:#8B0000;
+      --accent:#F97316;
       --bg:#F3F4F6;           /* light grey background */
       --card:#FFFFFF;
       --text:#111827;
       --muted:#6B7280;
       --border:#E5E7EB;
+      --shadow-soft:0 18px 50px rgba(15,23,42,0.15);
+      --shadow-strong:0 24px 60px rgba(15,23,42,0.24);
+      --radius-xl:24px;
+      --radius-lg:18px;
+      --radius-md:14px;
+      --dur-fast:.18s;
+      --dur-med:.25s;
+      --easing-out:cubic-bezier(.22,1,.36,1);
+    }
+
+    /* dark theme override (toggle by data-theme on html) */
+    html[data-theme="dark"]{
+      --bg:#020617;
+      --card:#020617;
+      --text:#E5E7EB;
+      --muted:#9CA3AF;
+      --border:#1F2933;
+      --shadow-soft:0 22px 60px rgba(0,0,0,0.8);
+      --shadow-strong:0 28px 80px rgba(0,0,0,0.92);
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
     body{
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
       min-height:100vh;
-      background:var(--bg);
+      background:radial-gradient(circle at top,var(--card) 0,var(--bg) 52%,var(--bg) 100%);
       color:var(--text);
       display:flex;
       justify-content:center;
       padding:16px;
+      -webkit-font-smoothing:antialiased;
+      transition:background-color var(--dur-med) linear,color var(--dur-med) linear;
+    }
+
+    /* subtle grid background */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background-image:
+        radial-gradient(circle at 1px 1px,rgba(148,163,184,0.18) 1px,transparent 0);
+      background-size:18px 18px;
+      opacity:.3;
+      pointer-events:none;
+      mix-blend-mode:multiply;
+      z-index:-1;
+    }
+    html[data-theme="dark"] body::before{
+      opacity:.22;
+      mix-blend-mode:screen;
     }
 
     .page{
       width:100%;
-      max-width:900px;
-      background:var(--card);
-      border-radius:24px;
-      box-shadow:
-        0 18px 50px rgba(15,23,42,0.15),
-        0 0 0 1px rgba(15,23,42,0.06);
+      max-width:940px;
+      background:radial-gradient(circle at top left,rgba(248,250,252,0.94),var(--card));
+      border-radius:var(--radius-xl);
+      box-shadow:var(--shadow-soft),0 0 0 1px rgba(15,23,42,0.06);
       overflow:hidden;
       display:flex;
       flex-direction:column;
+      position:relative;
+      isolation:isolate;
+      transform-origin:50% 100%;
+      animation:pageIntro .45s var(--easing-out) both;
+    }
+    html[data-theme="dark"] .page{
+      background:radial-gradient(circle at top left,#020617,#020617);
+      box-shadow:var(--shadow-soft),0 0 0 1px rgba(148,163,184,0.16);
+    }
+
+    /* animated edge glow */
+    .page::before{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      border-radius:inherit;
+      padding:1px;
+      background:conic-gradient(
+        from 140deg,
+        rgba(248,113,113,0.0),
+        rgba(248,113,113,0.6),
+        rgba(252,211,77,0.9),
+        rgba(56,189,248,0.4),
+        rgba(248,113,113,0.0)
+      );
+      -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor;
+      mask-composite:exclude;
+      opacity:.65;
+      animation:borderSpin 16s linear infinite;
+      pointer-events:none;
+      z-index:-1;
+    }
+
+    @keyframes borderSpin{
+      0%{transform:rotate(0deg);}
+      100%{transform:rotate(360deg);}
+    }
+    @keyframes pageIntro{
+      0%{transform:translateY(18px) scale(.97);opacity:0;}
+      100%{transform:translateY(0) scale(1);opacity:1;}
     }
 
     /* HEADER / TOP BAR */
@@ -48,13 +132,38 @@
       justify-content:space-between;
       padding:12px 18px;
       border-bottom:1px solid var(--border);
-      background:linear-gradient(90deg,#FFFFFF,#FDF2F2);
+      background:
+        radial-gradient(circle at top left,rgba(248,250,252,0.95),#FFFFFF);
+      position:relative;
+      overflow:hidden;
+    }
+    html[data-theme="dark"] .top-bar{
+      background:radial-gradient(circle at top left,#020617,#020617);
+    }
+
+    /* subtle shine */
+    .top-bar::before{
+      content:"";
+      position:absolute;
+      inset:-40%;
+      background:linear-gradient(120deg,transparent,rgba(248,250,252,0.9),transparent);
+      opacity:.25;
+      transform:translateX(-60%);
+      pointer-events:none;
+      animation:shineMove 12s linear infinite;
+    }
+    @keyframes shineMove{
+      0%{transform:translateX(-60%);}
+      40%{transform:translateX(40%);}
+      100%{transform:translateX(60%);}
     }
 
     .brand{
       display:flex;
       align-items:center;
       gap:10px;
+      position:relative;
+      z-index:1;
     }
     .logo-wrap{
       width:44px;
@@ -65,6 +174,15 @@
       box-shadow:0 8px 24px rgba(0,0,0,0.25);
       position:relative;
       flex-shrink:0;
+      transform:translateZ(0);
+    }
+    .logo-wrap::after{
+      content:"";
+      position:absolute;
+      inset:1px;
+      border-radius:inherit;
+      border:1px solid rgba(255,255,255,0.18);
+      pointer-events:none;
     }
     .logo-wrap img{
       width:100%;
@@ -80,7 +198,7 @@
       font-weight:800;
       padding:2px 6px;
       border-radius:999px;
-      background:rgba(0,0,0,0.75);
+      background:rgba(0,0,0,0.78);
       color:#F9FAFB;
       letter-spacing:0.12em;
       text-transform:uppercase;
@@ -92,38 +210,28 @@
     .brand-title{
       font-weight:800;
       font-size:16px;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+    .brand-title-pill{
+      font-size:9px;
+      text-transform:uppercase;
+      letter-spacing:0.14em;
+      padding:2px 7px;
+      border-radius:999px;
+      background:rgba(220,38,38,0.06);
+      color:var(--muted);
+      border:1px solid rgba(220,38,38,0.16);
+    }
+    html[data-theme="dark"] .brand-title-pill{
+      background:rgba(248,113,113,0.1);
+      color:#fecaca;
+      border-color:rgba(248,113,113,0.4);
     }
     .brand-sub{
       font-size:12px;
       color:var(--muted);
-    }
-
-    /* LIVE STATUS PILL */
-    .status-pill{
-      margin-top:4px;
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:2px 8px;
-      border-radius:999px;
-      background:rgba(16,185,129,0.08);
-      font-size:11px;
-      color:#059669;
-    }
-    .status-pill .dot{
-      width:8px;
-      height:8px;
-      border-radius:999px;
-      background:#22c55e;
-      box-shadow:0 0 0 4px rgba(34,197,94,0.35);
-    }
-    .status-pill.closed{
-      background:rgba(239,68,68,0.08);
-      color:#b91c1c;
-    }
-    .status-pill.closed .dot{
-      background:#ef4444;
-      box-shadow:0 0 0 4px rgba(239,68,68,0.25);
     }
 
     /* SIMPLE NAV (one-page anchors) */
@@ -132,6 +240,8 @@
       align-items:center;
       gap:10px;
       font-size:13px;
+      position:relative;
+      z-index:1;
     }
     .nav-links{
       display:flex;
@@ -140,7 +250,7 @@
       margin-right:8px;
     }
     .nav-link{
-      padding:3px 8px;
+      padding:4px 8px;
       border-radius:999px;
       border:1px solid rgba(0,0,0,0.04);
       background:rgba(255,255,255,0.9);
@@ -149,18 +259,48 @@
       white-space:nowrap;
       font-size:11px;
       font-weight:500;
+      position:relative;
+      overflow:hidden;
+      transition:
+        background-color var(--dur-fast) ease,
+        border-color var(--dur-fast) ease,
+        color var(--dur-fast) ease,
+        transform var(--dur-fast) ease;
+    }
+    html[data-theme="dark"] .nav-link{
+      background:rgba(15,23,42,0.96);
+      border-color:rgba(148,163,184,0.22);
+    }
+    .nav-link::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(90deg,rgba(248,113,113,0.12),rgba(251,191,36,0.18));
+      opacity:0;
+      transition:opacity var(--dur-fast) ease;
+      pointer-events:none;
     }
     .nav-link:hover{
       border-color:rgba(0,0,0,0.16);
       color:var(--text);
+      transform:translateY(-1px);
+    }
+    .nav-link:hover::after{
+      opacity:1;
     }
     .nav-link.active{
       border-color:var(--primary);
       color:var(--primary);
       font-weight:600;
+      box-shadow:0 4px 12px rgba(220,38,38,0.2);
+    }
+    html[data-theme="dark"] .nav-link.active{
+      background:linear-gradient(90deg,#DC2626,#F97316);
+      color:#FEFCE8;
+      border-color:transparent;
     }
 
-    /* QUICK CALL BUTTONS (top-right) */
+    /* Quick actions (top-right icons) */
     .quick-actions{
       display:flex;
       gap:6px;
@@ -170,7 +310,7 @@
       height:34px;
       border-radius:999px;
       border:none;
-      background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+      background:radial-gradient(circle at 20% 0,var(--primary),var(--primary-dark));
       color:#FFFFFF;
       font-size:16px;
       display:flex;
@@ -179,16 +319,46 @@
       cursor:pointer;
       text-decoration:none;
       box-shadow:0 8px 22px rgba(214,0,28,0.4);
-      transition:transform .12s ease, box-shadow .12s ease;
+      transition:
+        transform var(--dur-fast) ease,
+        box-shadow var(--dur-fast) ease,
+        filter var(--dur-fast) ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .quick-btn span{
+      transform:translateY(1px);
+    }
+    .quick-btn.theme-toggle{
+      background:radial-gradient(circle at 10% 0,#0EA5E9,#1E293B);
+      box-shadow:0 8px 22px rgba(30,64,175,0.55);
+      font-size:15px;
+    }
+    html[data-theme="dark"] .quick-btn.theme-toggle{
+      background:radial-gradient(circle at 10% 0,#FACC15,#EA580C);
+      box-shadow:0 8px 22px rgba(234,88,12,0.55);
+    }
+    .quick-btn::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle at 20% 0,rgba(255,255,255,0.5),transparent 55%);
+      opacity:.0;
+      transition:opacity var(--dur-fast) ease;
     }
     .quick-btn:hover{
       transform:translateY(-1px) scale(1.03);
       box-shadow:0 10px 30px rgba(214,0,28,0.55);
+      filter:brightness(1.03);
+    }
+    .quick-btn:hover::after{
+      opacity:.4;
     }
 
     /* MAIN CONTENT */
     main{
       padding:18px 18px 16px;
+      position:relative;
     }
 
     .eyebrow{
@@ -201,6 +371,16 @@
     h1{
       font-size:20px;
       margin-bottom:6px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .h1-dot{
+      width:6px;
+      height:6px;
+      border-radius:999px;
+      background:radial-gradient(circle,var(--primary),var(--primary-dark));
+      box-shadow:0 0 0 4px rgba(248,113,113,0.35);
     }
     .intro{
       font-size:13px;
@@ -216,12 +396,43 @@
       margin-bottom:10px;
     }
     .price-card{
-      border-radius:14px;
+      border-radius:var(--radius-md);
       border:1px solid var(--border);
       padding:10px 10px 9px;
       background:#FFFFFF;
       box-shadow:0 6px 18px rgba(15,23,42,0.08);
+      position:relative;
+      overflow:hidden;
+      transform-origin:50% 100%;
+      transition:
+        transform var(--dur-med) var(--easing-out),
+        box-shadow var(--dur-med) ease,
+        border-color var(--dur-med) ease,
+        background-color var(--dur-med) ease;
     }
+    html[data-theme="dark"] .price-card{
+      background:radial-gradient(circle at top left,#020617,#020617);
+      border-color:#1E293B;
+      box-shadow:0 10px 26px rgba(0,0,0,0.9);
+    }
+    .price-card::before{
+      content:"";
+      position:absolute;
+      inset:-20%;
+      background:radial-gradient(circle at top,rgba(248,113,113,0.14),transparent 55%);
+      opacity:0;
+      transition:opacity var(--dur-fast) ease;
+      pointer-events:none;
+    }
+    .price-card:hover{
+      transform:translateY(-3px) scale(1.01);
+      box-shadow:var(--shadow-strong);
+      border-color:rgba(220,38,38,0.65);
+    }
+    .price-card:hover::before{
+      opacity:1;
+    }
+
     .price-label{
       font-size:11px;
       text-transform:uppercase;
@@ -235,6 +446,9 @@
       margin-bottom:2px;
       color:var(--primary-dark);
     }
+    html[data-theme="dark"] .price-main{
+      color:#fecaca;
+    }
     .price-sub{
       font-size:11px;
       color:var(--muted);
@@ -244,6 +458,20 @@
       font-size:11px;
       color:var(--muted);
       margin-bottom:12px;
+    }
+    .note a{
+      color:var(--primary-dark);
+      text-decoration:none;
+      font-weight:600;
+      border-bottom:1px dashed rgba(220,38,38,0.35);
+      padding-bottom:1px;
+    }
+    .note a:hover{
+      text-decoration:none;
+      border-bottom-style:solid;
+    }
+    html[data-theme="dark"] .note a{
+      color:#fecaca;
     }
 
     /* HOW TO RENT */
@@ -284,7 +512,13 @@
       color:#FFFFFF;
       background:linear-gradient(135deg,var(--primary),var(--primary-dark));
       box-shadow:0 12px 28px rgba(214,0,28,0.55);
-      transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+      transition:
+        transform var(--dur-fast) var(--easing-out),
+        box-shadow var(--dur-fast) ease,
+        background var(--dur-fast) ease,
+        filter var(--dur-fast) ease;
+      position:relative;
+      overflow:hidden;
     }
     .cta-btn.secondary{
       background:linear-gradient(135deg,#111827,#374151);
@@ -301,15 +535,29 @@
       font-size:11px;
       opacity:0.9;
     }
+    .cta-btn::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle at 0 0,rgba(255,255,255,0.5),transparent 55%);
+      opacity:0;
+      transition:opacity var(--dur-fast) ease;
+      pointer-events:none;
+    }
     .cta-btn:hover{
-      transform:translateY(-2px) scale(1.02);
+      transform:translateY(-3px) translateZ(0);
       box-shadow:0 16px 36px rgba(0,0,0,0.35);
+      filter:brightness(1.02);
+    }
+    .cta-btn:hover::after{
+      opacity:.7;
     }
 
     /* FOOTER INFO */
     .divider{
       border-top:1px dashed var(--border);
       margin-bottom:8px;
+      margin-top:2px;
     }
     .footer-info{
       font-size:12px;
@@ -330,11 +578,121 @@
     .footer-info a:hover{
       text-decoration:underline;
     }
+    html[data-theme="dark"] .footer-info a{
+      color:#fecaca;
+    }
 
     .copyright{
       font-size:11px;
       color:var(--muted);
       text-align:right;
+    }
+
+    /* FLOATING SIDE BAR (for extra interactions) */
+    .side-bar{
+      position:fixed;
+      right:14px;
+      bottom:calc(18px + env(safe-area-inset-bottom,0));
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      z-index:40;
+      pointer-events:none;
+    }
+    .side-chip{
+      pointer-events:auto;
+      border-radius:999px;
+      background:rgba(15,23,42,0.9);
+      color:#E5E7EB;
+      font-size:11px;
+      padding:5px 9px;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      box-shadow:0 14px 26px rgba(15,23,42,0.6);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      border:1px solid rgba(148,163,184,0.35);
+      animation:chipIntro .35s var(--easing-out) .35s both;
+      cursor:default;
+    }
+    .side-chip-dot{
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:radial-gradient(circle,#22C55E,#166534);
+      box-shadow:0 0 0 4px rgba(34,197,94,0.4);
+    }
+    .side-chip span{
+      white-space:nowrap;
+    }
+    .side-copy-btn{
+      pointer-events:auto;
+      border-radius:999px;
+      border:none;
+      background:radial-gradient(circle at 20% 0,#3B82F6,#1E40AF);
+      color:#EFF6FF;
+      font-size:11px;
+      padding:6px 10px;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      box-shadow:0 14px 28px rgba(37,99,235,0.65);
+      cursor:pointer;
+      transition:
+        transform var(--dur-fast) var(--easing-out),
+        box-shadow var(--dur-fast) ease,
+        filter var(--dur-fast) ease;
+      animation:chipIntro .35s var(--easing-out) .55s both;
+    }
+    .side-copy-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 18px 36px rgba(37,99,235,0.8);
+      filter:brightness(1.05);
+    }
+    @keyframes chipIntro{
+      0%{opacity:0;transform:translateY(10px) scale(.96);}
+      100%{opacity:1;transform:translateY(0) scale(1);}
+    }
+
+    /* TOAST */
+    .toast{
+      position:fixed;
+      left:50%;
+      bottom:calc(8px + env(safe-area-inset-bottom,0));
+      transform:translateX(-50%) translateY(16px);
+      opacity:0;
+      pointer-events:none;
+      background:rgba(15,23,42,0.96);
+      color:#E5E7EB;
+      font-size:12px;
+      padding:7px 11px;
+      border-radius:999px;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      box-shadow:0 16px 32px rgba(15,23,42,0.75);
+      z-index:60;
+      transition:
+        opacity .18s ease,
+        transform .18s ease;
+    }
+    .toast.show{
+      opacity:1;
+      transform:translateX(-50%) translateY(0);
+    }
+
+    /* SMOOTH SECTION REVEAL */
+    .reveal{
+      opacity:0;
+      transform:translateY(10px);
+      transition:
+        opacity .4s var(--easing-out),
+        transform .4s var(--easing-out);
+    }
+    .reveal.visible{
+      opacity:1;
+      transform:translateY(0);
     }
 
     /* RESPONSIVE */
@@ -349,7 +707,7 @@
         justify-content:space-between;
       }
       .nav-links{
-        display:none; /* menu anchors not so important on mobile */
+        display:none; /* anchors not necessary on small screens */
       }
       .quick-actions{
         margin-left:auto;
@@ -360,11 +718,23 @@
       .cta-grid{
         grid-template-columns:1fr;
       }
+      .side-bar{
+        display:none;
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      *{
+        animation-duration:0.001ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:0.001ms !important;
+        scroll-behavior:auto !important;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="page">
+  <div class="page" id="page-root">
     <header class="top-bar">
       <div class="brand">
         <div class="logo-wrap">
@@ -373,51 +743,64 @@
           <span class="logo-tag">HM</span>
         </div>
         <div class="brand-text">
-          <div class="brand-title">Hanoi Motorbike</div>
-          <div class="brand-sub">Rental &amp; Sale • Quick Info</div>
-          <!-- Live status pill -->
-          <div class="status-pill" id="shop-status">
-            <span class="dot"></span>
-            <span class="status-text">Checking status...</span>
+          <div class="brand-title">
+            <span>Hanoi Motorbike</span>
+            <span class="brand-title-pill">QUICK CARD</span>
           </div>
+          <div class="brand-sub">Rental &amp; Sale • Quick Info</div>
         </div>
       </div>
 
       <div class="nav">
         <div class="nav-links">
-          <a href="#top" class="nav-link active">Overview</a>
-          <a href="#pricing" class="nav-link">Pricing</a>
-          <a href="#how-to-rent" class="nav-link">How to rent</a>
-          <a href="#contact" class="nav-link">Contact</a>
+          <a href="#top" class="nav-link active" data-nav="top">Overview</a>
+          <a href="#pricing" class="nav-link" data-nav="pricing">Pricing</a>
+          <a href="#how-to-rent" class="nav-link" data-nav="how-to-rent">How to rent</a>
+          <a href="#contact" class="nav-link" data-nav="contact">Contact</a>
         </div>
         <div class="quick-actions">
+          <!-- theme toggle -->
+          <button class="quick-btn theme-toggle" type="button" id="themeToggleBtn" aria-label="Toggle theme">
+            <span id="themeIcon">☀️</span>
+          </button>
           <!-- 4 quick-call ultra buttons (top-right) -->
-          <a class="quick-btn" href="https://wa.me/84942467674" target="_blank" rel="noopener" title="WhatsApp">
-            🟢
+          <a class="quick-btn" data-action="whatsapp"
+             href="https://wa.me/84942467674"
+             target="_blank" rel="noopener" title="WhatsApp">
+            <span>🟢</span>
           </a>
-          <a class="quick-btn" href="https://zalo.me/0942467674" target="_blank" rel="noopener" title="Zalo">
-            💬
+          <a class="quick-btn" data-action="zalo"
+             href="https://zalo.me/0942467674"
+             target="_blank" rel="noopener" title="Zalo">
+            <span>💬</span>
           </a>
-          <a class="quick-btn" href="tel:+84942467674" title="Call now">
-            📞
+          <a class="quick-btn" data-action="call"
+             href="tel:+84942467674" title="Call now">
+            <span>📞</span>
           </a>
-          <a class="quick-btn" href="https://maps.app.goo.gl/AQfB4c9MmfBJpP7QA?g_st=ipc"
+          <a class="quick-btn" data-action="map"
+             href="https://maps.app.goo.gl/AQfB4c9MmfBJpP7QA?g_st=ipc"
              target="_blank" rel="noopener" title="Shop map">
-            📍
+            <span>📍</span>
           </a>
         </div>
       </div>
     </header>
 
     <main id="top">
-      <div class="eyebrow">Short info card</div>
-      <h1>Short Info – Hanoi Motorbike Rental &amp; Sale</h1>
-      <p class="intro">
-        Simple overview for daily, weekly and monthly rental prices and basic rental deposit rules.
-        You can send this page directly to customers.
-      </p>
+      <div class="reveal" data-obs>
+        <div class="eyebrow">Short info card</div>
+        <h1>
+          <span>Short Info – Hanoi Motorbike Rental &amp; Sale</span>
+          <span class="h1-dot" aria-hidden="true"></span>
+        </h1>
+        <p class="intro">
+          Simple overview for daily, weekly and monthly rental prices and basic rental deposit rules.
+          You can send this page directly to customers.
+        </p>
+      </div>
 
-      <section id="pricing">
+      <section id="pricing" class="reveal" data-obs>
         <div class="price-grid">
           <div class="price-card">
             <div class="price-label">Daily rental</div>
@@ -445,7 +828,7 @@
         </p>
       </section>
 
-      <section id="how-to-rent">
+      <section id="how-to-rent" class="reveal" data-obs>
         <div class="section-title">Simple rental deposit rules</div>
         <ol class="steps">
           <li>
@@ -459,24 +842,28 @@
         </ol>
       </section>
 
-      <section>
+      <section class="reveal" data-obs>
         <div class="cta-grid">
-          <a class="cta-btn" href="https://wa.me/84942467674" target="_blank" rel="noopener">
+          <a class="cta-btn" data-action="whatsapp"
+             href="https://wa.me/84942467674" target="_blank" rel="noopener">
             <div class="cta-main">🟢 WhatsApp</div>
             <div class="cta-sub">Chat in English / Vietnamese</div>
           </a>
 
-          <a class="cta-btn secondary" href="https://zalo.me/0942467674" target="_blank" rel="noopener">
+          <a class="cta-btn secondary" data-action="zalo"
+             href="https://zalo.me/0942467674" target="_blank" rel="noopener">
             <div class="cta-main">💬 Zalo</div>
             <div class="cta-sub">Fast reply during opening hours</div>
           </a>
 
-          <a class="cta-btn secondary" href="tel:+84942467674">
+          <a class="cta-btn secondary" data-action="call"
+             href="tel:+84942467674">
             <div class="cta-main">📞 Call</div>
             <div class="cta-sub">Talk directly for quick advice</div>
           </a>
 
-          <a class="cta-btn" href="https://maps.app.goo.gl/AQfB4c9MmfBJpP7QA?g_st=ipc"
+          <a class="cta-btn" data-action="map"
+             href="https://maps.app.goo.gl/AQfB4c9MmfBJpP7QA?g_st=ipc"
              target="_blank" rel="noopener">
             <div class="cta-main">📍 Shop map</div>
             <div class="cta-sub">112 Nguyen Van Cu, Long Bien, Hanoi</div>
@@ -484,7 +871,7 @@
         </div>
       </section>
 
-      <section id="contact">
+      <section id="contact" class="reveal" data-obs>
         <div class="divider"></div>
         <div class="footer-info">
           <span>📍 <strong>Address:</strong> 112 Nguyen Van Cu, Bo De, Long Bien, Hanoi</span>
@@ -498,30 +885,225 @@
     </main>
   </div>
 
-  <!-- Script nhỏ update trạng thái mở cửa -->
-  <script>
-    (function(){
-      function updateStatus(){
-        var box = document.getElementById("shop-status");
-        if(!box) return;
-        var txt = box.querySelector(".status-text");
-        var now = new Date();
-        var h = now.getHours();
-        var open = (h >= 9 && h < 21); // 09:00 – 21:00
-        if(open){
-          box.classList.remove("closed");
-          txt.textContent = "Open now · 09:00 – 21:00";
-        }else{
-          box.classList.add("closed");
-          txt.textContent = "Closed now · 09:00 – 21:00";
-        }
-      }
-      updateStatus();
-      setInterval(updateStatus, 60000);
-    })();
-  </script>
+  <!-- Floating side info (no extra text paragraphs) -->
+  <aside class="side-bar" aria-hidden="false">
+    <div class="side-chip">
+      <div class="side-chip-dot" aria-hidden="true"></div>
+      <span>Quick info ready to share</span>
+    </div>
+    <button class="side-copy-btn" type="button" id="copyInfoBtn">
+      <span>📋 Copy main prices</span>
+    </button>
+  </aside>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">
+    <span id="toastIcon">✅</span>
+    <span id="toastText">Copied</span>
+  </div>
 
   <!-- Nhúng script chatbot của bạn -->
   <script src="https://hanoimoto.github.io/app/motoai_v39_hanoi_motorbike.js"></script>
+
+  <script>
+    (function(){
+      const html = document.documentElement;
+      const themeBtn = document.getElementById("themeToggleBtn");
+      const themeIcon = document.getElementById("themeIcon");
+      const navLinks = document.querySelectorAll(".nav-link[data-nav]");
+      const sections = {
+        top: document.getElementById("top"),
+        pricing: document.getElementById("pricing"),
+        "how-to-rent": document.getElementById("how-to-rent"),
+        contact: document.getElementById("contact")
+      };
+      const toast = document.getElementById("toast");
+      const toastIcon = document.getElementById("toastIcon");
+      const toastText = document.getElementById("toastText");
+      const copyBtn = document.getElementById("copyInfoBtn");
+
+      /* ===== Theme ===== */
+      const PREF_KEY = "hm_quick_theme";
+      function applyTheme(mode){
+        if (mode !== "dark" && mode !== "light") return;
+        html.setAttribute("data-theme", mode);
+        try{ localStorage.setItem(PREF_KEY, mode); }catch(e){}
+        if (themeIcon){
+          themeIcon.textContent = mode === "dark" ? "🌙" : "☀️";
+        }
+      }
+      (function initTheme(){
+        let saved;
+        try{ saved = localStorage.getItem(PREF_KEY); }catch(e){}
+        if (saved === "dark" || saved === "light"){
+          applyTheme(saved);
+        } else {
+          const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+          applyTheme(prefersDark ? "dark" : "light");
+        }
+      })();
+
+      if (themeBtn){
+        themeBtn.addEventListener("click", function(){
+          const current = html.getAttribute("data-theme") === "dark" ? "dark" : "light";
+          applyTheme(current === "dark" ? "light" : "dark");
+        });
+      }
+
+      /* ===== Smooth scroll + active nav ===== */
+      function smoothScrollTo(target){
+        if (!target) return;
+        const rect = target.getBoundingClientRect();
+        const offset = window.scrollY + rect.top - 80;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+
+      navLinks.forEach(link=>{
+        link.addEventListener("click", function(e){
+          const id = this.getAttribute("data-nav");
+          if (!id || !sections[id]) return;
+          e.preventDefault();
+          smoothScrollTo(sections[id]);
+        });
+      });
+
+      function updateActiveNav(){
+        const scrollY = window.scrollY;
+        let bestId = "top";
+        let bestOffset = Infinity;
+
+        Object.keys(sections).forEach(id=>{
+          const el = sections[id];
+          if (!el) return;
+          const rect = el.getBoundingClientRect();
+          const top = rect.top + window.scrollY;
+          const dist = Math.abs(top - (scrollY + 120));
+          if (dist < bestOffset){
+            bestOffset = dist;
+            bestId = id;
+          }
+        });
+
+        navLinks.forEach(a=>{
+          const id = a.getAttribute("data-nav");
+          if (id === bestId){
+            a.classList.add("active");
+          } else {
+            a.classList.remove("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", function(){
+        updateActiveNav();
+      }, { passive:true });
+
+      /* ===== Reveal on scroll ===== */
+      (function(){
+        const items = document.querySelectorAll("[data-obs]");
+        if (!("IntersectionObserver" in window)){
+          items.forEach(el=>el.classList.add("visible"));
+          return;
+        }
+        const io = new IntersectionObserver((entries,observer)=>{
+          entries.forEach(entry=>{
+            if (entry.isIntersecting){
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold:.2 });
+        items.forEach(el=>io.observe(el));
+      })();
+
+      /* ===== Toast helper ===== */
+      let toastTimeout;
+      function showToast(icon, text){
+        if (!toast) return;
+        if (toastIcon) toastIcon.textContent = icon || "✅";
+        if (toastText) toastText.textContent = text || "Done";
+        toast.classList.add("show");
+        if (toastTimeout) clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(()=>{
+          toast.classList.remove("show");
+        }, 2200);
+      }
+
+      /* ===== Copy main prices (no new text content, same info) ===== */
+      if (copyBtn){
+        copyBtn.addEventListener("click", function(){
+          const copyText =
+            "Hanoi Motorbike Rental & Sale - Main Prices:\\n" +
+            "- Daily: 150,000 VND – 200,000 VND / day\\n" +
+            "- Weekly: 600,000 VND – 900,000 VND / week\\n" +
+            "- Monthly: 800,000 VND – 2,000,000 VND / month\\n" +
+            "- Motorbikes for sale: 6,000,000 VND – 26,000,000 VND.";
+          if (navigator.clipboard && navigator.clipboard.writeText){
+            navigator.clipboard.writeText(copyText).then(function(){
+              showToast("📋","Copied prices");
+            }).catch(function(){
+              showToast("⚠️","Copy failed");
+            });
+          } else {
+            const ta = document.createElement("textarea");
+            ta.value = copyText;
+            document.body.appendChild(ta);
+            ta.select();
+            try{
+              document.execCommand("copy");
+              showToast("📋","Copied prices");
+            }catch(e){
+              showToast("⚠️","Copy failed");
+            }
+            document.body.removeChild(ta);
+          }
+        });
+      }
+
+      /* ===== Click tracking for contact buttons (toast only) ===== */
+      function attachActionToast(selector){
+        document.querySelectorAll(selector).forEach(el=>{
+          el.addEventListener("click", function(){
+            const action = this.getAttribute("data-action") || "";
+            if (action === "whatsapp"){
+              showToast("🟢","Opening WhatsApp");
+            } else if (action === "zalo"){
+              showToast("💬","Opening Zalo");
+            } else if (action === "call"){
+              showToast("📞","Calling");
+            } else if (action === "map"){
+              showToast("📍","Opening map");
+            }
+          });
+        });
+      }
+      attachActionToast(".quick-btn[data-action]");
+      attachActionToast(".cta-btn[data-action]");
+
+      /* ===== Keyboard shortcuts (W, Z, C, M) ===== */
+      window.addEventListener("keydown", function(e){
+        if (e.target && (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA")){
+          return;
+        }
+        const key = e.key.toLowerCase();
+        if (key === "w"){ // WhatsApp
+          const a = document.querySelector('.cta-btn[data-action="whatsapp"]');
+          if (a){ a.click(); }
+        } else if (key === "z"){ // Zalo
+          const a = document.querySelector('.cta-btn[data-action="zalo"]');
+          if (a){ a.click(); }
+        } else if (key === "c"){ // Call
+          const a = document.querySelector('.cta-btn[data-action="call"]');
+          if (a){ a.click(); }
+        } else if (key === "m"){ // Map
+          const a = document.querySelector('.cta-btn[data-action="map"]');
+          if (a){ a.click(); }
+        }
+      });
+
+      /* Initial nav highlight */
+      updateActiveNav();
+    })();
+  </script>
 </body>
 </html>
