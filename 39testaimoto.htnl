@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Viewport cho mobile + iOS safe area -->
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <title>Test MotoAI v39 - Hanoi Motorbike</title>
+
+  <style>
+    body{
+      margin:0;
+      font-family:-apple-system,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;
+      background:#f3f4f6;
+      color:#111827;
+      min-height:100vh;
+      padding:24px;
+      box-sizing:border-box;
+    }
+    .wrap{
+      max-width:720px;
+      margin:0 auto;
+    }
+    h1{
+      font-size:24px;
+      margin-bottom:8px;
+    }
+    p{
+      margin:4px 0 10px;
+    }
+    .note{
+      padding:10px 12px;
+      border-radius:8px;
+      background:#e5f2ff;
+      border:1px solid #bfdbfe;
+      font-size:14px;
+    }
+  </style>
+
+  <!-- (tuỳ chọn) Config override cho chatbot -->
+  <script>
+    window.MotoAI_CONFIG = {
+      brand: "Hanoi Motorbike",
+      phone: "0942467674",
+      // map: "https://maps.google.com/...",   // nếu có thì mở comment
+      // avatar: "🛵"
+    };
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Test MotoAI v39 – Hanoi Motorbike Assistant</h1>
+    <p>Bấm vào nút <b>💬 Chat</b> phía góc trái màn hình để mở chatbot.</p>
+
+    <div class="note">
+      Gợi ý test:
+      <ul>
+        <li>Trên mobile iPhone: mở trong Safari, xem bong bóng & khung chat có bị dính thanh điều hướng dưới không.</li>
+        <li>Gõ thử: “Thuê xe ga 5 ngày ở phố cổ giá bao nhiêu?”</li>
+        <li>Gõ: “Tôi muốn mua xe máy cũ giấy tờ đầy đủ tại Hà Nội.” (để test logic <b>mua</b> vs <b>thuê</b>).</li>
+        <li>Gõ lệnh: <code>reset</code> hoặc <code>xoá chat</code> để xem nó có clear lịch sử không.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Nhúng script chatbot của bạn -->
+  <script src="https://hanoimoto.github.io/app/motoai_v39_hanoi_motorbike.js"></script>
+</body>
+</html>
