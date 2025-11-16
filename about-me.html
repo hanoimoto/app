@@ -9,6 +9,11 @@
   <meta name="description"
         content="Quick info for Hanoi Motorbike Rental & Sale: rental prices, deposits and contact.">
 
+  <!-- PWA hooks -->
+  <link rel="manifest" href="hm-quickcard.webmanifest">
+  <meta name="theme-color" content="#F3F4F6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#020617" media="(prefers-color-scheme: dark)">
+
   <style>
     :root{
       --primary:#D6001C;      /* Honda red */
@@ -668,6 +673,41 @@
       background:radial-gradient(circle at 20% 0,#22C55E,#15803D);
       box-shadow:0 14px 28px rgba(22,163,74,0.7);
     }
+
+    /* Install FAB (PWA hint) */
+    .install-fab{
+      position:fixed;
+      left:14px;
+      bottom:calc(18px + env(safe-area-inset-bottom,0));
+      width:40px;
+      height:40px;
+      border-radius:999px;
+      border:none;
+      background:radial-gradient(circle at 20% 0,#22C55E,#16A34A);
+      color:#ECFDF3;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:19px;
+      box-shadow:0 16px 34px rgba(22,163,74,0.7);
+      cursor:pointer;
+      z-index:42;
+      transition:
+        opacity .2s ease,
+        transform .2s var(--easing-out),
+        box-shadow .2s ease;
+    }
+    .install-fab.hidden{
+      opacity:0;
+      pointer-events:none;
+      transform:translateY(16px) scale(.9);
+      box-shadow:none;
+    }
+    .install-fab:hover{
+      transform:translateY(-2px) scale(1.03);
+      box-shadow:0 20px 40px rgba(22,163,74,0.9);
+    }
+
     @keyframes chipIntro{
       0%{opacity:0;transform:translateY(10px) scale(.96);}
       100%{opacity:1;transform:translateY(0) scale(1);}
@@ -718,12 +758,13 @@
       justify-content:center;
       background:radial-gradient(circle at top,var(--card),var(--bg));
       z-index:80;
-      pointer-events:none;
+      pointer-events:auto;
       transition:opacity .35s ease,visibility .35s ease;
     }
     .skeleton-overlay.hidden{
       opacity:0;
       visibility:hidden;
+      pointer-events:none;
     }
     .sk-card{
       width:min(880px,100% - 40px);
@@ -756,6 +797,16 @@
       100%{background-position:-200% 0;}
     }
 
+    /* Better focus ring */
+    .nav-link:focus-visible,
+    .quick-btn:focus-visible,
+    .cta-btn:focus-visible,
+    .side-copy-btn:focus-visible,
+    .install-fab:focus-visible{
+      outline:2px solid var(--accent);
+      outline-offset:2px;
+    }
+
     /* RESPONSIVE */
     @media(max-width:640px){
       .top-bar{
@@ -782,6 +833,10 @@
       .side-bar{
         display:none;
       }
+      .install-fab{
+        left:10px;
+        bottom:calc(12px + env(safe-area-inset-bottom,0));
+      }
     }
 
     @media (prefers-reduced-motion:reduce){
@@ -806,6 +861,11 @@
       <div class="sk-line lg"></div>
     </div>
   </div>
+
+  <!-- PWA Install FAB (icon only) -->
+  <button class="install-fab hidden" type="button" id="installFab" aria-label="Install quick card">
+    📱
+  </button>
 
   <div class="page" id="page-root">
     <header class="top-bar">
@@ -1002,18 +1062,32 @@
       const compactBtn = document.getElementById("compactBtn");
       const page = document.getElementById("page-root");
       const skeleton = document.getElementById("skeletonLayer");
+      const installFab = document.getElementById("installFab");
+
+      const PREF_KEY = "hm_quick_theme";
+      const COMPACT_KEY = "hm_quick_compact";
 
       /* ===== Skeleton hide ===== */
       if (skeleton){
         window.addEventListener("load", function(){
           setTimeout(function(){
             skeleton.classList.add("hidden");
+            skeleton.setAttribute("aria-hidden","true");
           }, 650);
         });
       }
 
+      /* Restore compact mode */
+      if (page){
+        try{
+          const savedCompact = localStorage.getItem(COMPACT_KEY);
+          if (savedCompact === "1"){
+            page.classList.add("compact");
+          }
+        }catch(e){}
+      }
+
       /* ===== Theme (auto dark after 19:00 if no saved) ===== */
-      const PREF_KEY = "hm_quick_theme";
       function applyTheme(mode){
         if (mode !== "dark" && mode !== "light") return;
         html.setAttribute("data-theme", mode);
@@ -1029,7 +1103,7 @@
           applyTheme(saved);
         } else {
           const now = new Date();
-          const h = now.getHours(); // local time ~ Hanoi
+          const h = now.getHours();
           const darkTime = (h >= 19 || h < 6);
           applyTheme(darkTime ? "dark" : "light");
         }
@@ -1125,10 +1199,10 @@
       if (copyBtn){
         copyBtn.addEventListener("click", function(){
           const copyText =
-            "Hanoi Motorbike Rental & Sale - Main Prices:\\n" +
-            "- Daily: 150,000 VND – 200,000 VND / day\\n" +
-            "- Weekly: 600,000 VND – 900,000 VND / week\\n" +
-            "- Monthly: 800,000 VND – 2,000,000 VND / month\\n" +
+            "Hanoi Motorbike Rental & Sale - Main Prices:\n" +
+            "- Daily: 150,000 VND – 200,000 VND / day\n" +
+            "- Weekly: 600,000 VND – 900,000 VND / week\n" +
+            "- Monthly: 800,000 VND – 2,000,000 VND / month\n" +
             "- Motorbikes for sale: 6,000,000 VND – 26,000,000 VND.";
           if (navigator.clipboard && navigator.clipboard.writeText){
             navigator.clipboard.writeText(copyText).then(function(){
@@ -1156,6 +1230,9 @@
       if (compactBtn && page){
         compactBtn.addEventListener("click", function(){
           const isCompact = page.classList.toggle("compact");
+          try{
+            localStorage.setItem(COMPACT_KEY, isCompact ? "1" : "0");
+          }catch(e){}
           showToast("🧩", isCompact ? "Compact on" : "Compact off");
         });
       }
@@ -1223,9 +1300,13 @@
       }
       attachRipple(".quick-btn");
       attachRipple(".cta-btn");
+      attachRipple(".install-fab");
 
-      /* ===== Tilt on mouse move ===== */
-      if (page && window.matchMedia && !window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+      /* ===== Tilt on mouse move (desktop only) ===== */
+      if (page &&
+          window.matchMedia &&
+          !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+          window.innerWidth > 640){
         const maxTilt = 6;
         page.addEventListener("mousemove", function(e){
           const rect = page.getBoundingClientRect();
@@ -1240,6 +1321,44 @@
         page.addEventListener("mouseleave", function(){
           page.style.transform = "translateY(0) scale(1)";
         });
+      }
+
+      /* ===== PWA Install (beforeinstallprompt) ===== */
+      let deferredPrompt = null;
+      if (installFab){
+        installFab.classList.add("hidden");
+      }
+
+      window.addEventListener("beforeinstallprompt", function(e){
+        e.preventDefault();
+        deferredPrompt = e;
+        if (installFab){
+          installFab.classList.remove("hidden");
+        }
+      });
+
+      if (installFab){
+        installFab.addEventListener("click", async function(){
+          if (!deferredPrompt) return;
+          installFab.classList.add("hidden");
+          deferredPrompt.prompt();
+          try{
+            const choice = await deferredPrompt.userChoice;
+            if (choice && choice.outcome === "accepted"){
+              showToast("📱","Added to Home");
+            } else {
+              showToast("📱","Install canceled");
+            }
+          }catch(e){}
+          deferredPrompt = null;
+        });
+      }
+
+      /* Optional: service worker registration (safe to fail silently) */
+      if ("serviceWorker" in navigator){
+        try{
+          navigator.serviceWorker.register("hm-quickcard-sw.js").catch(function(){});
+        }catch(e){}
       }
 
       /* Initial nav highlight */
