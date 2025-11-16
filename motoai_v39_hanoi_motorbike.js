@@ -816,13 +816,16 @@
     return `${d}/${m}/${y}`;
   }
 
+  // === HÀM MỚI ĐÃ ĐƯỢC THAY THẾ ===
   function priceAnswer(q, lang, intents){
     if (!intents.needPrice) return null;
 
     const type = detectType(q) || "xe ga";
     const qty  = detectQty(q) || { n: 1, unit: "day" };
 
-    const unitKey = qty.unit === "week" ? "week" : (qty.unit === "month" ? "month" : "day");
+    const unitKey = qty.unit === "week"
+      ? "week"
+      : (qty.unit === "month" ? "month" : "day");
 
     let model = null;
     for (const it of TYPE_MAP){
@@ -836,7 +839,9 @@
     if (!base){
       const fam = modelFamily(type) || type;
       const table = PRICE_TABLE[fam] || PRICE_TABLE["xe ga"];
-      const arr = table && table[unitKey] ? (Array.isArray(table[unitKey]) ? table[unitKey] : [table[unitKey]]) : null;
+      const arr = table && table[unitKey]
+        ? (Array.isArray(table[unitKey]) ? table[unitKey] : [table[unitKey]])
+        : null;
       base = arr ? arr[0] : null;
     }
 
@@ -846,6 +851,7 @@
         : "Rental price depends on the motorbike model and duration. Please tell me what type of bike you want and for roughly how many days so I can estimate.";
     }
 
+    // Giá cơ bản /ngày, /tuần, /tháng
     let min = base;
     let max = Math.round(base * 1.2);
     if (qty.unit === "week"){
@@ -858,7 +864,9 @@
 
     const labelUnit = qty.unit === "week"
       ? (lang === "vi" ? "tuần" : "week")
-      : (qty.unit === "month" ? (lang === "vi" ? "tháng" : "month") : (lang === "vi" ? "ngày" : "day"));
+      : (qty.unit === "month"
+          ? (lang === "vi" ? "tháng" : "month")
+          : (lang === "vi" ? "ngày" : "day"));
 
     const modelLabel = model
       || (type === "xe ga"
@@ -866,6 +874,14 @@
           : (type === "xe số"
               ? (lang === "vi" ? "xe số (semi-automatic)" : "semi-automatic bike")
               : (lang === "vi" ? "xe máy" : "motorbike")));
+
+    // === TÍNH TỔNG TIỀN ƯỚC LƯỢNG ===
+    let totalMin = null;
+    let totalMax = null;
+    if (qty.n && qty.n > 1) {
+      totalMin = min * qty.n;
+      totalMax = max * qty.n;
+    }
 
     let text;
     if (lang === "vi"){
@@ -876,6 +892,7 @@
       if (qty.range && qty.startISO && qty.endISO){
         text += " (từ " + formatDateVN(qty.startISO) + " đến " + formatDateVN(qty.endISO) + ")";
       }
+
       text += ", giá thường rơi vào khoảng " + nfVND(min) + " – " + nfVND(max) + " VND";
       if (qty.unit === "month"){
         text += " mỗi tháng";
@@ -884,8 +901,14 @@
       } else {
         text += " mỗi ngày";
       }
+
+      // Thêm tổng tiền ước lượng nếu thời gian > 1 đơn vị
+      if (totalMin && totalMax){
+        text += ". Ước tính tổng chi phí cho " + qty.n + " " + labelUnit +
+                " sẽ khoảng " + nfVND(totalMin) + " – " + nfVND(totalMax) + " VND";
+      }
+
       text += ". Giá cụ thể còn tuỳ tình trạng xe và thời điểm.";
-      // follow-up hỏi thêm cho rõ
       text += " Bạn có thể cho mình biết khu vực bạn ở (Hoàn Kiếm, Tây Hồ, Long Biên...) và thời gian chính xác muốn thuê không để mình tư vấn kỹ hơn?";
     } else {
       text = "For a " + modelLabel + " rental in Hanoi";
@@ -895,6 +918,7 @@
       if (qty.range && qty.startISO && qty.endISO){
         text += " (from " + formatDateEN(qty.startISO) + " to " + formatDateEN(qty.endISO) + ")";
       }
+
       text += ", the typical price is around " + nfVND(min) + " – " + nfVND(max) + " VND";
       if (qty.unit === "month"){
         text += " per month";
@@ -903,12 +927,21 @@
       } else {
         text += " per day";
       }
+
+      if (totalMin && totalMax){
+        text += ". For around " + qty.n + " " + labelUnit +
+                ", the estimated total would be about " +
+                nfVND(totalMin) + " – " + nfVND(totalMax) + " VND";
+      }
+
       text += ". Exact price also depends on bike condition and current stock.";
       text += " Please also tell me your area in Hanoi (Old Quarter, Tay Ho, Long Bien...) and exact dates so I can suggest a more accurate option.";
     }
 
     return text;
   }
+  // === KẾT THÚC HÀM MỚI ===
+
 
   function faqAnswer(q, lang, intents){
     for (const item of STATIC_QA){
