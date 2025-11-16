@@ -412,69 +412,71 @@
       margin-bottom:12px;
     }
 
-    .price-grid{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:10px;
+    /* PRICE TABLE */
+    .price-table-wrap{
       margin-bottom:10px;
-    }
-    .price-card{
       border-radius:var(--radius-md);
       border:1px solid var(--border);
-      padding:10px 10px 9px;
+      overflow:hidden;
       background:#FFFFFF;
       box-shadow:0 6px 18px rgba(15,23,42,0.08);
-      position:relative;
-      overflow:hidden;
-      transform-origin:50% 100%;
-      transition:
-        transform var(--dur-med) var(--easing-out),
-        box-shadow var(--dur-med) ease,
-        border-color var(--dur-med) ease,
-        background-color var(--dur-med) ease;
     }
-    html[data-theme="dark"] .price-card{
-      background:radial-gradient(circle at top left,#020617,#020617);
+    html[data-theme="dark"] .price-table-wrap{
+      background:#020617;
       border-color:#1E293B;
       box-shadow:0 10px 26px rgba(0,0,0,0.9);
     }
-    .price-card::before{
-      content:"";
-      position:absolute;
-      inset:-20%;
-      background:radial-gradient(circle at top,rgba(248,113,113,0.14),transparent 55%);
-      opacity:0;
-      transition:opacity var(--dur-fast) ease;
-      pointer-events:none;
+    .price-table{
+      width:100%;
+      border-collapse:collapse;
+      font-size:13px;
     }
-    .price-card:hover{
-      transform:translateY(-3px) scale(1.01);
-      box-shadow:var(--shadow-strong);
-      border-color:rgba(220,38,38,0.65);
+    .price-table thead{
+      background:linear-gradient(90deg,rgba(220,38,38,0.06),rgba(248,113,113,0.08));
     }
-    .price-card:hover::before{
-      opacity:1;
+    html[data-theme="dark"] .price-table thead{
+      background:linear-gradient(90deg,rgba(248,113,113,0.16),rgba(248,113,113,0.06));
     }
-
-    .price-label{
+    .price-table th,
+    .price-table td{
+      padding:8px 10px;
+      text-align:left;
+      border-bottom:1px solid var(--border);
+    }
+    .price-table th{
       font-size:11px;
       text-transform:uppercase;
       letter-spacing:0.14em;
       color:var(--muted);
-      margin-bottom:4px;
     }
-    .price-main{
-      font-size:15px;
+    .price-table td.price-term{
+      font-weight:600;
+      white-space:nowrap;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+    .price-table td.price-range{
       font-weight:700;
-      margin-bottom:2px;
       color:var(--primary-dark);
     }
-    html[data-theme="dark"] .price-main{
+    html[data-theme="dark"] .price-table td.price-range{
       color:#fecaca;
     }
-    .price-sub{
-      font-size:11px;
-      color:var(--muted);
+    .price-table tbody tr:nth-child(2n){
+      background:rgba(249,250,251,0.7);
+    }
+    html[data-theme="dark"] .price-table tbody tr:nth-child(2n){
+      background:rgba(15,23,42,0.8);
+    }
+    .price-table tbody tr:hover{
+      background:rgba(248,250,252,0.9);
+    }
+    html[data-theme="dark"] .price-table tbody tr:hover{
+      background:rgba(30,64,175,0.32);
+    }
+    .term-icon{
+      font-size:15px;
     }
 
     .note{
@@ -824,9 +826,6 @@
       .quick-actions{
         margin-left:auto;
       }
-      .price-grid{
-        grid-template-columns:1fr;
-      }
       .cta-grid{
         grid-template-columns:1fr;
       }
@@ -836,6 +835,11 @@
       .install-fab{
         left:10px;
         bottom:calc(12px + env(safe-area-inset-bottom,0));
+      }
+      /* Ẩn cột NOTE ở mobile cho gọn */
+      .price-table th:nth-child(3),
+      .price-table td:nth-child(3){
+        display:none;
       }
     }
 
@@ -931,22 +935,42 @@
       </div>
 
       <section id="pricing" class="reveal" data-obs>
-        <div class="price-grid">
-          <div class="price-card">
-            <div class="price-label">Daily rental</div>
-            <div class="price-main">150,000 VND – 200,000 VND / day</div>
-            <div class="price-sub">Typical scooter rental in Hanoi</div>
-          </div>
-          <div class="price-card">
-            <div class="price-label">Weekly rental</div>
-            <div class="price-main">600,000 VND – 900,000 VND / week</div>
-            <div class="price-sub">Good for short trips &amp; tourists</div>
-          </div>
-          <div class="price-card">
-            <div class="price-label">Monthly rental</div>
-            <div class="price-main">800,000 VND – 2,000,000 VND / month</div>
-            <div class="price-sub">Best value for long stays &amp; expats</div>
-          </div>
+        <div class="price-table-wrap">
+          <table class="price-table">
+            <thead>
+              <tr>
+                <th>PLAN</th>
+                <th>PRICE</th>
+                <th>NOTE</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="price-term">
+                  <span class="term-icon">🕐</span>
+                  <span>Daily rental</span>
+                </td>
+                <td class="price-range">150,000 VND – 200,000 VND / day</td>
+                <td>Typical scooter rental in Hanoi</td>
+              </tr>
+              <tr>
+                <td class="price-term">
+                  <span class="term-icon">📆</span>
+                  <span>Weekly rental</span>
+                </td>
+                <td class="price-range">600,000 VND – 900,000 VND / week</td>
+                <td>Good for short trips &amp; tourists</td>
+              </tr>
+              <tr>
+                <td class="price-term">
+                  <span class="term-icon">🗓️</span>
+                  <span>Monthly rental</span>
+                </td>
+                <td class="price-range">800,000 VND – 2,000,000 VND / month</td>
+                <td>Best value for long stays &amp; expats</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
         <p class="note">
