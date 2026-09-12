@@ -2,4 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://hanoimoto.github.io/app/sitemap.xml
-Sitemap: https://hanoimoto.github.io/app/sitemap-social.xml
